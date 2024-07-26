@@ -97,6 +97,14 @@ function openPopup(contentId) {
             content += 'I am very proud of how it turned out, and I think the article speaks for itself.</p>';
             content += '<a href="feature.pdf" target="_blank">Read it Here</a>';
             break;
+        case 'content8':
+            popupImg.src = 'img/display.png';
+            content += '<h1>Room Status Sign - <span style="color:red">WORK IN PROGRESS</span></h1>';
+            content += 'An E-Ink display that is mounted on the door to my room that shows the ';
+            content += 'status of what I am currently doing. Commonly used for when I am doing ';
+            content += "something important, I can show 'Do Not Disturb!' and a timeframe of when ";
+            content += ' I will be done.';
+            break;
         default:
             popup.style.display = "none";
             return;
