@@ -17,7 +17,7 @@ function openPopup(contentId) {
             content += ' Graphics starter code was provided by the teaching assistants ';
             content += 'and the instructor.</p>'
             content += '<a href="https://github.com/owncook/Blob-Kart"';
-            content += 'target="_blank">Github Repo</a>';
+            content += 'target="_blank">GitHub Repo</a>';
             break;
         case 'content2':
             popupImg.src = 'img/cs1080final.png';
@@ -64,7 +64,7 @@ function openPopup(contentId) {
             content += 'The Raspberry Pi is connected directly to the hub, and it uses bluetooth to control ';
             content += 'peripherals using an Arduino Uno.</p>';
             content += '<a href="https://github.com/aaronperkel/DormKit" target="_blank">';
-            content += 'Github Repo</a>';
+            content += 'GitHub Repo</a>';
             break;
         case 'content5':
             popupImg.src = 'img/pcb.png';
@@ -86,7 +86,7 @@ function openPopup(contentId) {
             content += 'Light Out was created in C++ using GLM, GLFW, and OpenGL ';
             content += 'with <a href="https://oacook.w3.uvm.edu" target="_blank">Owen Cook</a>.</p>'
             content += '<a href="https://github.com/aaronperkel/Lights-Out" target="_blank">';
-            content += 'Github Repo</a>'
+            content += 'GitHub Repo</a>'
             break;
         case 'content7':
             popupImg.src = 'img/feature.png';
@@ -104,6 +104,7 @@ function openPopup(contentId) {
             content += 'status of what I am currently doing. Commonly used for when I am doing ';
             content += "something important, I can show 'Do Not Disturb!' and a timeframe of when ";
             content += ' I will be done.';
+            content += '<a href="https://github.com/aaronperkel/Room-Display-Sign">GitHub Repo</a>';
             break;
         default:
             popup.style.display = "none";
