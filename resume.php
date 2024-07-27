@@ -4,8 +4,8 @@
                 <div class="columnOne">
                     <h1>Aaron Perkel</h1>
                     <p class="orange">
-                        478.262.8935<br>
-                        aaron.perkel@gmail.com<br>
+                        <a href="tel:4782628935">478.262.8935</a><br>
+                        <a href="mailto:me@aaronperkel.com">me@aaronperkel.com</a><br>
                         Burlington VT | Macon GA
                     </p>
                     <p>

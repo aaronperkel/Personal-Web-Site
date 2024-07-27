@@ -61,7 +61,7 @@
             <section>
                 <h2>Contact Me</h2>
                 <p>
-                    Email: <a href="mailto:aaron.perkel@gmail.com">aaron.perkel@gmail.com</a> | 
+                    Email: <a href="mailto:me@aaronperkel.com">me@aaronperkel.com</a> | 
                     Phone: <a href="tel:4782628935">478.262.8935</a>
                 </p>
             </section>
