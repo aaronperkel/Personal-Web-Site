@@ -60,3 +60,7 @@ header {
     display: grid;
     grid-template-columns: auto;
 }
+
+.orange a {
+    padding: 0;
+}
