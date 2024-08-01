@@ -7,8 +7,8 @@ $pathParts = pathinfo($phpSelf);
 
     <head>
         <meta charset="utf-8">
-        <title>Aaron Perkel</title>
-        <meta name="author" content="Aaron Perkel - Personal Site">
+        <title>Aaron Perkel - Personal Site</title>
+        <meta name="author" content="Aaron Perkel">
         <meta name="description" content="
             Welcome to the personal site of Aaron Perkel. 
             Find projects, information about me, as well as my resume. 
