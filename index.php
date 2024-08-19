@@ -44,7 +44,7 @@
                         <img src="img/feature.png" alt="Magazine Feature">
                     </div>
                     <div class="imgWrapper" onclick="openPopup('content8')" data-overlay="Room Status Sign">
-                        <img src="img/display.png" alt="Room Status Sign">
+                        <img src="img/sign.png" alt="Room Status Sign">
                     </div>
                 </div>
                 <div id="popup" class="popup" onclick="closePopup(event)">
