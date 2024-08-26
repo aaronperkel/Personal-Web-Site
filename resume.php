@@ -21,13 +21,6 @@
                     <p><a href="https://github.com/owncook/Blob-Kart" target="_blank">Blob Kart</a> - Spring 2024</p>
                     <p class="grey">C++ Video Game Project inspired by Mario Kart</p>
 
-                    <p><a href="https://github.com/aaronperkel/DormKit" target="_blank">DormKit</a> - Fall 2023</p>
-                    <p class="grey">
-                        Prototype "smart dorm" product that allows a user to install 
-                        hardware in their dorm to control certain electronics from 
-                        anywhere on a college campus.
-                    </p>
-
                     <p><a href="https://github.com/aaronperkel/Utility-Manager" target="_blank">Utility Manager</a> - Summer 2024</p>
                     <p class="grey">
                         A web app to help track my two roommates' 
@@ -35,10 +28,16 @@
                         PHP, SQL, and Python.
                     </p>
 
-                    <p>“Helping Hand” - Fall 2022</p>
+                    <p><a href="https://github.com/aaronperkel/Room-Display-Sign" target="_blank">Room Status Sign</a> - Summer 2024</p>
                     <p class="grey">
-                        A prosthetic device to help people suffering from neuropathy 
-                        to detect high temperatures. Created a custom PCB using KiCad.
+                    An E-Ink display that is mounted on the door to my room that shows the status of what I am currently doing.
+                    </p>
+
+                    <p><a href="https://github.com/aaronperkel/DormKit" target="_blank">DormKit</a> - Fall 2023</p>
+                    <p class="grey">
+                        Prototype "smart dorm" product that allows a user to install 
+                        hardware in their dorm to control certain electronics from 
+                        anywhere on a college campus.
                     </p>
 
                     <h3>Awards</h3>

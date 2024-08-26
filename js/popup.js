@@ -104,7 +104,7 @@ function openPopup(contentId) {
             content += 'status of what I am currently doing. Commonly used for when I am doing ';
             content += "something important, I can show 'Do Not Disturb!' and a timeframe of when ";
             content += ' I will be done. I used a Waveshare E-Ink display and Flask running on a Raspberry Pi. ';
-            content += '<a href="https://github.com/aaronperkel/Room-Display-Sign">GitHub Repo</a>';
+            content += '<a href="https://github.com/aaronperkel/Room-Display-Sign" target="_blank">GitHub Repo</a>';
             break;
         default:
             popup.style.display = "none";
