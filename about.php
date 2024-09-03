@@ -54,7 +54,7 @@
                     <li>CS 3110 - Data Privacy</li>
                     <li>CS 3240 - Algorithm Design & Analysis</li>
                     <li>CS 3750 - Mobile App Development</li>
-                    <li>SPAN 1100 - Elementary Spanish I</li>
+                    <li>ALE 1100 - Home & Garden Horticulture</li>
                 </ul>
             </section>
             <hr>
