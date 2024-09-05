@@ -1,21 +1,21 @@
 function openPopup(contentId) {
     var popup = document.getElementById("popup");
     var popupContent = document.getElementById("popup-content");
-    var popupImg = document.getElementById("popup-img")
+    var popupImg = document.getElementById("popup-img");
     popup.style.display = "flex";
 
-    var content = ''
+    var content = '';
     switch(contentId) {
         case 'content1':
-            popupImg.src = 'img/img.gif'
-            content += '<h1>Blob Kart</h1>'
-            content += '<hr class="popupHR">'
+            popupImg.src = 'img/img.gif';
+            content += '<h1>Blob Kart</h1>';
+            content += '<hr class="popupHR">';
             content += '<p>Blob Kart is a game inspired by Mario Kart created in C++ ';
             content += 'using GLM, GLFW, and OpenGL. My partner ';
             content += '<a href="https://oacook.w3.uvm.edu" target="_blank">Owen Cook</a>';
             content += ' and I created this project for our Advanced Programming class at UVM.';
             content += ' Graphics starter code was provided by the teaching assistants ';
-            content += 'and the instructor.</p>'
+            content += 'and the instructor.</p>';
             content += '<a href="https://github.com/owncook/Blob-Kart"';
             content += 'target="_blank">GitHub Repo</a>';
             break;
@@ -91,6 +91,7 @@ function openPopup(contentId) {
         case 'content7':
             popupImg.src = 'img/feature.png';
             content += '<h1>Magazine Feature</h1>';
+            content += '<hr class="popupHR">';
             content += '<p><i>The Impact of Divorce on Children: More Than Just A Split</i> ';
             content += 'was a Magazine Feature I wrote for ENGL1001 - Written Expression during the ';
             content += 'summer of 2024. It was the result of four weeks of research and refining this topic. ';
@@ -100,6 +101,7 @@ function openPopup(contentId) {
         case 'content8':
             popupImg.src = 'img/sign.png';
             content += '<h1>Room Status Sign</h1>';
+            content += '<hr class="popupHR">';
             content += 'An E-Ink display that is mounted on the door to my room that shows the ';
             content += 'status of what I am currently doing. Commonly used for when I am doing ';
             content += "something important, I can show 'Do Not Disturb!' and a timeframe of when ";
