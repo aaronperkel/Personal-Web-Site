@@ -102,10 +102,10 @@ function openPopup(contentId) {
             popupImg.src = 'img/sign.png';
             content += '<h1>Room Status Sign</h1>';
             content += '<hr class="popupHR">';
-            content += 'An E-Ink display that is mounted on the door to my room that shows the ';
+            content += '<p>An E-Ink display that is mounted on the door to my room that shows the ';
             content += 'status of what I am currently doing. Commonly used for when I am doing ';
             content += "something important, I can show 'Do Not Disturb!' and a timeframe of when ";
-            content += ' I will be done. I used a Waveshare E-Ink display and Flask running on a Raspberry Pi. ';
+            content += ' I will be done. I used a Waveshare E-Ink display and Flask running on a Raspberry Pi.</p>';
             content += '<a href="https://github.com/aaronperkel/Room-Display-Sign" target="_blank">GitHub Repo</a>';
             break;
         default:
