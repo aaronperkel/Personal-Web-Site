@@ -5,8 +5,8 @@
 }
 
 * {
-    font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
-    line-height: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.25em;
     margin: 0;
     padding: 0;
 }
@@ -55,7 +55,8 @@ nav a {
     display: inline-block;
 }
 
-nav a:link:not(.activePage):not(:hover) { 
+nav a:link:not(.activePage):not(:hover),
+footer a:link:not(.activePage):not(:hover) { 
     color: var(--main-text-color);
     text-decoration-style: dotted;
 }
@@ -94,6 +95,10 @@ hr:not(.popupHR) {
 
 footer {
     text-align: center;
+}
+
+footer nav {
+    margin-top: 10px;
 }
 
 blockquote {
@@ -300,4 +305,30 @@ blockquote {
 .about ul.dashed > li:before {
     content: "- ";
     text-indent: -5px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
 }

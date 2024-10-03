@@ -2,11 +2,14 @@
         <main>
             <section>
                 <h2>About Me</h2>
+                <h3>Music</h3>
                 <p>
                     I have been playing piano since I was 6 years old. In middle school, 
                     I also picked up the Alto Saxophone and played in the Symphonic and 
                     Marching Bands.
                 </p>
+
+                <h3>Photography and Film Making</h3>
                 <p>
                     I have also loved making movies and documenting things via video 
                     for as long as I've known how to use a camera. I occasionally 
@@ -46,7 +49,7 @@
             <section>
                 <h2>Courses - Fall 2024</h2>
                 <p>
-                    This fall, I am planning on taking the following courses at UVM:
+                    This fall, I am currently taking the following courses at UVM:
                 </p>
                 <ul class="dashed">
                     <li>CS 2660 - Cybersecurity Principles</li>

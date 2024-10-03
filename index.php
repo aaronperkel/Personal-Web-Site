@@ -48,12 +48,12 @@
                     </div>
                 </div>
                 <div id="popup" class="popup" onclick="closePopup(event)">
-					<div class="popupStack">
-						<span class="close" onclick="closePopup()">&times;</span>
-						<img id="popup-img" class="popup-img">
-						<div id="popup-content" class="popup-content"></div>
-					</div>
-				</div>
+                    <div class="popupStack" onclick="event.stopPropagation()">
+                        <span class="close" onclick="closePopup(event)">&times;</span>
+                        <img id="popup-img" class="popup-img">
+                        <div id="popup-content" class="popup-content"></div>
+                    </div>
+                </div>
             </section>
 
             <hr>

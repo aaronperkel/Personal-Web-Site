@@ -116,8 +116,8 @@ function openPopup(contentId) {
 }
 
 function closePopup(event) {
-    if (event.target.classList.contains('popup') || event.target.classList.contains('close')) {
-        var popup = document.getElementById("popup");
-        popup.style.display = "none";
+    if (event.target.id === 'popup' || event.target.classList.contains('close')) {
+      var popup = document.getElementById("popup");
+      popup.style.display = "none";
     }
-}
+  }

@@ -30,6 +30,8 @@ $pathParts = pathinfo($phpSelf);
             
         <link rel="apple-touch-icon" sizes="16x16" href="img/apple-touch-icon.png">
         <link rel="icon" href="img/favicon.ico">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
     <?php
 
