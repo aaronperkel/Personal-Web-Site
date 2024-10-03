@@ -47,30 +47,6 @@ body {
     max-width: 57em;
 }
 
-/*
-nav {
-    border-bottom: medium solid var(--main-bg-color);
-}
-
-nav a {
-    display: inline-block;
-}
-
-nav a:link:not(.activePage):not(:hover),
-footer a:link:not(.activePage):not(:hover) { 
-    color: var(--main-text-color);
-    text-decoration-style: dotted;
-}
-
-nav a:visited {
-    color: var(--main-text-color);
-}
-
-nav a:hover {
-    text-decoration: underline;
-    text-decoration-style: solid;
-}
-    */
 
 a {
     color: var(--main-text-color);
@@ -98,12 +74,6 @@ hr:not(.popupHR) {
 footer {
     text-align: center;
 }
-/*
-
-footer nav {
-    margin-top: 10px;
-}
-    */
 
 blockquote {
     font-size: 1.00em;
@@ -204,6 +174,7 @@ blockquote {
     height: auto;
     display: block;
     margin: 0 auto;
+    padding-top: 2em;
   }
   
   .popup-content {
@@ -256,15 +227,6 @@ blockquote {
     margin-top: 10px;
 }
 
-/*
-
-.awardsGrid .columnTwo p {
-    padding-bottom: 9%;
-    padding-left: 3%;
-}
-
-*/
-
 .courseGrid,
 .skillsGrid {
     display: grid;
@@ -309,31 +271,7 @@ blockquote {
     content: "- ";
     text-indent: -5px;
 }
-/*
 
-@media (max-width: 600px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-    }
-
-    .nav-links a {
-        padding: 10px;
-        border-bottom: 1px solid #ccc;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-}
-    */
-
-
-/* General nav styles */
 nav {
     position: relative;
 }
@@ -369,94 +307,32 @@ footer nav ul li a.activePage {
   background-color: transparent;
 }
 
-  
-  /* Footer navigation */
-  footer nav ul {
+/* Footer navigation */
+footer nav ul {
     display: flex;
     list-style: none;
     padding: 0;
     justify-content: center;
-  }
-  
-  footer nav ul li {
-    margin: 0 10px;
-  }
-  
-  footer nav ul li a {
-    text-decoration: none;
-    color: var(--main-text-color);
-  }
-  
-  footer nav ul li a.activePage {
-    font-weight: bold;
-    text-decoration: underline;
-  }
-
-  /* General styles (Desktop) */
-.hamburger {
-    display: none; /* Hide hamburger icon on desktop */
 }
 
+footer nav ul li {
+    margin: 0 10px;
+}
 
-  
-  /* Mobile styles */
-  @media (max-width: 600px) {
-    /* Show hamburger icon */
-    .hamburger {
-        display: flex; /* Changed from 'none' to 'flex' */
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 21px;
-        cursor: pointer;
-    }
+footer nav ul li a {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
 
-    .hamburger span {
-        display: block;
-        height: 3px;
-        background-color: var(--main-text-color);
-        border-radius: 3px;
-    }
-  
-    /* Hide nav-links by default */
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 50px; /* Adjust based on header height */
-      left: 0;
-      width: 100%;
-      flex-direction: column;
-      background-color: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      z-index: 1000;
-    }
-  
-    /* Show nav-links when 'show' class is added */
-    .nav-links.show {
-      display: flex;
-    }
-  
-    /* Style nav-links for mobile */
-    .nav-links li {
-      margin: 0;
-      border-bottom: 1px solid #ccc;
-    }
-  
-    .nav-links li:last-child {
-      border-bottom: none;
-    }
-  
-    .nav-links a {
-      padding: 15px;
-      display: block;
-      color: var(--main-text-color);
-    }
-  
-    .nav-links a.activePage {
-      background-color: #f0f0f0; /* Light gray background */
-    }
-  }
+footer nav ul li a.activePage {
+    font-weight: bold;
+    text-decoration: underline;
+}
 
-  body.popup-open {
+.hamburger {
+    display: none;
+}
+
+body.popup-open {
     overflow: hidden;
-  }
+}

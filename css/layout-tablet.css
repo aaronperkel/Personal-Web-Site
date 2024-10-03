@@ -29,7 +29,6 @@ header {
 
 .popupStack {
     display: grid;
-    padding: 0;
     grid-template-columns: auto;
     width: 100%;
     place-items: center;
@@ -44,16 +43,12 @@ header {
     margin: auto;
 }
 
-.popup-img {
-    width: 600px;
-}
-
 .mobileNote {
     visibility: unset;
 }
 
 .popup-img.tallimg {
-    padding-top: 20em;
+    padding-top: 4em;
 }
 
 .resumeGrid {
