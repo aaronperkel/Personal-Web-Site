@@ -133,11 +133,11 @@
                             <p class="bold">
                                 01.24-PRESENT<br>‎ 
                             </p>
-                            <p>‎ <br>‎ <br>‎ <br>‎ <br></p>
+                            <p>‎ <br>‎ <br>‎ <br></p>
                             <p class="bold">
                                 11.23-PRESENT<br>‎
                             </p> 
-                            <p>‎ <br>‎ <br>‎ <br></p>
+                            <p>‎ <br>‎ <br></p>
                             <p class="bold">   
                                 06.21-08.23
                             </p>   

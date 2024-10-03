@@ -3,6 +3,7 @@ function openPopup(contentId) {
     var popupContent = document.getElementById("popup-content");
     var popupImg = document.getElementById("popup-img");
     popup.style.display = "flex";
+    document.body.classList.add('popup-open');
 
     var content = '';
     switch(contentId) {
@@ -119,5 +120,6 @@ function closePopup(event) {
     if (event.target.id === 'popup' || event.target.classList.contains('close')) {
       var popup = document.getElementById("popup");
       popup.style.display = "none";
+      document.body.classList.remove('popup-open');
     }
   }

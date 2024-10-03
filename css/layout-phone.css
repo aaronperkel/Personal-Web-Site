@@ -26,6 +26,7 @@ main, section {
 header {
     text-align: center;
 }
+/*
 
 nav a { 
     display: block;
@@ -40,7 +41,7 @@ nav a {
 nav .activePage {
     background-color: lightblue;
 }
-
+*/
 .socials {
     display: grid;
     grid-template-columns: auto auto auto auto auto;

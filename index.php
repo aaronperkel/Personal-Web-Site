@@ -50,8 +50,10 @@
                 <div id="popup" class="popup" onclick="closePopup(event)">
                     <div class="popupStack" onclick="event.stopPropagation()">
                         <span class="close" onclick="closePopup(event)">&times;</span>
+                        <div class="popup-content-wrapper">
                         <img id="popup-img" class="popup-img">
                         <div id="popup-content" class="popup-content"></div>
+                        </div>
                     </div>
                 </div>
             </section>
