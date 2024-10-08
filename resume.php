@@ -8,10 +8,10 @@
                         <a href="mailto:me@aaronperkel.com">me@aaronperkel.com</a><br>
                         Burlington VT | Macon GA
                     </p>
-                    <p>
+                    <p class="socialIcons">
                         <a href="https://github.com/aaronperkel"
                         target="_blank"><img src="img/github-mark.png" alt="GitHub"></a>
-                        <a href="https://linkedin.com/aaronperkel"
+                        <a href="https://linkedin.com/in/aaronperkel"
                         target="_blank"><img src="img/LI-In-Bug.png" alt="LinkedIn"></a>
                     </p>
 
