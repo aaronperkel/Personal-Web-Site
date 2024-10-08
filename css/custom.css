@@ -221,7 +221,8 @@ blockquote {
 
 .awardsGrid,
 .educationGrid,
-.workGrid {
+.workGrid,
+.clubsGrid {
     display: grid;
     grid-template-columns: 30% 70%;
     margin-top: 10px;

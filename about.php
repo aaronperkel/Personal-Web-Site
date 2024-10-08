@@ -14,9 +14,7 @@
                     I have also loved making movies and documenting things via video 
                     for as long as I've known how to use a camera. I occasionally 
                     upload these videos to my 
-                    <a href="https://www.youtube.com/@aaronperkel" target="_blank">YouTube Channel</a> 
-                    or my 
-                    <a href="https://www.instagram.com/aaronperkel/" target="_blank">Instagram Account</a>.
+                    <a href="https://www.youtube.com/@aaronperkel" target="_blank">YouTube Channel</a>.
                 </p>
 
                 <h3>Aviation</h3>

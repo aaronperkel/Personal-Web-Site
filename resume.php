@@ -40,27 +40,47 @@
                         anywhere on a college campus.
                     </p>
 
-                    <h3>Awards</h3>
+                    <h3>Clubs</h3>
                     <hr>
-
-                    <div class="awardsGrid">
+                    <div class="clubsGrid">
                         <div class="columnsOne">
+                            <p class="bold">
+                                10.24<br><p></p>‎
+                            </p>
                             <p class="bold">
                                 10.23<br>‎
                             </p>
+                        </div>
+                        <div class="columnTwo">
+                            <p>
+                                <a href="https://uvmaero.org" target="_blank">UVM AERO</a> - Member
+                            </p>
+                            <p class="grey ital">
+                                University of Vermont
+                            </p>
+                            <p>
+                                Golden Key Honor Society
+                            </p>
+                            <p class="grey ital">
+                                University of Vermont
+                            </p>
+                        </div>
+                    </div>
 
+                    <h3>Awards</h3>
+                    <hr>
+                    <div class="awardsGrid">
+                        <div class="columnsOne">
                             <p class="bold">
                                 05.21
                             </p>
                         </div>
                         <div class="columnTwo">
                             <p>
-                                Golden Key Honor 
-                                Society
+                                Excellence in Technology
                             </p>
-                            <p>
-                                Excellence in 
-                                Technology
+                            <p class="grey ital">
+                                Stratford Academy Macon, GA
                             </p>
                         </div>
                     </div>
