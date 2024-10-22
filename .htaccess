@@ -6,7 +6,7 @@ RewriteRule ^ /%1 [NC,L,R]
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^ %{REQUEST_URI}.php [NC,L]
 
-ErrorDocument 404 /notfound.html
+ErrorDocument 404 https://aperkel.w3.uvm.edu/notfound.html
 
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE application/javascript
