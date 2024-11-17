@@ -1,5 +1,5 @@
 <footer>
-  <p>October 2024 Aaron Perkel</p>
+  <p>Updated November 2024</p>
   <nav>
     <ul>
       <li><a class="<?php if ($pathParts['filename'] == 'index') { print 'activePage'; } ?>" href="/">Home</a></li>

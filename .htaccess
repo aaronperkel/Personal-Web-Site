@@ -1,11 +1,18 @@
 RewriteEngine on
 
-RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
-RewriteRule ^ /%1 [NC,L,R]
+# Exclude the cs-fair/ directory from rewrite rules
+RewriteCond %{REQUEST_URI} !^/cs-fair(/|$) [NC]
 
+# Remove .php extension from URLs
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# Internally rewrite URLs to their .php counterparts if the .php file exists
+RewriteCond %{REQUEST_URI} !^/cs-fair(/|$) [NC]
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^ %{REQUEST_URI}.php [NC,L]
 
+# Custom 404 error page
 ErrorDocument 404 https://aperkel.w3.uvm.edu/notfound.html
 
 <IfModule mod_deflate.c>

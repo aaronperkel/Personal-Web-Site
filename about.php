@@ -2,6 +2,15 @@
         <main>
             <section>
                 <h2>About Me</h2>
+                <p>
+                    I was born in Richmond, Virginia, but spent most of my childhood in 
+                    Macon, Georgia, where I attended a small private school from first 
+                    grade through high school. Growing up, I developed a deep love for 
+                    both technology and aviation—two passions that have shaped my life. 
+                    After high school, I took a leap and headed to the University of Vermont, 
+                    where I'm now in my final year studying Computer Science with a Mathematics 
+                    minor.
+                </p>
                 <h3>Music</h3>
                 <p>
                     I have been playing piano since I was 6 years old. In middle school, 
@@ -45,17 +54,17 @@
             </section>
 
             <section>
-                <h2>Courses - Fall 2024</h2>
+                <h2>Courses - Spring 2025</h2>
                 <p>
-                    This fall, I am currently taking the following courses at UVM:
+                    This upcoming Spring, I am planning on taking the following courses at UVM:
                 </p>
                 <ul class="dashed">
-                    <li>CS 2660 - Cybersecurity Principles</li>
-                    <li>CS 2994 - Teaching Assistantship</li>
-                    <li>CS 3110 - Data Privacy</li>
-                    <li>CS 3240 - Algorithm Design & Analysis</li>
-                    <li>CS 3750 - Mobile App Development</li>
-                    <li>ALE 1100 - Home & Garden Horticulture</li>
+                    <li>CS 3540 - Machine Learning</li>
+                    <li>CS 3010 - Operating Systems</li>
+                    <li>CS 3050 - Software Engineering</li>
+                    <li>CS 3920 - Senior Seminar</li>
+                    <li>CS 3930 - Computing Career Preparation</li>
+                    <li>NFS 1053 - Basic Concepts of Foods</li>
                 </ul>
             </section>
             <hr>
