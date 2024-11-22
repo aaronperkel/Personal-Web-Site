@@ -46,6 +46,9 @@
                     <div class="imgWrapper" onclick="openPopup('content8')" data-overlay="Room Status Sign">
                         <img src="img/sign.png" alt="Room Status Sign">
                     </div>
+                    <div class="imgWrapper" onclick="openPopup('content9')" data-overlay="Intermediate Programming Autograder">
+                        <img src="img/autograder.png" alt="Intermediate Programming Autograder">
+                    </div>
                 </div>
                 <div id="popup" class="popup" onclick="closePopup(event)">
                     <div class="popupStack" onclick="event.stopPropagation()">

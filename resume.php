@@ -29,7 +29,7 @@
                     
                     <!-- Website -->
                     <i class="fas fa-globe"></i> 
-                    <a href="http://aaronperkel.com" target="_blank">aaronperkel.com</a><br>
+                    <a href="http://aaronperkel.com">aaronperkel.com</a><br>
                     
                     <!-- GitHub -->
                     <img 

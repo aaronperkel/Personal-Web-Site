@@ -109,6 +109,16 @@ function openPopup(contentId) {
             content += ' I will be done. I used a Waveshare E-Ink display and Flask running on a Raspberry Pi.</p>';
             content += '<a href="https://github.com/aaronperkel/Room-Display-Sign" target="_blank">GitHub Repo</a>';
             break;
+        case 'content9':
+            popupImg.src = 'img/autograder.png';
+            content += '<h1>Intermediate Programming Autograder</h1>';
+            content += '<hr class="popupHR">';
+            content += '<p>As a part of my duties as TAing for CS1200 - Intermediate Programming, I was  ';
+            content += 'assigned to set up a Gradescope Autograder that would make the grading of the ';
+            content += 'final project more efficient. The autograder automatically verifies that all ';
+            content += 'necessary files are included, compiles the Java code, and runs thorough unit ';
+            content += 'tests using JUnit. It then generates detailed feedback in a neat JSON format.' ;
+            break;
         default:
             popup.style.display = "none";
             return;
