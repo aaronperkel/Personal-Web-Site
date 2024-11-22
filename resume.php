@@ -1,31 +1,70 @@
 <?php include 'top.php'; ?>  
+
 <main>
+    <!-- Resume Grid Container -->
     <div class="resumeGrid">
+        
+        <!-- Column One: Contact, Projects, Clubs, Awards -->
         <div class="columnOne">
+            
+            <!-- Contact Section -->
             <h3>Contact</h3>
             <div class="resumeItem contactInfo">
                 <p class="orange">
-                    <i class="fas fa-phone"></i> <a href="tel:4782628935">478.262.8935</a><br>
-                    <i class="fas fa-envelope"></i> <a href="mailto:me@aaronperkel.com">me@aaronperkel.com</a><br>
-                    Burlington VT | Macon GA
+                    <!-- Email -->
+                    <i class="fas fa-envelope"></i> 
+                    <a href="mailto:me@aaronperkel.com">me@aaronperkel.com</a><br>
+                    
+                    <!-- Address (Note: Nested <a> tags might be unintended) -->
+                    <i class="fas fa-house"></i> 
+                    <a href='https://maps.google.com/?q=81+Buell+St+Burlington+VT+05401'>
+                        <a href='https://maps.apple.com/maps?q=81+Buell+St+Burlington+VT+05401'>
+                            81 Buell St #1, Burlington VT 05401
+                        </a>
+                    </a><br>
+                    
+                    <!-- Phone -->
+                    <i class="fas fa-phone"></i> 
+                    <a href="tel:4782628935">(478) 262-8935</a><br>
+                    
+                    <!-- Website -->
+                    <i class="fas fa-globe"></i> 
+                    <a href="http://aaronperkel.com" target="_blank">aaronperkel.com</a><br>
+                    
+                    <!-- GitHub -->
+                    <img 
+                        style="margin: 0px; margin-top: 2px; width: 16px;" 
+                        src="img/github-mark.png" 
+                        alt="GitHub"
+                    >
+                    <span style="position:relative; top:-2px;">
+                        <a href="https://github.com/aaronperkel" target="_blank"> /aaronperkel</a>
+                    </span><br>
+                    
+                    <!-- LinkedIn -->
+                    <img 
+                        style="margin: 0px; margin-top: 2px; width: 16px;" 
+                        src="img/LI-In-Bug.png" 
+                        alt="LinkedIN"
+                    >
+                    <span style="position:relative; top:-2px;">
+                        <a href="https://linkedin.com/in/aaronperkel" target="_blank"> /aaronperkel</a>
+                    </span>
                 </p>
-                <div class="socialIcons">
-                    <a href="https://github.com/aaronperkel" target="_blank" aria-label="GitHub">
-                        <img src="img/github-mark.png" alt="GitHub">
-                    </a>
-                    <a href="https://linkedin.com/in/aaronperkel" target="_blank" aria-label="LinkedIn">
-                        <img src="img/LI-In-Bug.png" alt="LinkedIn">
-                    </a>
-                </div>
             </div>
 
+            <!-- Projects Section -->
             <h3>Projects</h3>
-
             <div class="projectsBox">
+                
                 <!-- Project 1 -->
                 <div class="project resumeItem">
                     <p class="projectDate">Spring 2024</p>
-                    <a href="https://github.com/owncook/Blob-Kart" target="_blank" class="projectTitle">
+                    <a 
+                        href="https://github.com/owncook/Blob-Kart" 
+                        target="_blank" 
+                        class="projectTitle"
+                    >
                         Blob Kart <i class="fas fa-external-link-alt"></i>
                     </a>
                     <p class="projectDescription">
@@ -36,83 +75,123 @@
                 <!-- Project 2 -->
                 <div class="project resumeItem">
                     <p class="projectDate">Summer 2024</p>
-                    <a href="https://github.com/aaronperkel/Utility-Manager" target="_blank" class="projectTitle">
+                    <a 
+                        href="https://github.com/aaronperkel/Utility-Manager" 
+                        target="_blank" 
+                        class="projectTitle"
+                    >
                         Utility Manager <i class="fas fa-external-link-alt"></i>
                     </a>
                     <p class="projectDescription">
-                        A web app to help track my two roommates' and my utility bills. Built using HTML, CSS, PHP, SQL, and Python.
+                        A web app to help track my two roommates' and my utility bills. 
+                        Built using HTML, CSS, PHP, SQL, and Python.
                     </p>
                 </div>
 
                 <!-- Project 3 -->
                 <div class="project resumeItem">
                     <p class="projectDate">Summer 2024</p>
-                    <a href="https://github.com/aaronperkel/Room-Display-Sign" target="_blank" class="projectTitle">
+                    <a 
+                        href="https://github.com/aaronperkel/Room-Display-Sign" 
+                        target="_blank" 
+                        class="projectTitle"
+                    >
                         Room Status Sign <i class="fas fa-external-link-alt"></i>
                     </a>
                     <p class="projectDescription">
-                        An E-Ink display that is mounted on the door to my room that shows the status of what I am currently doing.
+                        An E-Ink display that is mounted on the door to my room that 
+                        shows the status of what I am currently doing.
                     </p>
                 </div>
 
                 <!-- Project 4 -->
                 <div class="project resumeItem">
                     <p class="projectDate">Fall 2023</p>
-                    <a href="https://github.com/aaronperkel/DormKit" target="_blank" class="projectTitle">
+                    <a 
+                        href="https://github.com/aaronperkel/DormKit" 
+                        target="_blank" 
+                        class="projectTitle"
+                    >
                         DormKit <i class="fas fa-external-link-alt"></i>
                     </a>
                     <p class="projectDescription">
-                        Prototype "smart dorm" product that allows a user to install hardware in their dorm to control certain electronics from anywhere on a college campus.
+                        Prototype "smart dorm" product that allows a user to install 
+                        hardware in their dorm to control certain electronics from anywhere 
+                        on a college campus.
                     </p>
                 </div>
             </div>
 
+            <!-- Clubs Section -->
             <h3>Clubs</h3>
             <div class="clubsGrid">
+                
                 <!-- Club 1 -->
                 <div class="club resumeItem">
-                    <a href="https://uvmaero.org" target="_blank" class="clubTitle">UVM AERO <i class="fas fa-external-link-alt"></i></a>
+                    <a 
+                        href="https://uvmaero.org" 
+                        target="_blank" 
+                        class="clubTitle"
+                    >
+                        UVM AERO <i class="fas fa-external-link-alt"></i>
+                    </a>
                     <span class="clubDate">OCT 2024</span>
                     <p class="clubDescription">Member at University of Vermont</p>
                 </div>
 
                 <!-- Club 2 -->
                 <div class="club resumeItem">
-                    <a href="https://catalogue.uvm.edu/undergraduate/aboutuniv/honoraryandrecognitionsocieties/" target="_blank" class="clubTitle">Golden Key Honor Society <i class="fas fa-external-link-alt"></i></a>
+                    <a 
+                        href="https://catalogue.uvm.edu/undergraduate/aboutuniv/honoraryandrecognitionsocieties/" 
+                        target="_blank" 
+                        class="clubTitle"
+                    >
+                        Golden Key Honor Society <i class="fas fa-external-link-alt"></i>
+                    </a>
                     <span class="clubDate">OCT 2023</span>
                     <p class="clubDescription">Member at University of Vermont</p>
                 </div>
+            </div>
+
+            <!-- Awards Section -->
             <h3>Awards</h3>
+            <div class="clubsGrid">
                 <!-- Award 1 -->
                 <div class="award resumeItem">
                     <strong>Excellence in Technology</strong>
                     <span class="awardDate">MAY 2021</span>
-                    <p class="awardDescription">Recieved from Stratford Academy</p>
+                    <p class="awardDescription">Received from Stratford Academy</p>
                 </div>
             </div>
-        </div>
+            
+        </div> <!-- End of Column One -->
 
+        <!-- Column Two: Education, Courses, Skills, Work Experience -->
         <div class="columnTwo">
+            
+            <!-- Education Section -->
             <h3>Education</h3>
             <div class="resumeItem educationGrid">
-                    <div class="jobDate">
-                        <p class="bold">AUG 2022 - MAY 2025</p>
-                    </div>
-                    <div class="jobDescription">
-                        <p>
-                            <strong>University Of Vermont</strong><br>
-                            Burlington, VT
-                        </p>
-                        <p class="grey ital jobdesc">
-                            - Bachelor of Science in Computer Science<br>
-                            - Mathematics Minor
-                        </p>
-                    </div>
+                <div class="jobDate">
+                    <p class="bold">AUG 2022 - MAY 2025</p>
                 </div>
-                
+                <div class="jobDescription">
+                    <p>
+                        <strong>University Of Vermont</strong><br>
+                        Burlington, VT
+                    </p>
+                    <p class="grey ital jobdesc">
+                        - Bachelor of Science in Computer Science<br>
+                        - Mathematics Minor
+                    </p>
+                </div>
+            </div>
+
+            <!-- Relevant Courses Section -->
             <h3>Relevant Courses</h3>
             <hr>
             <div class="courseGrid">
+                <!-- Courses Column One -->
                 <div class="columnOne">
                     <ul class="dashed">
                         <li>Data Structures & Algorithms</li>
@@ -122,6 +201,7 @@
                         <li>Intermediate Programming</li>
                     </ul>
                 </div>
+                <!-- Courses Column Two -->
                 <div class="columnTwo">
                     <ul class="dashed">
                         <li>Discrete Structures</li>
@@ -133,9 +213,11 @@
                 </div>
             </div>
 
+            <!-- Skills and Interests Section -->
             <h3>Skills and Interests</h3>
             <hr>
             <div class="skillsGrid">
+                <!-- Skills Column One -->
                 <div class="columnOne">
                     <ul class="dashed">
                         <li>
@@ -152,6 +234,7 @@
                         </li>
                     </ul>
                 </div>
+                <!-- Skills Column Two -->
                 <div class="columnTwo">
                     <ul class="dashed">
                         <li>
@@ -169,6 +252,7 @@
             <!-- Work Experience Section -->
             <h3>Work Experience</h3>
             <div class="workGrid">
+                
                 <!-- Job 1 -->
                 <div class="job resumeItem">
                     <div class="jobDate">
@@ -220,11 +304,19 @@
                     </div>
                 </div>
 
-                <!-- Additional Jobs... -->
-            </div>
-        </div>
-    </div>
+            </div> <!-- End of Work Grid -->
+            
+        </div> <!-- End of Column Two -->
+        
+    </div> <!-- End of Resume Grid -->
+
+    <!-- Horizontal Divider -->
     <hr>
-    <p class="dl"><a href="aaron-perkel-resume.pdf" download>Download my Resume (PDF)</a></p>
+
+    <!-- Download Resume Link -->
+    <p class="dl">
+        <a href="aaron-perkel-resume.pdf" download>Download my Resume (PDF)</a>
+    </p>
 </main>
+
 <?php include 'footer.php'; ?>
