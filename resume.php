@@ -1,203 +1,230 @@
 <?php include 'top.php'; ?>  
-        <main>
-            <div class="resumeGrid">
-                <div class="columnOne">
-                    <h1>Aaron Perkel</h1>
-                    <p class="orange">
-                        <a href="tel:4782628935">478.262.8935</a><br>
-                        <a href="mailto:me@aaronperkel.com">me@aaronperkel.com</a><br>
-                        Burlington VT | Macon GA
-                    </p>
-                    <p class="socialIcons">
-                        <a href="https://github.com/aaronperkel"
-                        target="_blank"><img src="img/github-mark.png" alt="GitHub"></a>
-                        <a href="https://linkedin.com/in/aaronperkel"
-                        target="_blank"><img src="img/LI-In-Bug.png" alt="LinkedIn"></a>
-                    </p>
-
-                    <h3>Projects</h3>
-                    <hr>
-
-                    <p><a href="https://github.com/owncook/Blob-Kart" target="_blank">Blob Kart</a> - Spring 2024</p>
-                    <p class="grey">C++ Video Game Project inspired by Mario Kart</p>
-
-                    <p><a href="https://github.com/aaronperkel/Utility-Manager" target="_blank">Utility Manager</a> - Summer 2024</p>
-                    <p class="grey">
-                        A web app to help track my two roommates' 
-                        and my utility bills. Built using HTML, CSS, 
-                        PHP, SQL, and Python.
-                    </p>
-
-                    <p><a href="https://github.com/aaronperkel/Room-Display-Sign" target="_blank">Room Status Sign</a> - Summer 2024</p>
-                    <p class="grey">
-                    An E-Ink display that is mounted on the door to my room that shows the status of what I am currently doing.
-                    </p>
-
-                    <p><a href="https://github.com/aaronperkel/DormKit" target="_blank">DormKit</a> - Fall 2023</p>
-                    <p class="grey">
-                        Prototype "smart dorm" product that allows a user to install 
-                        hardware in their dorm to control certain electronics from 
-                        anywhere on a college campus.
-                    </p>
-
-                    <h3>Clubs</h3>
-                    <hr>
-                    <div class="clubsGrid">
-                        <div class="columnsOne">
-                            <p class="bold">
-                                10.24<br><p></p>‎
-                            </p>
-                            <p class="bold">
-                                10.23<br>‎
-                            </p>
-                        </div>
-                        <div class="columnTwo">
-                            <p>
-                                <a href="https://uvmaero.org" target="_blank">UVM AERO</a> - Member
-                            </p>
-                            <p class="grey ital">
-                                University of Vermont
-                            </p>
-                            <p>
-                                Golden Key Honor Society
-                            </p>
-                            <p class="grey ital">
-                                University of Vermont
-                            </p>
-                        </div>
-                    </div>
-
-                    <h3>Awards</h3>
-                    <hr>
-                    <div class="awardsGrid">
-                        <div class="columnsOne">
-                            <p class="bold">
-                                05.21
-                            </p>
-                        </div>
-                        <div class="columnTwo">
-                            <p>
-                                Excellence in Technology
-                            </p>
-                            <p class="grey ital">
-                                Stratford Academy Macon, GA
-                            </p>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="columnTwo">
-                    <h3>Education</h3>
-                    <hr>
-                    <div class="educationGrid">
-                        <div class="columnOne">
-                            <p class="bold">08.22-PRESENT</p>
-                            <p class="grey ital">Graduation 05.25</p>
-                        </div>
-                        <div class="columnTwo">
-                            <p>University of Vermont - Burlington VT</p>
-                            <p class="grey ital">
-                                Bachelor of Science in Computer Science<br>
-                                Mathematics Minor
-                            </p>  
-                        </div>
-                    </div>
-                    
-                    <h3>Relavant Courses</h3>
-                    <hr>
-                    <div class="courseGrid">
-                        <div class="columnOne">
-                            <ul>
-                                <li>Calculus III</li>
-                                <li>Differential Equations</li>
-                                <li>Intermediate Programming</li>
-                                <li>Advanced Programming</li>
-                                <li>Applied Probability</li>
-                            </ul>
-                        </div>
-                        <div class="columnTwo">
-                            <ul>
-                                <li>Linear Algebra</li>
-                                <li>Computer Organization</li>
-                                <li>Computability and Complexity</li>
-                                <li>Data Structures & Algorithms</li>
-                                <li>Web Site Development</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h3>Skills and Interests</h3>
-                    <hr>
-                    <div class="skillsGrid">
-                        <div class="columnOne">
-                            <ul>
-                                <li>Python</li>
-                                <li>Java</li>
-                                <li>C++</li>
-                                <li>HTML / PHP / SQL</li>
-                            </ul>
-                        </div>
-                        <div class="columnTwo">
-                            <ul>
-                                <li>KiCad / PCB Design</li>
-                                <li>Fusion 360</li>
-                                <li>Video Editing</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h3>Work Experience</h3>
-                    <hr>
-                    <div class="workGrid">
-                        <div class="columnOne">
-                            <p class="bold">
-                                01.24-PRESENT<br>‎ 
-                            </p>
-                            <p>‎ <br>‎ <br>‎ <br></p>
-                            <p class="bold">
-                                11.23-PRESENT<br>‎
-                            </p> 
-                            <p>‎ <br>‎ <br></p>
-                            <p class="bold">   
-                                06.21-08.23
-                            </p>   
-                        </div>
-                        <div class="columnTwo">
-                            <p>
-                                Computer Science Teaching Assistant<br>
-                                UVM CS - Burlington VT
-                            </p>
-                            <p class="grey ital">
-                                Provide one on one help to over 100+ Advanced 
-                                Programming, Intermediate Programming, and 
-                                Data Structures & Algorithms students. Grade 
-                                weekly assignments.
-                            </p>
-
-                            <p>
-                                ETS Student Technician<br>
-                                UVM Tech Team - Burlington VT
-                            </p>
-                            <p class="grey ital">
-                                The Tech Team serves as the main entry point 
-                                for all IT support issues at the University of 
-                                Vermont.
-                            </p>
-
-                            <p>
-                                Mover<br>
-                                Previews Interiors and Antiques - Macon GA
-                            </p>
-                            <p class="grey ital">
-                                Drove moving van and delivered clients 
-                                furniture to their homes. Moved large items 
-                                around workshop.
-                            </p>
-                        </div>
-                    </div>
+<main>
+    <div class="resumeGrid">
+        <div class="columnOne">
+            <h3>Contact</h3>
+            <div class="resumeItem contactInfo">
+                <p class="orange">
+                    <i class="fas fa-phone"></i> <a href="tel:4782628935">478.262.8935</a><br>
+                    <i class="fas fa-envelope"></i> <a href="mailto:me@aaronperkel.com">me@aaronperkel.com</a><br>
+                    Burlington VT | Macon GA
+                </p>
+                <div class="socialIcons">
+                    <a href="https://github.com/aaronperkel" target="_blank" aria-label="GitHub">
+                        <img src="img/github-mark.png" alt="GitHub">
+                    </a>
+                    <a href="https://linkedin.com/in/aaronperkel" target="_blank" aria-label="LinkedIn">
+                        <img src="img/LI-In-Bug.png" alt="LinkedIn">
+                    </a>
                 </div>
             </div>
+
+            <h3>Projects</h3>
+
+            <div class="projectsBox">
+                <!-- Project 1 -->
+                <div class="project resumeItem">
+                    <p class="projectDate">Spring 2024</p>
+                    <a href="https://github.com/owncook/Blob-Kart" target="_blank" class="projectTitle">
+                        Blob Kart <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <p class="projectDescription">
+                        C++ Video Game Project inspired by Mario Kart
+                    </p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project resumeItem">
+                    <p class="projectDate">Summer 2024</p>
+                    <a href="https://github.com/aaronperkel/Utility-Manager" target="_blank" class="projectTitle">
+                        Utility Manager <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <p class="projectDescription">
+                        A web app to help track my two roommates' and my utility bills. Built using HTML, CSS, PHP, SQL, and Python.
+                    </p>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project resumeItem">
+                    <p class="projectDate">Summer 2024</p>
+                    <a href="https://github.com/aaronperkel/Room-Display-Sign" target="_blank" class="projectTitle">
+                        Room Status Sign <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <p class="projectDescription">
+                        An E-Ink display that is mounted on the door to my room that shows the status of what I am currently doing.
+                    </p>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project resumeItem">
+                    <p class="projectDate">Fall 2023</p>
+                    <a href="https://github.com/aaronperkel/DormKit" target="_blank" class="projectTitle">
+                        DormKit <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <p class="projectDescription">
+                        Prototype "smart dorm" product that allows a user to install hardware in their dorm to control certain electronics from anywhere on a college campus.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Clubs</h3>
+            <div class="clubsGrid">
+                <!-- Club 1 -->
+                <div class="club resumeItem">
+                    <a href="https://uvmaero.org" target="_blank" class="clubTitle">UVM AERO <i class="fas fa-external-link-alt"></i></a>
+                    <span class="clubDate">OCT 2024</span>
+                    <p class="clubDescription">Member at University of Vermont</p>
+                </div>
+
+                <!-- Club 2 -->
+                <div class="club resumeItem">
+                    <a href="https://catalogue.uvm.edu/undergraduate/aboutuniv/honoraryandrecognitionsocieties/" target="_blank" class="clubTitle">Golden Key Honor Society <i class="fas fa-external-link-alt"></i></a>
+                    <span class="clubDate">OCT 2023</span>
+                    <p class="clubDescription">Member at University of Vermont</p>
+                </div>
+            <h3>Awards</h3>
+                <!-- Award 1 -->
+                <div class="award resumeItem">
+                    <strong>Excellence in Technology</strong>
+                    <span class="awardDate">MAY 2021</span>
+                    <p class="awardDescription">Recieved from Stratford Academy</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="columnTwo">
+            <h3>Education</h3>
+            <div class="resumeItem educationGrid">
+                    <div class="jobDate">
+                        <p class="bold">AUG 2022 - MAY 2025</p>
+                    </div>
+                    <div class="jobDescription">
+                        <p>
+                            <strong>University Of Vermont</strong><br>
+                            Burlington, VT
+                        </p>
+                        <p class="grey ital jobdesc">
+                            - Bachelor of Science in Computer Science<br>
+                            - Mathematics Minor
+                        </p>
+                    </div>
+                </div>
+                
+            <h3>Relevant Courses</h3>
             <hr>
-            <p><a href="aaron-perkel-resume.pdf" download>Download</a></p>
-        </main>
-        <?php include 'footer.php'; ?>   
+            <div class="courseGrid">
+                <div class="columnOne">
+                    <ul class="dashed">
+                        <li>Data Structures & Algorithms</li>
+                        <li>Algorithm Design & Analysis</li>
+                        <li>Computer Organization</li>
+                        <li>Advanced Programming</li>
+                        <li>Intermediate Programming</li>
+                    </ul>
+                </div>
+                <div class="columnTwo">
+                    <ul class="dashed">
+                        <li>Discrete Structures</li>
+                        <li>Cybersecurity Principles</li>
+                        <li>Computability and Complexity</li>
+                        <li>Data Privacy</li>
+                        <li>Mobile App Development</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Skills and Interests</h3>
+            <hr>
+            <div class="skillsGrid">
+                <div class="columnOne">
+                    <ul class="dashed">
+                        <li>
+                            Programming Languages:
+                            <p class="grey ital">Python, Java, C++</p>
+                        </li>
+                        <li>
+                            Web Development:
+                            <p class="grey ital">HTML5, CSS3, PHP</p>
+                        </li>
+                        <li>
+                            Mobile App Development:
+                            <p class="grey ital">iOS (Swift), Xcode</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="columnTwo">
+                    <ul class="dashed">
+                        <li>
+                            Database Management:
+                            <p class="grey ital">SQL</p>
+                        </li>
+                        <li>
+                            Soft Skills:
+                            <p class="grey ital">Problem-Solving, Customer Service, Adaptability</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Work Experience Section -->
+            <h3>Work Experience</h3>
+            <div class="workGrid">
+                <!-- Job 1 -->
+                <div class="job resumeItem">
+                    <div class="jobDate">
+                        <p class="bold">JAN 2024 - PRESENT</p>
+                    </div>
+                    <div class="jobDescription">
+                        <p>
+                            <strong>Computer Science Teaching Assistant</strong><br>
+                            UVM CS - Burlington, VT
+                        </p>
+                        <p class="grey ital jobdesc">
+                            - Conduct weekly grading of assignments and projects, ensuring timely and constructive feedback.<br>
+                            - Collaborate with faculty to develop course materials and improve curriculum effectiveness.<br>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="job resumeItem">
+                    <div class="jobDate">
+                        <p class="bold">NOV 2023 - PRESENT</p>
+                    </div>
+                    <div class="jobDescription">
+                        <p>
+                            <strong>ETS Student Technician</strong><br>
+                            UVM Tech Team - Burlington, VT
+                        </p>
+                        <p class="grey ital jobdesc">
+                            - Serve as the primary contact for IT support, addressing and resolving technical issues for university staff and students.<br>
+                            - Provide technical support to students and faculty, resolving software-related issues efficiently.<br>
+                            - Respond to incoming phone calls and emails, addressing IT support requests and troubleshooting technical problems.<br>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="job resumeItem">
+                    <div class="jobDate">
+                        <p class="bold">JUN 2021 - AUG 2023</p>
+                    </div>
+                    <div class="jobDescription">
+                        <p>
+                            <strong>Mover</strong><br>
+                            Previews Interiors and Antiques - Macon, GA
+                        </p>
+                        <p class="grey ital jobdesc">
+                            - Handled and moved large and delicate items with care, minimizing damage and ensuring customer satisfaction.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Additional Jobs... -->
+            </div>
+        </div>
+    </div>
+    <hr>
+    <p class="dl"><a href="aaron-perkel-resume.pdf" download>Download my Resume (PDF)</a></p>
+</main>
+<?php include 'footer.php'; ?>

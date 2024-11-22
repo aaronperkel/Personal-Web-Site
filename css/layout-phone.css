@@ -33,7 +33,7 @@ header {
     place-items: center;
 }
 
-.projectsBox {
+.index .projectsBox {
     all: unset;
 	display: grid;
 	grid-template-columns: auto;

@@ -6,7 +6,7 @@ header {
     text-align: center;
 }
 
-.projectsBox {
+.index .projectsBox {
     all: unset;
     padding: 1%;
 	display: grid;

@@ -27,6 +27,9 @@ $pathParts = pathinfo($phpSelf);
             media="(max-width:600px)" 
             rel="stylesheet" 
             type="text/css">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet">
             
         <link rel="apple-touch-icon" sizes="16x16" href="img/apple-touch-icon.png">
         <link rel="icon" href="img/favicon.ico">
