@@ -90,14 +90,15 @@ function openPopup(contentId) {
             content += 'GitHub Repo</a>'
             break;
         case 'content7':
-            popupImg.src = 'img/feature.png';
-            content += '<h1>Magazine Feature</h1>';
+            popupImg.src = 'img/combine.png';
+            content += '<h1>CodeBuilder</h1>';
             content += '<hr class="popupHR">';
-            content += '<p><i>The Impact of Divorce on Children: More Than Just A Split</i> ';
-            content += 'was a Magazine Feature I wrote for ENGL1001 - Written Expression during the ';
-            content += 'summer of 2024. It was the result of four weeks of research and refining this topic. ';
-            content += 'I am very proud of how it turned out, and I think the article speaks for itself.</p>';
-            content += '<a href="feature.pdf" target="_blank">Read it Here</a>';
+            content += '<p>CodeBuilder is an educational iOS application designed to help users ';
+            content += 'learn and practice coding skills in a fun and interactive way. The app provides ';
+            content += 'a platform where users can solve coding problems by arranging code blocks, read ';
+            content += 'educational articles, participate in daily challenges, and engage with a community ';
+            content += 'through a built-in forum. </p>';
+            content += '<a href="https://github.com/gohacki/CodeBuilder" target="_blank">GitHub Repo</a>';
             break;
         case 'content8':
             popupImg.src = 'img/sign.png';

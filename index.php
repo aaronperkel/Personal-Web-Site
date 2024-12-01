@@ -40,8 +40,8 @@
 					<div class="imgWrapper" onclick="openPopup('content6')" data-overlay="Lights Out">
 						<img src="img/lightsout.gif" alt="Lights Out">
 					</div>
-                    <div class="imgWrapper" onclick="openPopup('content7')" data-overlay="Magazine Feature">
-                        <img src="img/feature.png" alt="Magazine Feature">
+                    <div class="imgWrapper" onclick="openPopup('content7')" data-overlay="CodeBuilder">
+                        <img src="img/combine.png" alt="CodeBuilder">
                     </div>
                     <div class="imgWrapper" onclick="openPopup('content8')" data-overlay="Room Status Sign">
                         <img src="img/sign.png" alt="Room Status Sign">
