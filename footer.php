@@ -1,5 +1,5 @@
 <footer>
-  <p>Updated November 2024</p>
+  <p>Updated December 2024</p>
   <nav>
     <ul>
       <li><a class="<?php if ($pathParts['filename'] == 'index') { print 'activePage'; } ?>" href="/">Home</a></li>
