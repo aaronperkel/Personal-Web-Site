@@ -56,19 +56,20 @@
             <!-- Projects Section -->
             <h3>Projects</h3>
             <div class="projectsBox">
-                
+
                 <!-- Project 1 -->
                 <div class="project resumeItem">
-                    <p class="projectDate">Spring 2024</p>
+                    <p class="projectDate">Fall 2024</p>
                     <a 
-                        href="https://github.com/owncook/Blob-Kart" 
+                        href="https://github.com/gohacki/CodeBuilder" 
                         target="_blank" 
                         class="projectTitle"
                     >
-                        Blob Kart <i class="fas fa-external-link-alt"></i>
+                        CodeBuilder <i class="fas fa-external-link-alt"></i>
                     </a>
                     <p class="projectDescription">
-                        C++ Video Game Project inspired by Mario Kart
+                        CodeBuilder is an educational iOS application designed to help users 
+                        learn and practice coding skills in a fun and interactive way.
                     </p>
                 </div>
 
@@ -90,17 +91,16 @@
 
                 <!-- Project 3 -->
                 <div class="project resumeItem">
-                    <p class="projectDate">Summer 2024</p>
+                    <p class="projectDate">Spring 2024</p>
                     <a 
-                        href="https://github.com/aaronperkel/Room-Display-Sign" 
+                        href="https://github.com/owncook/Blob-Kart" 
                         target="_blank" 
                         class="projectTitle"
                     >
-                        Room Status Sign <i class="fas fa-external-link-alt"></i>
+                        Blob Kart <i class="fas fa-external-link-alt"></i>
                     </a>
                     <p class="projectDescription">
-                        An E-Ink display that is mounted on the door to my room that 
-                        shows the status of what I am currently doing.
+                        C++ Video Game Project inspired by Mario Kart
                     </p>
                 </div>
 
