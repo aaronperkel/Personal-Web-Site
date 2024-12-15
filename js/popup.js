@@ -28,7 +28,7 @@ function openPopup(contentId) {
             content += 'We worked using HTML, CSS, and PHP to create a web site for';
             content += 'the fictitious company Green Mountain Cycles';
             content += 'It has 5 pages, and has a form that is connected to email.</p>';
-            content += '<a href="https://aperkel.w3.uvm.edu/cs1080/final/"';
+            content += '<a href="https://courses.aperkel.w3.uvm.edu/cs1080/final/"';
             content += 'target="_blank">Website</a>';
             break;
         case 'content3':
