@@ -291,7 +291,7 @@
 
     <!-- Download Resume Link -->
     <p class="dl">
-        <a href="aaron-perkel-resume.pdf" download>Download my Resume (PDF)</a>
+        <a href="./public/aaron-perkel-resume.pdf" download>Download my Resume (PDF)</a>
     </p>
 </main>
 

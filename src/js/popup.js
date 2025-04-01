@@ -8,7 +8,7 @@ function openPopup(contentId) {
     var content = '';
     switch(contentId) {
         case 'content1':
-            popupImg.src = 'img/img.gif';
+            popupImg.src = './public/img/img.gif';
             content += '<h1>Blob Kart</h1>';
             content += '<hr class="popupHR">';
             content += '<p>Blob Kart is a game inspired by Mario Kart created in C++ ';
@@ -21,7 +21,7 @@ function openPopup(contentId) {
             content += 'target="_blank">GitHub Repo</a>';
             break;
         case 'content2':
-            popupImg.src = 'img/cs1080final.png';
+            popupImg.src = './public/img/cs1080final.png';
             content += '<h1>Web Site Development Final</h1>';
             content += '<hr class="popupHR">';
             content += '<p>This is a project I worked on with my classmate Lily Bonds.';
@@ -32,7 +32,7 @@ function openPopup(contentId) {
             content += 'target="_blank">Website</a>';
             break;
         case 'content3':
-            popupImg.src = 'img/utility.gif';
+            popupImg.src = './public/img/utility.gif';
             popupImg.className += ' tallimg';
             content += '<h1>Utility Manager</h1>';
             content += '<hr class="popupHR">';
@@ -49,7 +49,7 @@ function openPopup(contentId) {
             content += 'GitHub Repo</a>';
             break;
         case 'content4':
-            popupImg.src = 'img/dormkit.JPG';
+            popupImg.src = './public/img/dormkit.JPG';
             popupImg.className += ' tallimg';
             content += '<h1>DormKit</h1>';
             content += '<hr class="popupHR">';
@@ -68,7 +68,7 @@ function openPopup(contentId) {
             content += 'GitHub Repo</a>';
             break;
         case 'content5':
-            popupImg.src = 'img/pcb.png';
+            popupImg.src = './public/img/pcb.png';
             content += '<h1>Custom PCB</h1>';
             content += '<hr class="popupHR">';
             content += '<p>During my Senior year of high school, I worked with a group to create ';
@@ -76,7 +76,7 @@ function openPopup(contentId) {
             content += 'to detect high temperatures. I used KiCad to design a custom PCB that housed all of the electronics.';
             break;
         case 'content6':
-            popupImg.src = 'img/lightsout.gif';
+            popupImg.src = './public/img/lightsout.gif';
             popupImg.className += ' tallimg';
             content += '<h1>Lights Out</h1>';
             content += '<hr class="popupHR">';
@@ -90,7 +90,7 @@ function openPopup(contentId) {
             content += 'GitHub Repo</a>'
             break;
         case 'content7':
-            popupImg.src = 'img/combine.png';
+            popupImg.src = './public/img/combine.png';
             content += '<h1>CodeBuilder</h1>';
             content += '<hr class="popupHR">';
             content += '<p>CodeBuilder is an educational iOS application designed to help users ';
@@ -101,7 +101,7 @@ function openPopup(contentId) {
             content += '<a href="https://github.com/gohacki/CodeBuilder" target="_blank">GitHub Repo</a>';
             break;
         case 'content8':
-            popupImg.src = 'img/sign.png';
+            popupImg.src = './public/img/sign.png';
             content += '<h1>Room Status Sign</h1>';
             content += '<hr class="popupHR">';
             content += '<p>An E-Ink display that is mounted on the door to my room that shows the ';
@@ -111,7 +111,7 @@ function openPopup(contentId) {
             content += '<a href="https://github.com/aaronperkel/Room-Display-Sign" target="_blank">GitHub Repo</a>';
             break;
         case 'content9':
-            popupImg.src = 'img/autograder.png';
+            popupImg.src = './public/img/autograder.png';
             content += '<h1>Intermediate Programming Autograder</h1>';
             content += '<hr class="popupHR">';
             content += '<p>As a part of my duties as TAing for CS1200 - Intermediate Programming, I was  ';
