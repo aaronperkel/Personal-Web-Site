@@ -1,8 +1,5 @@
 RewriteEngine on
 
-# Exclude the cs-fair/ directory from rewrite rules
-RewriteCond %{REQUEST_URI} !^/cs-fair(/|$) [NC]
-
 # Remove .php extension from URLs
 RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
 RewriteRule ^ /%1 [NC,L,R=301]

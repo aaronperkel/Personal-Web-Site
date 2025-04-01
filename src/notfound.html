@@ -1,0 +1,290 @@
+<?php include 'top.php'; ?>
+<main>
+    <section>
+        <h2>About Me</h2>
+        <p>
+            I was born in Richmond, Virginia, but spent most of my childhood in
+            Macon, Georgia, where I attended a small private school from first
+            grade through high school. Growing up, I developed a deep love for
+            both technology and aviation—two passions that have shaped my life.
+            After high school, I took a leap and headed to the University of Vermont,
+            where I'm now in my final year studying Computer Science with a Mathematics
+            minor.
+        </p>
+        <h3>Music</h3>
+        <p>
+            I have been playing piano since I was 6 years old. In middle school,
+            I also picked up the Alto Saxophone and played in the Symphonic and
+            Marching Bands.
+        </p>
+
+        <h3>Photography and Film Making</h3>
+        <p>
+            I have also loved making movies and documenting things via video
+            for as long as I've known how to use a camera. I occasionally
+            upload these videos to my
+            <a href="https://www.youtube.com/@aaronperkel" target="_blank">YouTube Channel</a>.
+        </p>
+
+        <h3>Aviation</h3>
+        <p>
+            My biggest passion outside of school is aviation. I have been determined
+            to become a pilot as long as I can remember. Currently, I achieve
+            this passion by spending my time on
+            <a href="https://vatsim.net/" target="_blank">Vatsim</a>.
+        </p>
+        <blockquote id="b0f4863c-347c-4134-b63c-77284e3dac49" class="">
+            VATSIM (short for the Virtual Air Traffic Simulation Network) is a
+            completely free online platform which allows virtual pilots, wherever
+            they are in the world, to connect their flight simulators into one
+            shared virtual world. VATSIM also simulates air traffic control in
+            this virtual world, creating the ultimate as-real-as-it-gets experience
+            for you, the virtual aviation enthusiast.
+            <a href="https://vatsim.net/docs/about/about-vatsim" target="_blank">Source</a>
+        </blockquote>
+
+        <p>
+            I currently hold my PPL rating on Vatsim with just over
+            <a href="https://stats.vatsim.net/stats/1317676" target="_blank">
+                350 flying hours logged</a>.
+            I also have recently achieved my S1 Controller rating from
+            <a href="https://about.bvartcc.com/" target="_blank">
+                Boston Virtual ARTCC</a>.
+        </p>
+    </section>
+
+    <section>
+        <h2>Courses - Spring 2025</h2>
+        <p>
+            This upcoming Spring, I am planning on taking the following courses at UVM:
+        </p>
+        <ul class="dashed">
+            <li>CS 2994 - TA for CS2100 and CS2300</li>
+            <li>CS 3010 - Operating Systems</li>
+            <li>CS 3060 - Evolutionary Robotics</li>
+            <li>CS 3920 - Senior Seminar</li>
+            <li>CS 3930 - Computing Career Preparation</li>
+            <li>CS 3993 - Independent Study - CaveDiver in C#</li>
+            <li>NFS 1053 - Basic Concepts of Foods</li>
+        </ul>
+    </section>
+    <hr>
+</main>
+<?php include 'footer.php'; ?> aperkel in www-root $ cat footer.php
+<footer>
+    <p>Updated December 2024</p>
+    <nav>
+        <ul>
+            <li><a class="<?php if ($pathParts['filename'] == 'index') { print 'activePage'; } ?>" href="/">Home</a>
+            </li>
+            <li><a class="<?php if ($pathParts['filename'] == 'about') { print 'activePage'; } ?>"
+                    href="about">About</a></li>
+            <li><a class="<?php if ($pathParts['filename'] == 'resume') { print 'activePage'; } ?>"
+                    href="resume">Resume</a></li>
+        </ul>
+    </nav>
+</footer>
+</body>
+<script src="js/popup.js"></script>
+<script src="js/menu.js"></script>
+
+</html> aperkel in www-root $ cat header.php
+<header>
+    <div class="header">
+        <img src="img/headshot.jpg" alt="headshot">
+        <h1>Aaron Perkel</h1>
+    </div>
+</header>aperkel in www-root $ cat index.php
+<?php include 'top.php'; ?>
+<main>
+    <section>
+        <h2>Home</h2>
+        <p>
+            Hello, I am Aaron Perkel, a Computer Science and Mathematics
+            Senior at the University of Vermont. I am interested in Programming,
+            IT, and Enterprise Networking.
+        </p>
+        <p>
+            I currently work as an Enterprise Technology Services Student
+            Technician at the <a href="https://www.uvm.edu/it/kb/contact/" target="_blank">UVM Tech Team</a>.
+        </p>
+        <p>
+            Some of my hobbies include Music, Photography/Film Making, and Aviation.
+        </p>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Projects</h2>
+        <div class="projectsBox">
+            <div class="imgWrapper" onclick="openPopup('content9')" data-overlay="UVM Sublets">
+                <img src="img/sublet.png" alt="UVM Sublets">
+            </div>
+            <div class="imgWrapper" onclick="openPopup('content3')" data-overlay="Utility Manager">
+                <img src="img/utility.gif" alt="Utility Manager">
+            </div>
+            <div class="imgWrapper" onclick="openPopup('content1')" data-overlay="Blob Kart">
+                <img src="img/img.gif" alt="Blob Kart">
+            </div>
+            <div class="imgWrapper" onclick="openPopup('content2')" data-overlay="Web Site Dev. Final">
+                <img src="img/cs1080final.png" alt="Web Site Dev. Final">
+            </div>
+            <div class="imgWrapper" onclick="openPopup('content4')" data-overlay="DormKit">
+                <img src="img/dormkit.JPG" alt="DormKit">
+            </div>
+            <div class="imgWrapper" onclick="openPopup('content5')" data-overlay="Custom PCB">
+                <img src="img/pcb.png" alt="Custom PCB">
+            </div>
+            <div class="imgWrapper" onclick="openPopup('content6')" data-overlay="Lights Out">
+                <img src="img/lightsout.gif" alt="Lights Out">
+            </div>
+            <div class="imgWrapper" onclick="openPopup('content7')" data-overlay="CodeBuilder">
+                <img src="img/combine.png" alt="CodeBuilder">
+            </div>
+            <div class="imgWrapper" onclick="openPopup('content8')" data-overlay="Room Status Sign">
+                <img src="img/sign.png" alt="Room Status Sign">
+            </div>
+        </div>
+        <div id="popup" class="popup" onclick="closePopup(event)">
+            <div class="popupStack" onclick="event.stopPropagation()">
+                <span class="close" onclick="closePopup(event)">&times;</span>
+                <div class="popup-content-wrapper">
+                    <img id="popup-img" class="popup-img">
+                    <div id="popup-content" class="popup-content"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Contact Me</h2>
+        <p>
+            Email: <a href="mailto:me@aaronperkel.com">me@aaronperkel.com</a> |
+            Phone: <a href="tel:4782628935">478.262.8935</a>
+        </p>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Socials</h2>
+        <div class="socials noUnderline">
+            <a href="https://github.com/aaronperkel" target="_blank">
+                <img src="img/github-mark.png" alt="GitHub" width="45">
+            </a>
+            <a href="https://linkedin.com/in/aaronperkel" target="_blank">
+                <img src="img/LI-In-Bug.png" alt="LinkedIn" width="50">
+            </a>
+            <a href="https://youtube.com/@aaronperkel" target="_blank">
+                <img src="img/youtube.png" alt="YouTube" width="45">
+            </a>
+            <a href="https://facebook.com/aaroncperkel" target="_blank">
+                <img src="img/facebook.svg" alt="Facebook" width="45">
+            </a>
+            <a href="https://instagram.com/aaronperkel" target="_blank">
+                <img src="img/instagram.svg" alt="Instagram" width="45">
+            </a>
+        </div>
+    </section>
+</main>
+<?php include 'footer.php'; ?>aperkel in www-root $ cat nav.php
+<nav>
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+        <li><a class="<?php if ($pathParts['filename'] == 'index') { print 'activePage'; } ?>" href="/">Home</a></li>
+        <li><a class="<?php if ($pathParts['filename'] == 'about') { print 'activePage'; } ?>"
+                href="about.php">About</a></li>
+        <li><a class="<?php if ($pathParts['filename'] == 'resume') { print 'activePage'; } ?>"
+                href="resume.php">Resume</a></li>
+    </ul>
+</nav>
+<hr>aperkel in www-root $ cat notfound.html
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Page Not Found</title>
+
+    <meta name="author" content="Aaron Perkel">
+
+    <meta name="viewport" content="width=device-width, 
+        initial-scale=1.0">
+
+    <link href="../css/custom.css" rel="stylesheet" type="text/css">
+    <link href="css/layout-tablet.css" rel="stylesheet" type="text/css" media="(max-width:900px)">
+    <link href="css/layout-phone.css" rel="stylesheet" type="text/css" media="(max-width:600px)">
+
+    <link rel="apple-touch-icon" sizes="16x16" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.ico">
+
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bouncing-img {
+            position: absolute;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body class="about">
+    <h1>404: Page Not Found</h1>
+    <hr>
+    <p>Oops! It looks like this page might have gone AWOL.</p>
+    <div class="container">
+        <img src="../img/dns.png" alt="Blame DNS" class="bouncing-img" id="bouncingImg">
+    </div>
+    <p>In the meantime, you can:</p>
+    <ul class="dashed">
+        <li>Go back to the <a href="/" style="padding:0;">Home Page</a></li>
+        <li>Send me an email: <a href="mailto:me@aaronperkel.com" style="padding:0;">me@aaronperkel.com</a></li>
+    </ul>
+    <br><br>
+    <hr>
+    <p style="text-align:center">
+        July 2024 Aaron Perkel
+    </p>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const img = document.getElementById("bouncingImg");
+            const container = img.parentElement;
+            let containerWidth = container.clientWidth;
+            const imgWidth = img.clientWidth;
+            let pos = (containerWidth - imgWidth) / 2;
+            let direction = 1;
+            const speed = 1.3;
+            function bounce() {
+                if (pos + imgWidth >= containerWidth || pos <= 0) {
+                    direction *= -1;
+                }
+                pos += direction * speed;
+                img.style.left = pos + "px";
+            }
+            function resizeHandler() {
+                containerWidth = container.clientWidth;
+                pos = (containerWidth - imgWidth) / 2;
+            }
+            window.addEventListener('resize', resizeHandler);
+            img.style.left = pos + "px";
+            setInterval(bounce, 10);
+        });
+    </script>
+</body>
+
+</html>
