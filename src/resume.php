@@ -32,16 +32,13 @@
                     <a href="http://aaronperkel.com">aaronperkel.com</a><br>
 
                     <!-- GitHub -->
-                    <img style="margin: 0px; margin-top: 2px; width: 16px;" src="./public/img/github-mark.png" alt="GitHub">
-                    <span style="position:relative; top:-2px;">
-                        <a href="https://github.com/aaronperkel" target="_blank"> /aaronperkel</a>
-                    </span><br>
+                    <i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/aaronperkel" target="_blank"> /aaronperkel</a>
+                    <br>
 
                     <!-- LinkedIn -->
-                    <img style="margin: 0px; margin-top: 2px; width: 16px;" src="./public/img/LI-In-Bug.png" alt="LinkedIN">
-                    <span style="position:relative; top:-2px;">
-                        <a href="https://linkedin.com/in/aaronperkel" target="_blank"> /aaronperkel</a>
-                    </span>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/aaronperkel" target="_blank"> /aaronperkel</a>
                 </p>
             </div>
 
