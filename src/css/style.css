@@ -464,3 +464,17 @@ body.no-scroll {
     left: 0;
     color: var(--accent);
 }
+
+/* Mobile‑friendly resume layout */
+@media (max-width: 768px) {
+    .resume-grid {
+        /* switch to a single column */
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    .resume .sidebar {
+        /* give a little breathing room */
+        margin-bottom: 1.5rem;
+    }
+}

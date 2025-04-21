@@ -1,9 +1,4 @@
-RewriteEngine on
-# pretty urls as before…
-RewriteCond %{REQUEST_URI} !^/cs-fair(/|$) [NC]
-RewriteRule ^(.+?)$ $1.php [NC,L]
 ErrorDocument 404 /notfound.html
-
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/rss+xml
