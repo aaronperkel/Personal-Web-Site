@@ -21,26 +21,38 @@ html {
 body {
     margin: auto;
     max-width: 57em;
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-x: hidden;
+    /* Prevent horizontal overflow */
 }
 
 header {
     font-size: 15pt;
     margin: 3% 0;
-    text-align: center; /* Moved from layout CSS for consistency */
+    text-align: center;
+    /* Moved from layout CSS for consistency */
 }
 
 .main,
 article,
 section,
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 nav {
     padding: 1%;
     padding-left: 0;
     padding-right: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     padding-bottom: 0;
     margin-bottom: 0;
     line-height: 1.2em;
@@ -52,7 +64,8 @@ h3 {
 
 a {
     color: var(--main-text-color);
-    text-decoration: none; /* Default to no underline */
+    text-decoration: none;
+    /* Default to no underline */
 }
 
 a:hover {
@@ -215,23 +228,29 @@ blockquote {
 
 /* Increase spacing between dashed lines in job descriptions */
 .resumeItem .jobdesc {
-    margin-top: 0.75em;  /* Space above the first line */
-    margin-bottom: 0.75em; /* Space below the last line */
-    line-height: 1.6em;   /* Increased line height for better readability */
+    margin-top: 0.75em;
+    /* Space above the first line */
+    margin-bottom: 0.75em;
+    /* Space below the last line */
+    line-height: 1.6em;
+    /* Increased line height for better readability */
 }
 
 /* Optional: Style the dashes for better visibility */
 .resumeItem .jobdesc p {
-    margin-bottom: 0.5em; /* Space between lines */
+    margin-bottom: 0.5em;
+    /* Space between lines */
     position: relative;
-    padding-left: 1em;    /* Indent the text */
+    padding-left: 1em;
+    /* Indent the text */
 }
 
 .resumeItem .jobdesc p::before {
     content: "- ";
     position: absolute;
     left: 0;
-    color: var(--orange); /* Highlight the dash color */
+    color: var(--orange);
+    /* Highlight the dash color */
 }
 
 /* Education Grid */
@@ -305,12 +324,12 @@ ul.dashed {
     list-style-type: none;
 }
 
-ul.dashed > li {
+ul.dashed>li {
     position: relative;
     padding-left: 15px;
 }
 
-ul.dashed > li::before {
+ul.dashed>li::before {
     content: "- ";
     position: absolute;
     left: 0;
@@ -380,54 +399,56 @@ body.popup-open {
 }
 
 .header img {
-    height: 85px; 
+    height: 85px;
     width: 85px;
-    display: inline-block; 
+    display: inline-block;
     margin-right: 20px;
     border-radius: 50%;
 }
 
 /* Popup Styles */
 .index .projectsBox {
-	padding-top: 1%;
-	display: grid;
-	grid-template-columns: auto auto auto;
-	width: 100%;
-	margin: 0 auto;
-	grid-gap: 8px;
+    padding-top: 1%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    margin: 0 auto;
+    grid-gap: 8px;
 }
 
 .projectsBox img,
 .imgWrapper {
-	width: 292px;
-	height: 195px;
+    width: 292px;
+    height: 195px;
+    border-radius: 16px;
 }
 
 .imgWrapper {
-	position: relative;
-	cursor: pointer;
+    position: relative;
+    cursor: pointer;
 }
 
 .imgWrapper:hover::after {
-	opacity: 0.8;
+    opacity: 0.8;
 }
 
 .imgWrapper::after {
-	content: attr(data-overlay);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #000000;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: white;
-	font-size: 1.2em;
-	text-align: center;
+    content: attr(data-overlay);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    border-radius: 16px;
 }
 
 .popup {
@@ -438,7 +459,7 @@ body.popup-open {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
 }
