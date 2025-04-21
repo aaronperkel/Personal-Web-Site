@@ -113,22 +113,8 @@ a:hover {
 }
 
 @media(max-width:768px) {
-    .nav-toggle {
-        display: block;
-    }
-
-    .nav-list {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--bg-header);
-        flex-direction: column;
-        display: none;
-    }
-
-    .nav-list.show {
-        display: flex;
+    .site-nav .container {
+        justify-content: center;
     }
 }
 
