@@ -1,21 +1,13 @@
-<nav>
-  <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
-    <span></span>
-    <span></span>
-    <span></span>
+<nav class="site-nav">
+  <div class="container">
+    <button class="nav-toggle" aria-label="open menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-list">
+      <li><a href="index.php" class="<?= $pathParts['filename'] == 'index' ? 'active' : '' ?>">Home</a></li>
+      <li><a href="about.php" class="<?= $pathParts['filename'] == 'about' ? 'active' : '' ?>">About</a></li>
+      <li><a href="resume.php" class="<?= $pathParts['filename'] == 'resume' ? 'active' : '' ?>">Resume</a></li>
+    </ul>
   </div>
-  <ul class="nav-links" id="navLinks">
-    <li><a class="<?php if ($pathParts['filename'] == 'index') {
-      print 'activePage';
-    } ?>" href="./">Home</a></li>
-    <li><a class="<?php if ($pathParts['filename'] == 'about') {
-      print 'activePage';
-    } ?>" href="./about.php">About</a>
-    </li>
-    <li><a class="<?php if ($pathParts['filename'] == 'resume') {
-      print 'activePage';
-    } ?>" href="./resume.php">Resume</a>
-    </li>
-  </ul>
 </nav>
-<hr>
+<hr class="nav-divider">
