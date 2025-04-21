@@ -22,6 +22,8 @@ $pathParts = pathinfo($phpSelf);
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/main.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" media="print">
 </head>
 
 <body class="<?= $pathParts['filename'] ?>">

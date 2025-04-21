@@ -2,104 +2,119 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html {
     font-size: 100%;
     font-family: 'Inter', sans-serif;
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
 }
 
+/* Dark-mode variables */
+:root {
+    --bg-page: #0b1a2a;
+    --bg-panel: #12263f;
+    --bg-header: #091622;
+    --text-primary: #e6f1ff;
+    --text-muted: #a3b1c2;
+    --accent: #58a6ff;
+}
+
+/* Page & Global */
 body {
-    color: #333;
-    background: #f9f9f9;
-    line-height: 1.6
+    background: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #79c0ff;
+    text-decoration: underline;
+}
+
+/* Containers */
 .container {
     width: 90%;
     max-width: 960px;
     margin: 0 auto;
-    padding: 2rem 0
-}
-
-/* Vars */
-:root {
-    --primary: #1a73e8;
-    --light: #fff;
-    --dark: #222;
-    --muted: #666;
+    padding: 2rem 0;
 }
 
 /* Header */
 .site-header {
-    background: var(--light);
-    border-bottom: 1px solid #e0e0e0
+    background: var(--bg-header);
+    border-bottom: 1px solid var(--bg-panel);
 }
 
 .site-header .container {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem 0
+    padding: 1rem 0;
 }
 
 .logo {
     width: 64px;
     height: 64px;
-    border-radius: 50%
+    border-radius: 50%;
 }
 
 .site-title {
     font-size: 1.75rem;
     font-weight: 600;
-    color: var(--dark)
+    color: var(--text-primary);
 }
 
 /* Nav */
 .site-nav {
-    background: var(--light)
+    background: var(--bg-header);
 }
 
 .nav-divider {
-    margin: 0
+    margin: 0;
+    border-color: var(--bg-panel);
 }
 
 .site-nav .container {
     display: flex;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
 }
 
 .nav-toggle {
     background: none;
     border: none;
     font-size: 1.5rem;
-    display: none
+    display: none;
 }
 
 .nav-list {
     display: flex;
     gap: 1rem;
-    list-style: none
+    list-style: none;
 }
 
 .nav-list a {
     padding: .5rem;
-    color: var(--dark);
-    text-decoration: none;
-    font-weight: 500
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 .nav-list a:hover,
 .nav-list a.active {
-    color: var(--primary)
+    color: var(--accent);
 }
 
 @media(max-width:768px) {
     .nav-toggle {
-        display: block
+        display: block;
     }
 
     .nav-list {
@@ -107,143 +122,74 @@ body {
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--light);
+        background: var(--bg-header);
         flex-direction: column;
-        display: none
+        display: none;
     }
 
     .nav-list.show {
-        display: flex
+        display: flex;
     }
 }
 
 /* Hero */
 .hero {
     text-align: center;
-    padding: 4rem 0
+    padding: 4rem 0;
 }
 
 .hero h2 {
     font-size: 2rem;
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
 }
 
 .hero p {
     font-size: 1.125rem;
-    color: var(--muted)
+    color: var(--text-muted);
 }
 
-/* Grid helper */
+/* Grid helpers */
 .grid {
     display: grid;
-    gap: 1.5rem
+    gap: 1.5rem;
 }
 
 .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .resume-grid {
-    grid-template-columns: 1fr 2fr
+    grid-template-columns: 1fr 2fr;
 }
 
 /* Cards */
 .card {
-    background: var(--light);
+    background: var(--bg-panel);
     padding: 1rem;
     border-radius: 8px;
     cursor: pointer;
     transition: transform .2s, box-shadow .2s;
-    text-align: center
+    text-align: center;
 }
 
 .card img {
-    max-width: 100%;
-    border-radius: 6px
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
 }
 
 .card h3 {
     margin-top: .75rem;
     font-size: 1rem;
-    color: var(--dark)
+    color: var(--text-primary);
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .1)
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
 }
 
-/* Resume */
-.sidebar {
-    background: var(--light);
-    padding: 1rem;
-    border-radius: 8px
-}
-
-.main-resume h3 {
-    margin-top: 1rem;
-    color: var(--primary)
-}
-
-.job {
-    background: var(--light);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1rem
-}
-
-.job h4 {
-    margin-bottom: .25rem
-}
-
-.job time {
-    display: block;
-    color: var(--muted);
-    font-size: .875rem
-}
-
-.job ul {
-    margin-top: .5rem;
-    list-style: disc;
-    margin-left: 1.25rem;
-    color: var(--muted)
-}
-
-/* Footer */
-.site-footer {
-    background: var(--light);
-    border-top: 1px solid #e0e0e0;
-    margin-top: 2rem
-}
-
-.site-footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0
-}
-
-.social-icons a {
-    margin-left: .5rem;
-    color: var(--muted);
-    font-size: 1.25rem
-}
-
-.social-icons a:hover {
-    color: var(--primary)
-}
-
-/* Utility */
-a {
-    color: var(--primary);
-    text-decoration: none
-}
-
-a:hover {
-    text-decoration: underline
-}
-
-/* popup overlay */
+/* Popup overlay */
 .popup {
     display: none;
     position: fixed;
@@ -251,31 +197,33 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
 .popup-content {
-    position: relative;
-    background: #fff;
+    background: var(--bg-panel);
+    color: var(--text-primary);
     padding: 1rem;
     border-radius: 8px;
-    max-width: 90%;
-    max-height: 90%;
+    width: 80vw;
+    max-width: 750px;
+    max-height: 120vh;
     overflow: auto;
+    position: relative;
 }
 
 .popup-img {
-    max-width: 100%;
+    max-width: 90%;
     display: block;
     margin: 0 auto;
 }
 
 .popup-text {
     margin-top: 1rem;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .popup-content .close {
@@ -286,7 +234,31 @@ a:hover {
     cursor: pointer;
 }
 
-/* improve spacing on About & Resume */
+/* Footer */
+.site-footer {
+    background: var(--bg-header);
+    border-top: 1px solid var(--bg-panel);
+    margin-top: 2rem;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.social-icons a {
+    margin-left: .5rem;
+    color: var(--text-muted);
+    font-size: 1.25rem;
+}
+
+.social-icons a:hover {
+    color: var(--accent);
+}
+
+/* About & Resume spacing */
 .about h2,
 .resume h3 {
     margin-bottom: 1rem;
@@ -294,5 +266,120 @@ a:hover {
 
 .about p,
 .resume p {
-    margin-bottom: 0.75rem;
+    margin-bottom: .75rem;
+}
+
+/* Disable background scroll when popup is open */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* ─── Resume Page Styles ───────────────────────────────────── */
+.resume-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.resume .sidebar {
+    background: var(--bg-panel);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.resume .sidebar h3 {
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.resume .sidebar ul {
+    list-style: none;
+}
+
+.resume .sidebar li {
+    margin-bottom: .75rem;
+    font-size: .95rem;
+}
+
+.resume .sidebar a {
+    color: var(--text-primary);
+}
+
+.resume .main-resume h3 {
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    padding-bottom: .25rem;
+    margin-top: 1.5rem;
+    color: var(--text-primary);
+}
+
+.resume .main-resume p {
+    margin-bottom: 1rem;
+}
+
+.resume .main-resume ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.resume .main-resume ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.resume .main-resume ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.resume .job {
+    margin-bottom: 1.5rem;
+}
+
+.resume .job h4 {
+    margin-bottom: .25rem;
+    color: var(--text-primary);
+}
+
+.resume .job time {
+    display: block;
+    font-size: .9rem;
+    color: var(--text-muted);
+    margin-bottom: .5rem;
+}
+
+.resume .job ul {
+    margin-left: 1rem;
+    list-style: disc;
+}
+
+/* Remove discs under Experience, keep only arrows */
+.resume .job ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.resume .download {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.resume .download a {
+    background: var(--accent);
+    color: #fff;
+    padding: .75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.resume .download a:hover {
+    background: #79c0ff;
 }
