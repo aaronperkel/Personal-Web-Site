@@ -1,29 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const cards = Array.from(document.querySelectorAll('.card'));
+  let currentIndex = 0;
 
-  // Popup handlers
-  window.openPopup = (imgSrc, html) => {
-    const popup = document.getElementById('popup');
+  window.openPopup = (imgSrc, html, idx) => {
+    currentIndex = idx;
     document.getElementById('popup-img').src = imgSrc;
     document.getElementById('popup-text').innerHTML = html;
-    popup.style.display = 'flex';
+    document.getElementById('popup').style.display = 'flex';
     document.body.classList.add('no-scroll');
   };
-  window.closePopup = (e) => {
-    const popup = document.getElementById('popup');
-    popup.style.display = 'none';
-    document.body.classList.remove('no-scroll');
-  };
 
-  // Attach to each project card
-  document.querySelectorAll('.card').forEach(card => {
+  cards.forEach((card, idx) => {
     card.addEventListener('click', () => {
-      const img = card.querySelector('img').src;
-      const title = card.querySelector('h3').textContent;
-      // Customize description if needed via data-desc attribute
-      const desc = card.dataset.desc || '';
-      openPopup(img, `<h3>${title}</h3><p>${desc}</p>`);
+      openPopup(
+        card.querySelector('img').src,
+        `<h3>${card.querySelector('h3').textContent}</h3><p>${card.dataset.desc || ''}</p>`,
+        idx
+      );
     });
   });
+
+  document.getElementById('popup-prev').addEventListener('click', e => {
+    e.stopPropagation();
+    cards[(currentIndex - 1 + cards.length) % cards.length].click();
+  });
+  document.getElementById('popup-next').addEventListener('click', e => {
+    e.stopPropagation();
+    cards[(currentIndex + 1) % cards.length].click();
+  });
+
+  window.closePopup = e => {
+    document.getElementById('popup').style.display = 'none';
+    document.body.classList.remove('no-scroll');
+  };
 
   // If we came with a ?project=Name param, open that card
   if (window.location.pathname.endsWith('index.php')) {

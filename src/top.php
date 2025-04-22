@@ -29,10 +29,3 @@ $pathParts = pathinfo($phpSelf);
 <body class="<?= $pathParts['filename'] ?>">
     <?php include __DIR__ . '/header.php'; ?>
     <?php include __DIR__ . '/nav.php'; ?>
-    <div id="popup" class="popup" onclick="closePopup(event)">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <span class="close" onclick="closePopup(event)">&times;</span>
-            <img id="popup-img" class="popup-img">
-            <div id="popup-text" class="popup-text"></div>
-        </div>
-    </div>

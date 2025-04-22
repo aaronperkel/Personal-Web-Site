@@ -1,4 +1,13 @@
 <?php include 'top.php'; ?>
+<div id="popup" class="popup" onclick="closePopup(event)">
+    <div class="popup-content" onclick="event.stopPropagation()">
+        <button id="popup-prev" class="popup-nav">&#10094;</button>
+        <span class="close" onclick="closePopup(event)">&times;</span>
+        <button id="popup-next" class="popup-nav">&#10095;</button>
+        <img id="popup-img" class="popup-img">
+        <div id="popup-text" class="popup-text"></div>
+    </div>
+</div>
 <main class="home container">
     <section class="hero">
         <h2>Hello! I’m Aaron.</h2>
