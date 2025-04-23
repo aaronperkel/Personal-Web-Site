@@ -27,9 +27,14 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
-    max-width: 1100px;
+    max-width: 80%;
     margin: 2em auto;
     padding: 0 1em;
+}
+
+body .resume {
+    max-width: 1100px;
+    margin: auto auto;
 }
 
 a {
@@ -86,6 +91,7 @@ nav a:hover,
 nav a.active {
     background: var(--accent);
     color: rgb(255, 255, 255);
+    text-decoration: none;
 }
 
 @media(max-width:768px) {
@@ -196,11 +202,11 @@ nav a.active {
 
 /* push arrows just outside the 80vw panel (panel is 80vw, so 10vw margin on each side) */
 #popup-prev {
-    left: 20vw;
+    left: 32%;
 }
 
 #popup-next {
-    right: 20vw;
+    right: 32%;
 }
 
 .popup-nav:hover {
@@ -225,21 +231,30 @@ nav a.active {
 }
 
 .popup-content .close {
-    position: absolute;
-    top: 0px;
-    right: 5px;
-    font-size: 1.5rem;
-    cursor: pointer;
+    /* lock in its size so scaling can’t push anything */
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+
+    /* ensure rotations happen around the very center */
+    transform-origin: center center;
+
+    /* you already have this: */
     display: inline-block;
+    position: absolute;
+    top: 0.5rem;
+    /* you can tweak this vertical offset */
+    right: 0.5rem;
+    /* and this one too */
+    cursor: pointer;
     transition: transform 0.25s ease;
 }
 
-/* on hover, spin it around and pop it out a bit */
 .popup-content .close:hover {
     transform: rotate(90deg) scale(1.2);
 }
 
-/* optional: give it a little feedback on click */
 .popup-content .close:active {
     transform: rotate(90deg) scale(1.0);
 }
