@@ -1,12 +1,13 @@
 <?php include 'top.php'; ?>
 <div id="popup" class="popup" onclick="closePopup(event)">
+    <!-- move these two buttons out here, not inside .popup-content -->
+    <button id="popup-prev" class="popup-nav"><i class="fa-solid fa-caret-left" style="color: rbga(255, 255, 255, 0.1)"></i></button>
     <div class="popup-content" onclick="event.stopPropagation()">
-        <button id="popup-prev" class="popup-nav">&#10094;</button>
-        <span class="close" onclick="closePopup(event)">&times;</span>
-        <button id="popup-next" class="popup-nav">&#10095;</button>
+        <span class="close" onclick="closePopup(event)"><i class="fa-solid fa-xmark" style="color: rbga(255, 255, 255, 0.1)"></i></span>
         <img id="popup-img" class="popup-img">
         <div id="popup-text" class="popup-text"></div>
     </div>
+    <button id="popup-next" class="popup-nav"><i class="fa-solid fa-caret-right" style="color: rbga(255, 255, 255, 0.1)"></i></button>
 </div>
 <main class="home container">
     <section class="hero">
