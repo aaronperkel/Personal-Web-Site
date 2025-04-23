@@ -20,8 +20,8 @@ $pathParts = pathinfo($phpSelf);
     <script src="https://kit.fontawesome.com/c428e5511d.js" crossorigin="anonymous"></script>
 
     <!-- Main stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>">
+    <script defer src="js/main.js?<?php echo time(); ?>"></script>
 
     <link rel="stylesheet" href="css/style.css" media="print">
 

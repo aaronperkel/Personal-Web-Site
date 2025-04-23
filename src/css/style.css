@@ -196,17 +196,8 @@ nav a.active {
     font-size: 2rem;
     color: var(--text-primary);
     cursor: pointer;
+
     transition: background 0.2s ease, transform 0.1s ease;
-    z-index: 1001;
-}
-
-/* push arrows just outside the 80vw panel (panel is 80vw, so 10vw margin on each side) */
-#popup-prev {
-    left: 32%;
-}
-
-#popup-next {
-    right: 32%;
 }
 
 .popup-nav:hover {
@@ -216,6 +207,18 @@ nav a.active {
 
 .popup-nav:active {
     transform: translateY(-50%) scale(0.9);
+}
+
+#popup-prev {
+    left: calc(-1.5rem);
+    /* in case of tiny viewports */
+    left: calc(50% - min(40vw, 375px) - 4rem);
+    /* center (50%) minus half-width minus half-button */
+}
+
+#popup-next {
+    right: calc(-1.5rem);
+    right: calc(50% - min(40vw, 375px) - 4rem);
 }
 
 .popup-img {
