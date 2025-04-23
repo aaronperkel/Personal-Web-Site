@@ -24,6 +24,39 @@ $pathParts = pathinfo($phpSelf);
     <script defer src="js/main.js"></script>
 
     <link rel="stylesheet" href="css/style.css" media="print">
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aaron Perkel",
+        "url": "https://aaronperkel.com",
+        "sameAs": [
+            "https://github.com/aaronperkel",
+            "https://linkedin.com/in/aaronperkel",
+            "https://youtube.com/@aaronperkel",
+            "https://instagram.com/aaronperkel",
+            "https://aperkel.w3.uvm.edu"
+        ],
+        "jobTitle": "Computer Science Student",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "University of Vermont"
+        },
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Vermont"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "81 Buell St #1",
+            "addressLocality": "Burlington",
+            "addressRegion": "VT",
+            "postalCode": "05401",
+            "addressCountry": "US"
+        }
+        }
+    </script>
 </head>
 
 <body class="<?= $pathParts['filename'] ?>">
