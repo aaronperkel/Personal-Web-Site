@@ -7,7 +7,7 @@
             <section>
                 <h3>Contact</h3>
                 <ul>
-                    <li><i class="fas fa-envelope"></i> <a href="mailto:me@aaronperkel.com">me@aaronperkel.com</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:&#109;&#101;&#64;&#97;&#97;&#114;&#111;&#110;&#112;&#101;&#114;&#107;&#101;&#108;.com">me[at]aaronperkel.com</a></li>
                     <li><i class="fas fa-phone"></i> <a href="tel:4782628935">(478) 262‑8935</a></li>
                     <li><i class="fas fa-map-marker-alt"></i> 81 Buell St #1, Burlington VT 05401</li>
                     <li><i class="fas fa-globe"></i> <a href="http://aaronperkel.com">aaronperkel.com</a></li>
