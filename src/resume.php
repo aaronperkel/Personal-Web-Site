@@ -65,8 +65,8 @@
 
             <h3>Education</h3>
             <p>
-                <strong>Midde Georgia State University</strong> — M.S. Management, Aviation Concentration<br>
-                <em>Expected Graduation May 2027</em>
+                <strong>Middle Georgia State University</strong> — M.S. Management, Aviation Concentration<br>
+                <em>Admitted</em>
             </p>
             <p>
                 <strong>University of Vermont</strong> — B.S. Computer Science, Math Minor<br>
