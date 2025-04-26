@@ -9,7 +9,7 @@ $pathParts = pathinfo($phpSelf);
     <meta charset="utf-8">
     <title>Aaron Perkel – Personal Site</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="author" content="Aaron Perkel">
+    <meta name="author" content="Aaron Coleman Perkel">
     <meta name="description" content="Aaron Perkel | CS & Aviation Enthusiast">
     <link rel="icon" href="public/img/favicon.ico">
 
@@ -29,7 +29,7 @@ $pathParts = pathinfo($phpSelf);
         {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Aaron Perkel",
+        "name": "Aaron Coleman Perkel",
         "url": "https://aaronperkel.com",
         "sameAs": [
             "https://github.com/aaronperkel",
