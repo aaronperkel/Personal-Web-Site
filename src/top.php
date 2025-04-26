@@ -26,7 +26,7 @@ $pathParts = pathinfo($phpSelf);
     <link rel="stylesheet" href="css/style.css" media="print">
 
     <script type="application/ld+json">
-        {
+    {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Aaron Coleman Perkel",
@@ -43,10 +43,17 @@ $pathParts = pathinfo($phpSelf);
             "@type": "Organization",
             "name": "University of Vermont"
         },
-        "alumniOf": {
+        "alumniOf": [
+            {
             "@type": "CollegeOrUniversity",
             "name": "University of Vermont"
-        },
+            },
+            {
+            "@type": "CollegeOrUniversity",
+            "name": "Middle Georgia State University",
+            "description": "Admitted to the Master of Management (Aviation Management) program"
+            }
+        ],
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "81 Buell St #1",
@@ -54,8 +61,12 @@ $pathParts = pathinfo($phpSelf);
             "addressRegion": "VT",
             "postalCode": "05401",
             "addressCountry": "US"
-        }
-        }
+        },
+        "birthPlace": "Richmond, VA",
+        "birthDate": "2003-11-11",
+        "gender": "Male",
+        "image": "https://aperkel.w3.uvm.edu/public/img/headshot.jpg"
+    }
     </script>
 </head>
 
