@@ -32,6 +32,13 @@
                 <h3>Utility Manager</h3>
             </div>
 
+            <!-- Finance Tracker -->
+            <div class="card"
+                data-desc='Developed a full-stack “Finance Tracker” web app (PHP, MySQL, JavaScript/Chart.js, CSS) to help users monitor net worth, manage accounts, and log work hours. <a href="https://github.com/aaronperkel/finance-tracker" target="_blank">GitHub Repo</a>'>
+                <img src="public/img/finance-tracker.png" alt="Finance Tracker">
+                <h3>Finance Tracker</h3>
+            </div>
+
             <!-- Blob Kart -->
             <div class="card"
                 data-desc='Blob Kart is a game inspired by Mario Kart created in C++ using GLM, GLFW, and OpenGL. My partner Owen Cook and I created this project for our Advanced Programming class at UVM. Graphics starter code was provided by the teaching assistants and the instructor. <a href="https://github.com/owncook/Blob-Kart" target="_blank">GitHub Repo</a>'>
