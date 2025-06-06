@@ -7,7 +7,9 @@
             <section>
                 <h3>Contact</h3>
                 <ul>
-                    <li><i class="fas fa-envelope"></i> <a href="mailto:&#109;&#101;&#64;&#97;&#97;&#114;&#111;&#110;&#112;&#101;&#114;&#107;&#101;&#108;.com">me[at]aaronperkel.com</a></li>
+                    <li><i class="fas fa-envelope"></i> <a
+                            href="mailto:&#109;&#101;&#64;&#97;&#97;&#114;&#111;&#110;&#112;&#101;&#114;&#107;&#101;&#108;.com">me[at]aaronperkel.com</a>
+                    </li>
                     <li><i class="fas fa-phone"></i> <a href="tel:4782628935">(478) 262‑8935</a></li>
                     <li><i class="fas fa-map-marker-alt"></i> 81 Buell St #1, Burlington VT 05401</li>
                     <li><i class="fas fa-globe"></i> <a href="http://aaronperkel.com">aaronperkel.com</a></li>
@@ -35,18 +37,20 @@
             <h3>Experience</h3>
 
             <article class="job">
-                <h4>ETS Student Technician</h4>
-                <time>Nov 2023 – Present</time>
+                <h4>Network Technician</h4>
+                <h5 class="job-location">University of Vermont – Burlington, VT</h5>
+                <time>May 2025 – Present</time>
                 <ul>
-                    <li>Primary IT support contact for UVM staff & students</li>
-                    <li>Respond to tickets via phone & email, resolving 95% within SLA</li>
-                    <li>Maintained internal documentation and automated onboarding workflows</li>
+                    <li>Support campus-wide networking infrastructure</li>
+                    <li>Assist with switch and access point deployments</li>
+                    <li>Collaborate with other ETS staff on summer infrastructure upgrades.</li>
                 </ul>
             </article>
 
             <article class="job">
                 <h4>Computer Science Teaching Assistant</h4>
-                <time>Jan 2024 – Present</time>
+                <h5 class="job-location">University of Vermont – Burlington, VT</h5>
+                <time>Jan 2024 – May 2025 • 1 yr 5 mos</time>
                 <ul>
                     <li>Grade weekly assignments and provide detailed feedback</li>
                     <li>Co‑develop lecture materials and lab exercises for CS2100 & CS2300</li>
@@ -55,23 +59,25 @@
             </article>
 
             <article class="job">
-                <h4>Mover, Previews Interiors & Antiques</h4>
-                <time>Jun 2021 – Aug 2023</time>
+                <h4>ETS Student Technician - Level II</h4>
+                <h5 class="job-location">University of Vermont – Burlington, VT</h5>
+                <time>Nov 2023 – May 2025 • 1 yr 7 mos</time>
                 <ul>
-                    <li>Safely packed, transported, and handled high‑value antiques</li>
-                    <li>Coordinated with clients to ensure on‑time delivery and setup</li>
+                    <li>Primary IT support contact for UVM staff & students</li>
+                    <li>Respond to tickets via phone & email, resolving 95% within SLA</li>
+                    <li>Maintained internal documentation and automated onboarding workflows</li>
                 </ul>
             </article>
 
             <h3>Education</h3>
-            <p>
+            <article class="school">
                 <strong>Middle Georgia State University</strong> — M.S. Management, Aviation Concentration<br>
-                <em>Admitted</em>
-            </p>
-            <p>
+                <time>Admitted</time>
+            </article>
+            <article class="school">
                 <strong>University of Vermont</strong> — B.S. Computer Science, Math Minor<br>
-                <em>Aug 2022 – May 2025</em>
-            </p>
+                <time>Aug 2022 – May 2025</time>
+            </article>
 
             <h3>Skills & Interests</h3>
             <div class="grid" style="grid-template-columns:1fr 1fr; gap:1rem;">
