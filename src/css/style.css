@@ -193,11 +193,11 @@ section > .section-title {
 
 /* Popup overlay */
 .popup {
-    display: none;
+    display: none; /* Initially hidden */
     position: fixed;
     inset: 0; /* Replaces top, left, width, height */
     background: rgba(0, 0, 0, 0.88); /* Slightly darker overlay */
-    display: flex; /* Use flex for centering popup-content */
+    /* display: flex; Will be set by JS when opened */
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -207,7 +207,7 @@ section > .section-title {
 .popup-content {
     background: var(--bg-panel);
     color: var(--text-primary);
-    padding: 1.5rem; /* More padding */
+    padding: 2rem; /* Increased padding */
     border-radius: 12px; /* Consistent with cards */
     width: 90vw; /* Relative width */
     max-width: 700px; /* Max width */
@@ -292,8 +292,8 @@ section > .section-title {
     font-size: 1.2rem; /* Larger icon */
     transform-origin: center center;
     position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
+    top: 1rem; /* Adjusted position */
+    right: 1rem; /* Adjusted position */
     color: var(--text-muted); /* Muted color, accent on hover */
     cursor: pointer;
     transition: transform 0.25s ease, color 0.2s ease;
