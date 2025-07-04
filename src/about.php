@@ -6,12 +6,15 @@
 
         <div class="feature">
             <h3>My Journey</h3>
-            <p>Hey! I’m Aaron Perkel — a computer science student at the University of 
-                Vermont finishing my degree in just three years, with a minor in math 
-                and a big passion for aviation. I love building useful tools, automating 
-                the boring stuff, and figuring out how systems work from the ground up. 
-                Whether it’s managing networks, coding up full-stack projects, or flying planes 
-                on VATSIM, I’m all about blending tech and aviation in creative ways.</p>
+            <p>Hey! I’m Aaron Perkel — a computer science graduate from the University of Vermont, 
+                where I earned my degree in just three years along with a minor in math. I 
+                currently work as a Network Technician at UVM. I’ve been admitted to Middle 
+                Georgia State University for an M.S. in Management with a concentration in 
+                Aviation Management, hoping to bridge the gap between tech and aviation. 
+                I’m passionate about building practical tools, automating workflows, and 
+                understanding systems from the ground up — whether that’s managing networks, 
+                coding full-stack projects, or flying on VATSIM. I’m also planning to begin the 
+                ATC process soon, and maybe pursue becoming a pilot in the next few years.</p>
         </div>
 
         <div class="feature">

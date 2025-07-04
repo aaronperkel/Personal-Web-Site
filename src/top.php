@@ -21,9 +21,11 @@ $pathParts = pathinfo($phpSelf);
 
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>">
-    <script defer src="js/main.js?<?php echo time(); ?>"></script>
 
-    <link rel="stylesheet" href="css/style.css" media="print">
+    <!-- Project Card JS -->
+    <?php if ($pathParts['filename'] === 'index') {
+        print '<script defer src="js/main.js?<?php echo time(); ?>"></script>';
+    }?>
 
     <script type="application/ld+json">
     {

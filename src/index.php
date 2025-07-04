@@ -12,7 +12,7 @@
 <main class="home container">
     <section class="hero">
         <h2>Hello! I’m Aaron.</h2>
-        <p>CS & Mathematics Senior @ UVM. Enterprise IT, programming & aviation enthusiast.</p>
+        <p>Network Technician @ UVM, B.S. in Computer Science, & Aviation Enthusiast.</p>
     </section>
 
     <section class="projects">
