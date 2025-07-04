@@ -25,108 +25,187 @@ function get_resume_html($resumeData) {
     <meta charset="UTF-8">
     <title>Resume - <?php echo htmlspecialchars($resumeData['pageTitle']); ?></title>
     <style>
-        /* Basic styling - you'll need to expand this or link your stylesheet */
-        body { font-family: 'Helvetica', 'Arial', sans-serif; line-height: 1.4; color: #333; margin: 0; padding: 0; }
-        .resume { width: 100%; margin: 20px auto; max-width: 800px; }
-        .resume-grid { display: grid; grid-template-columns: 200px 1fr; gap: 20px; }
-        .sidebar { padding: 15px; background-color: #f0f0f0; }
-        .sidebar h3 { font-size: 1.1em; color: #007bff; text-transform: uppercase; margin-top: 0; margin-bottom: 10px; border-bottom: 1px solid #007bff; padding-bottom: 5px;}
-        .sidebar ul { list-style: none; padding: 0; margin: 0 0 15px 0; }
-        .sidebar ul li { margin-bottom: 8px; font-size: 0.9em; }
-        .sidebar ul li i { margin-right: 8px; width: 15px; text-align: center; }
-        .main-resume { padding: 15px; }
-        .main-resume h3 { font-size: 1.2em; color: #333; border-bottom: 2px solid #007bff; display: inline-block; padding-bottom: 3px; margin-top: 20px; margin-bottom: 10px; }
-        .main-resume h3:first-child { margin-top: 0; }
-        .job, .school { margin-bottom: 15px; }
-        .job h4, .school strong { font-size: 1.1em; margin-bottom: 3px; color: #222; }
-        .job .job-location, .school span { display: block; font-size: 0.95em; color: #555; margin-bottom: 3px; }
-        .job time, .school time { display: block; font-size: 0.9em; color: #777; margin-bottom: 5px; }
-        .job ul { list-style: disc; padding-left: 20px; margin-top: 5px; }
-        .job ul li { margin-bottom: 5px; font-size: 0.95em; }
-        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .skills-grid ul { list-style: none; padding: 0; margin: 0; }
-        .skills-grid ul li { font-size: 0.95em; margin-bottom: 3px; }
-        .projects ul { list-style: none; padding: 0; margin: 0; }
-        .projects ul li { margin-bottom: 5px; font-size: 0.95em; }
-        a { color: #007bff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        @page { margin: 0.75in; } /* Default page margins */
+        body {
+            font-family: 'DejaVu Sans', 'Arial', sans-serif; /* DejaVu Sans is good for UTF-8, Arial as fallback */
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .resume-container {
+            width: 100%;
+        }
+        /* Basic two-column layout using tables for Dompdf compatibility */
+        .resume-grid {
+            width: 100%;
+            border-spacing: 20px; /* Simulates gap */
+            border-collapse: separate; /* Important for border-spacing */
+        }
+        .sidebar-cell {
+            width: 30%; /* Adjust sidebar width */
+            vertical-align: top;
+            padding-right: 15px; /* Space between sidebar and main content line */
+        }
+        .main-content-cell {
+            width: 70%; /* Adjust main content width */
+            vertical-align: top;
+        }
 
-        /* Minimal FontAwesome-like icons (actual icons won't render without FA CSS) */
-        .fas, .fab { font-style: normal; /* Placeholder */ }
-        .fa-envelope::before { content: "📧 "; }
-        .fa-phone::before { content: "📞 "; }
-        .fa-map-marker-alt::before { content: "📍 "; }
-        .fa-globe::before { content: "🌐 "; }
-        .fa-github::before { content: " "; } /* GitHub icon placeholder */
-        .fa-linkedin::before { content: " "; } /* LinkedIn icon placeholder */
+        .sidebar h3, .main-resume h3 {
+            font-size: 13pt;
+            color: #0056b3; /* A professional blue */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 1.5px solid #0056b3;
+        }
+        .sidebar section { margin-bottom: 20px; }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 6px;
+            font-size: 9.5pt;
+            word-wrap: break-word; /* Help with long links */
+        }
+        .sidebar ul li .icon-placeholder { /* Simple text prefix for icons */
+            display: inline-block;
+            width: 18px; /* Adjust as needed */
+            font-weight: bold;
+        }
+         .sidebar a { color: #0056b3; text-decoration: none; }
+         .sidebar a:hover { text-decoration: underline; }
 
-        /* Ensure full width for PDF */
-        @page { margin: 0.5in; } /* Adjust margins as needed */
-        body.resume-pdf { max-width: 100%; margin: 0; padding: 0; background-color: #fff; /* Ensure white background for PDF */ }
-        .resume-grid { grid-template-columns: 220px 1fr; /* Adjust sidebar width if needed */ }
+
+        .main-resume article { margin-bottom: 18px; }
+        .main-resume h4 { /* Job titles, school names */
+            font-size: 11pt;
+            font-weight: bold;
+            color: #222222;
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+        .main-resume .job-location, .main-resume .degree-info {
+            font-size: 10pt;
+            font-style: italic;
+            color: #555555;
+            margin-bottom: 2px;
+        }
+        .main-resume time {
+            font-size: 9pt;
+            color: #777777;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .main-resume ul { /* For job details, skills, projects */
+            list-style: disc;
+            padding-left: 18px; /* Indent for bullets */
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        .main-resume ul li {
+            margin-bottom: 4px;
+            font-size: 10pt;
+            line-height: 1.5;
+        }
+
+        .skills-categories {
+            /* If using two columns for skills */
+            /* display: table; width: 100%; table-layout: fixed; */ /* More complex, might be better as single list */
+        }
+        .skills-categories ul { margin-bottom: 5px; }
+
+
+        .main-resume a { color: #0056b3; text-decoration: none; }
+        .main-resume a:hover { text-decoration: underline; }
+
+        /* Helper for contact icons */
+        .contact-label { font-weight: bold; }
+
     </style>
 </head>
-<body class="resume-pdf">
-    <div class="resume">
-        <div class="resume-grid">
-            <aside class="sidebar">
-                <section>
-                    <h3>Contact</h3>
-                    <ul>
-                        <?php foreach ($resumeData['contactInfo'] as $item): ?>
-                            <li><i class="<?php echo htmlspecialchars($item['icon']); ?>"></i> <?php echo $item['text']; ?></li>
+<body>
+    <div class="resume-container">
+        <table class="resume-grid">
+            <tr>
+                <td class="sidebar-cell">
+                    <section class="contact-info">
+                        <h3>Contact</h3>
+                        <ul>
+                            <?php foreach ($resumeData['contactInfo'] as $item): ?>
+                                <?php
+                                    $label = '';
+                                    if (strpos($item['icon'], 'fa-envelope') !== false) $label = '<span class="icon-placeholder">E:</span>';
+                                    else if (strpos($item['icon'], 'fa-phone') !== false) $label = '<span class="icon-placeholder">P:</span>';
+                                    else if (strpos($item['icon'], 'fa-map-marker-alt') !== false) $label = '<span class="icon-placeholder">A:</span>';
+                                    else if (strpos($item['icon'], 'fa-globe') !== false) $label = '<span class="icon-placeholder">W:</span>';
+                                    else if (strpos($item['icon'], 'fa-github') !== false) $label = '<span class="icon-placeholder">GH:</span>';
+                                    else if (strpos($item['icon'], 'fa-linkedin') !== false) $label = '<span class="icon-placeholder">LI:</span>';
+                                ?>
+                                <li><?php echo $label; ?> <?php echo $item['text']; // HTML is allowed in text ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </section>
+
+                    <section class="honors-awards">
+                        <h3>Honors &amp; Awards</h3>
+                        <?php foreach ($resumeData['honorsAndAwards'] as $honor): ?>
+                        <ul>
+                            <li>
+                                <strong><?php echo htmlspecialchars($honor['title']); ?></strong><br>
+                                <em><?php echo htmlspecialchars($honor['date']); ?></em>
+                            </li>
+                        </ul>
                         <?php endforeach; ?>
-                    </ul>
-                </section>
+                    </section>
+                </td>
+                <td class="main-content-cell">
+                    <section class="main-resume">
+                        <h3>Experience</h3>
+                        <?php foreach ($resumeData['experience'] as $job): ?>
+                            <article class="job">
+                                <h4><?php echo htmlspecialchars($job['title']); ?></h4>
+                                <div class="job-location"><?php echo htmlspecialchars($job['location']); ?></div>
+                                <time><?php echo htmlspecialchars($job['time']); ?></time>
+                                <ul>
+                                    <?php foreach ($job['details'] as $detail): ?>
+                                        <li><?php echo htmlspecialchars($detail); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </article>
+                        <?php endforeach; ?>
 
-                <section>
-                    <h3>Honors and Awards</h3>
-                    <?php foreach ($resumeData['honorsAndAwards'] as $honor): ?>
-                    <ul>
-                        <li><?php echo htmlspecialchars($honor['title']); ?> <em><?php echo htmlspecialchars($honor['date']); ?></em></li>
-                    </ul>
-                    <?php endforeach; ?>
-                </section>
-            </aside>
+                        <h3>Education</h3>
+                        <?php foreach ($resumeData['education'] as $edu): ?>
+                            <article class="school">
+                                <h4><?php echo htmlspecialchars($edu['institution']); ?></h4>
+                                <div class="degree-info"><?php echo htmlspecialchars($edu['degree']); ?></div>
+                                <time><?php echo htmlspecialchars($edu['time']); ?></time>
+                            </article>
+                        <?php endforeach; ?>
 
-            <section class="main-resume">
-                <h3>Experience</h3>
-                <?php foreach ($resumeData['experience'] as $job): ?>
-                    <article class="job">
-                        <h4><?php echo htmlspecialchars($job['title']); ?></h4>
-                        <span class="job-location"><?php echo htmlspecialchars($job['location']); ?></span>
-                        <time><?php echo htmlspecialchars($job['time']); ?></time>
-                        <ul>
-                            <?php foreach ($job['details'] as $detail): ?>
-                                <li><?php echo htmlspecialchars($detail); ?></li>
+                        <h3>Skills &amp; Interests</h3>
+                        <div class="skills-categories">
+                            <?php foreach ($resumeData['skillsAndInterests']['categories'] as $category): ?>
+                                <ul>
+                                    <?php foreach ($category as $skill): ?>
+                                        <li><?php echo $skill; // HTML is allowed in skill items ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
                             <?php endforeach; ?>
-                        </ul>
-                    </article>
-                <?php endforeach; ?>
+                        </div>
 
-                <h3>Education</h3>
-                <?php foreach ($resumeData['education'] as $edu): ?>
-                    <article class="school">
-                        <strong><?php echo htmlspecialchars($edu['institution']); ?></strong> — <span><?php echo htmlspecialchars($edu['degree']); ?></span><br>
-                        <time><?php echo htmlspecialchars($edu['time']); ?></time>
-                    </article>
-                <?php endforeach; ?>
-
-                <h3>Skills & Interests</h3>
-                <div class="skills-grid">
-                    <?php foreach ($resumeData['skillsAndInterests']['categories'] as $category): ?>
+                        <h3>Projects</h3>
                         <ul>
-                            <?php foreach ($category as $skill): ?>
-                                <li><?php echo $skill; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    <?php endforeach; ?>
-                </div>
-
-                <h3>Projects</h3>
-                <ul class="projects">
-                    <?php foreach ($resumeData['projects'] as $project): ?>
-                        <li><a href="<?php echo htmlspecialchars($project['link']); ?>"><?php echo htmlspecialchars($project['name']); ?></a> — <?php echo htmlspecialchars($project['description']); ?></li>
+                            <?php foreach ($resumeData['projects'] as $project): ?>
+                                <li><a href="<?php echo htmlspecialchars($project['link']); ?>"><?php echo htmlspecialchars($project['name']); ?></a> — <?php echo htmlspecialchars($project['description']); ?></li>
                     <?php endforeach; ?>
                 </ul>
             </section>
@@ -158,12 +237,31 @@ $dompdf->loadHtml($html);
 $dompdf->setPaper('A4', 'portrait'); // or 'letter', 'legal', etc.
 
 // Render the HTML as PDF
-$dompdf->render();
+try {
+    $dompdf->render();
 
-// Output the generated PDF (1 = download and 0 = preview)
-// The 'false' argument here prevents the browser from displaying the PDF inline first
-// and forces a download dialog.
-$dompdf->stream("aaron-perkel-resume.pdf", ["Attachment" => true]);
+    // Clean any previous output buffering before sending PDF
+    if (ob_get_level()) {
+        ob_end_clean();
+    }
 
-exit;
+    // Output the generated PDF
+    // The ["Attachment" => true] option prompts for download.
+    // Using ["Attachment" => false] would attempt to display inline.
+    $dompdf->stream("aaron-perkel-resume.pdf", ["Attachment" => true]);
+    exit;
+
+} catch (Exception $e) {
+    // Log the error or display a user-friendly message
+    // For debugging, we can output the error message directly.
+    // IMPORTANT: In a production environment, you would log this error
+    // and show a generic error page to the user.
+    error_log("Error generating PDF: " . $e->getMessage() . "\n" . $e->getTraceAsString());
+    header("HTTP/1.1 500 Internal Server Error");
+    echo "<h1>Error generating PDF</h1>";
+    echo "<p>An error occurred while generating the PDF. Please try again later.</p>";
+    echo "<p>Error details (for debugging):<br><pre>" . htmlspecialchars($e->getMessage()) . "</pre></p>";
+    // You might want to see the full trace in your PHP error log, not necessarily output to browser.
+    exit;
+}
 ?>
