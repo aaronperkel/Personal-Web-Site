@@ -40,14 +40,14 @@ function get_resume_html($resumeData) {
         body {
             width: 100%;
             margin: 0;
-            padding: 0; /* Padding moved to .container */
+            padding: 0;
             position: relative;
             background-color: #ffffff;
         }
-        main.container { /* Targeting the <main> element directly */
+        main.container {
             width: 100%;
             margin: 0 auto;
-            padding: 15pt; /* This will be the main content inset */
+            padding: 15pt;
             position: relative;
         }
 
@@ -57,12 +57,14 @@ function get_resume_html($resumeData) {
             margin-bottom: 15pt;
             padding-bottom: 10pt;
             border-bottom: 1.5px solid #0056b3;
+            /* width: 100%; /* Should be implicitly from parent padding */
         }
         .resume-top-header h1 {
             font-size: 22pt;
             color: #0056b3;
             margin: 0 0 4pt 0;
             font-weight: bold;
+            display: inline-block; /* To ensure it doesn't force full width if not needed */
         }
         .resume-top-header .contact-line {
             font-size: 9pt;
@@ -101,7 +103,7 @@ function get_resume_html($resumeData) {
         }
 
         /* Section Headings */
-        h3 {
+        h3 { /* General h3 for less specificity issues initially */
             color: #0056b3;
             text-transform: uppercase;
             margin-top: 0;
@@ -109,13 +111,15 @@ function get_resume_html($resumeData) {
             font-size: 11pt;
             border-bottom: 1px solid #0056b3;
             padding-bottom: 2pt;
+            display: inline-block; /* Key change for border width */
         }
          .resume-main-cell h3 {
             font-size: 12pt;
             border-bottom-width: 1.5px;
             padding-bottom: 3pt;
+            /* display: inline-block; /* Already covered by general h3 if not overridden */
          }
-         .resume-sidebar-cell section:first-child > h3, /* Simpler selector for first h3 */
+         .resume-sidebar-cell section:first-child > h3,
          .resume-main-cell section:first-child > h3 {
             margin-top: 0;
          }
@@ -302,7 +306,7 @@ try {
         ob_end_clean();
     }
 
-    $dompdf->stream("resume_padding_corrected.pdf", ["Attachment" => true]);
+    $dompdf->stream("resume_border_fix_attempt.pdf", ["Attachment" => true]);
     exit;
 
 } catch (Exception $e) {
