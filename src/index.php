@@ -3,7 +3,8 @@
     <!-- move these two buttons out here, not inside .popup-content -->
     <button id="popup-prev" class="popup-nav"><i class="fa-solid fa-caret-left"></i></button>
     <div class="popup-content" onclick="event.stopPropagation()">
-        <span class="close" onclick="closePopup(event)"><i class="fa-solid fa-xmark fa-xl" style="color: rbga(255, 255, 255, 0.1)"></i></span>
+        <span class="close" onclick="closePopup(event)"><i class="fa-solid fa-xmark fa-xl"
+                style="color: rbga(255, 255, 255, 0.1)"></i></span>
         <img id="popup-img" class="popup-img">
         <div id="popup-text" class="popup-text"></div>
     </div>
@@ -13,7 +14,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Hello! I’m Aaron.</h1>
-            <p class="hero-subtitle">CS & Mathematics Senior @ UVM. Enterprise IT, programming & aviation enthusiast.</p>
+            <p>Network Technician @ UVM, B.S. in Computer Science, & Aviation Enthusiast.</p>
         </div>
     </section>
 
@@ -23,21 +24,21 @@
             <!-- UVM Sublets -->
             <article class="card"
                 data-desc='UVM Sublets is a PHP/MySQL platform for UVM students to post & manage sublet listings. Uses noUiSlider & Leaflet for filters & interactive maps. <a href="https://github.com/aaronperkel/sublet" target="_blank">GitHub Repo</a>'>
-                <img src="public/img/sublet.png" alt="UVM Sublets" class="card-img">
+                <img src="public/img/sublet.webp" alt="UVM Sublets" class="card-img">
                 <h3 class="card-title">UVM Sublets</h3>
             </article>
 
             <!-- Utility Manager -->
             <article class="card"
                 data-desc='A personal portal for my two roommates’ and my utility bills—built with HTML, CSS, PHP, SQL & Python. Features include bill listing, cost splitting, PDF downloads, admin portal, email reminders (automated via Raspberry Pi). <a href="https://github.com/aaronperkel/Utility-Manager" target="_blank">GitHub Repo</a>'>
-                <img src="public/img/utility.jpeg" alt="Utility Manager" class="card-img">
+                <img src="public/img/utility.webp" alt="Utility Manager" class="card-img">
                 <h3 class="card-title">Utility Manager</h3>
             </article>
 
             <!-- Finance Tracker -->
             <article class="card"
                 data-desc='Developed a full-stack “Finance Tracker” web app (PHP, MySQL, JavaScript/Chart.js, CSS) to help users monitor net worth, manage accounts, and log work hours. <a href="https://github.com/aaronperkel/finance-tracker" target="_blank">GitHub Repo</a>'>
-                <img src="public/img/finance-tracker.png" alt="Finance Tracker" class="card-img">
+                <img src="public/img/finance-tracker.webp" alt="Finance Tracker" class="card-img">
                 <h3 class="card-title">Finance Tracker</h3>
             </article>
 
@@ -51,21 +52,21 @@
             <!-- Web Site Development Final -->
             <article class="card"
                 data-desc='This project was built with Lily Bonds using HTML, CSS & PHP for a fictitious company Green Mountain Cycles. It includes 5 pages and a form that emails submissions. <a href="https://courses.aperkel.w3.uvm.edu/cs1080/final/" target="_blank">View Site</a>'>
-                <img src="public/img/cs1080final.png" alt="Web Site Dev Final" class="card-img">
+                <img src="public/img/cs1080final.webp" alt="Web Site Dev Final" class="card-img">
                 <h3 class="card-title">Web Site Dev Final</h3>
             </article>
 
             <!-- DormKit -->
             <article class="card"
                 data-desc='DormKit is a "smart dorm" prototype—Flask web app + Raspberry Pi + Arduino to control dorm electronics remotely. Built with Owen Cook, Alexa Witkin & Sam Zimpfer. <a href="https://github.com/aaronperkel/DormKit" target="_blank">GitHub Repo</a>'>
-                <img src="public/img/dormkit.JPG" alt="DormKit" class="card-img">
+                <img src="public/img/dormkit.webp" alt="DormKit" class="card-img">
                 <h3 class="card-title">DormKit</h3>
             </article>
 
             <!-- Custom PCB -->
             <article class="card"
                 data-desc='Designed a custom KiCad PCB for a prosthetic glove detecting high temperatures to assist people with neuropathy.'>
-                <img src="public/img/pcb.png" alt="Custom PCB" class="card-img">
+                <img src="public/img/pcb.webp" alt="Custom PCB" class="card-img">
                 <h3 class="card-title">Custom PCB</h3>
             </article>
 
@@ -79,15 +80,15 @@
             <!-- CodeBuilder -->
             <article class="card"
                 data-desc='CodeBuilder is an iOS app to learn coding via drag‑and‑drop code blocks, articles, daily challenges & community forum. <a href="https://github.com/gohacki/CodeBuilder" target="_blank">GitHub Repo</a>'>
-                <img src="public/img/combine.png" alt="CodeBuilder" class="card-img">
+                <img src="public/img/combine.webp" alt="CodeBuilder" class="card-img">
                 <h3 class="card-title">CodeBuilder</h3>
             </article>
 
             <!-- Room Status Sign -->
             <article class="card"
                 data-desc='An E‑Ink door display showing my current status (e.g. "Do Not Disturb") with timeframe, powered by Flask on Raspberry Pi. <a href="https://github.com/aaronperkel/Room-Display-Sign" target="_blank">GitHub Repo</a>'>
-                <img src="public/img/sign.png" alt="Room Status Sign" class="card-img">
-                <h3 class="card-title">Room Status Sign</h3>
+                <img src="public/img/sign.webp" alt="Room Status Sign" class="card-img">
+                <h3 class="card-title">Room Status Sign</h3>
             </article>
         </div>
     </section>
