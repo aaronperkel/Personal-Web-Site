@@ -53,23 +53,25 @@ function get_resume_html($resumeData) {
 
         /* Resume Header Styles */
         .resume-top-header {
-            text-align: center;
+            /* text-align: center; /* Removed: Will center h1 and contact-line individually */
             margin-bottom: 15pt;
-            padding-bottom: 10pt;
+            padding-bottom: 10pt; /* Space above the border */
             border-bottom: 1.5px solid #0056b3;
-            /* width: 100%; /* Should be implicitly from parent padding */
+            width: 100%; /* Explicitly set width */
         }
         .resume-top-header h1 {
             font-size: 22pt;
             color: #0056b3;
             margin: 0 0 4pt 0;
             font-weight: bold;
-            display: inline-block; /* To ensure it doesn't force full width if not needed */
+            text-align: center; /* Center the h1 text */
+            /* display: inline-block; /* Reverted: h1 should be block to allow text-align:center to work as expected */
         }
         .resume-top-header .contact-line {
             font-size: 9pt;
             color: #495057;
             word-wrap: break-word;
+            text-align: center; /* Center the contact line text */
         }
         .resume-top-header .contact-line a {
             color: #495057;
@@ -85,7 +87,7 @@ function get_resume_html($resumeData) {
             table-layout: fixed;
             border-collapse: collapse;
             border-spacing: 0;
-            margin: 0;
+            margin: 15pt 0 0 0; /* Add some margin above the table, below the header */
             padding: 0;
         }
         .resume-sidebar-cell {
@@ -103,7 +105,7 @@ function get_resume_html($resumeData) {
         }
 
         /* Section Headings */
-        h3 { /* General h3 for less specificity issues initially */
+        h3 {
             color: #0056b3;
             text-transform: uppercase;
             margin-top: 0;
@@ -111,19 +113,17 @@ function get_resume_html($resumeData) {
             font-size: 11pt;
             border-bottom: 1px solid #0056b3;
             padding-bottom: 2pt;
-            display: inline-block; /* Key change for border width */
+            display: inline-block; /* Key change for border width - for section titles */
         }
-         .resume-main-cell h3 {
+         .resume-main-cell h3 { /* Specific for main content if different styling needed later */
             font-size: 12pt;
             border-bottom-width: 1.5px;
             padding-bottom: 3pt;
-            /* display: inline-block; /* Already covered by general h3 if not overridden */
          }
          .resume-sidebar-cell section:first-child > h3,
          .resume-main-cell section:first-child > h3 {
             margin-top: 0;
          }
-
 
         .resume-sidebar-cell ul { list-style: none; padding: 0; margin: 0 0 8pt 0; }
         .resume-sidebar-cell li { margin-bottom: 5pt; font-size: 9pt; word-wrap: break-word; }
@@ -159,7 +159,6 @@ function get_resume_html($resumeData) {
             <div class="contact-line">
                 <?php
                 $header_contacts_map = [];
-                // Standardize keys for easier lookup
                 foreach ($resumeData['contactInfo'] as $item) {
                     if (strpos($item['icon'], 'fa-envelope') !== false) $header_contacts_map['email'] = $item['text'];
                     else if (strpos($item['icon'], 'fa-phone') !== false) $header_contacts_map['phone'] = $item['text'];
@@ -306,7 +305,7 @@ try {
         ob_end_clean();
     }
 
-    $dompdf->stream("resume_border_fix_attempt.pdf", ["Attachment" => true]);
+    $dompdf->stream("resume_border_and_header_fix.pdf", ["Attachment" => true]);
     exit;
 
 } catch (Exception $e) {
