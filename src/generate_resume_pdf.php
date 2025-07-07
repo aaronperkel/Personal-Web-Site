@@ -16,18 +16,21 @@ function get_resume_html($resumeData) {
     ob_start();
 ?>
 <!DOCTYPE html>
-<html lang="en" style="width: 100%; margin: 0; padding: 0; background-color: #fff;">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Aaron Perkel - Resume</title>
     <style>
+        * {
+            box-sizing: border-box; /* Apply border-box to all elements */
+        }
         @page {
-            margin: 0.7in;
+            margin: 0.7in; /* This is the main "outer" padding from paper edge */
         }
         html {
             width: 100%;
             margin: 0;
-            padding: 0;
+            padding: 0; /* Remove padding from html element */
             font-family: 'DejaVu Sans', 'Arial', sans-serif;
             font-size: 10pt;
             background-color: #ffffff;
@@ -37,51 +40,50 @@ function get_resume_html($resumeData) {
         body {
             width: 100%;
             margin: 0;
-            padding: 0;
+            padding: 2%; /* This padding will now be inside the 100% width due to box-sizing */
             position: relative;
+            background-color: #ffffff; /* Ensure body background is white if html isn't enough */
         }
-        .container {
+        .container { /* This class is on <main>, can be used if further nesting is needed */
             width: 100%;
             margin: 0 auto;
-            padding: 0;
+            padding: 0; /* Container itself doesn't need padding if body has it */
             position: relative;
         }
 
-        /* New Resume Header Styles */
+        /* Resume Header Styles */
         .resume-top-header {
             text-align: center;
             margin-bottom: 15pt;
             padding-bottom: 10pt;
-            border-bottom: 1.5px solid #0056b3; /* Accent color border */
+            border-bottom: 1.5px solid #0056b3;
         }
         .resume-top-header h1 {
             font-size: 22pt;
-            color: #0056b3; /* Accent color */
+            color: #0056b3;
             margin: 0 0 4pt 0;
-            font-weight: bold; /* Make name bold */
+            font-weight: bold;
         }
         .resume-top-header .contact-line {
             font-size: 9pt;
-            color: #495057; /* Muted text color */
+            color: #495057;
+            word-wrap: break-word; /* Allow long lines to wrap */
         }
         .resume-top-header .contact-line a {
             color: #495057;
             text-decoration: none;
         }
-        .resume-top-header .contact-line a:hover {
-            text-decoration: underline;
-        }
-        .resume-top-header .contact-separator {
-            margin: 0 0.5em;
+        .resume-top-header .contact-line .contact-separator {
+            margin: 0 0.4em; /* Slightly reduced separator margin */
         }
 
-
+        /* Main two-column layout table */
         .resume-grid-table {
             width: 100%;
             table-layout: fixed;
             border-collapse: collapse;
             border-spacing: 0;
-            margin: 0;
+            margin: 0; /* Ensure no default table margins */
             padding: 0;
         }
         .resume-sidebar-cell {
@@ -98,11 +100,11 @@ function get_resume_html($resumeData) {
             color: #212529;
         }
 
-        /* Headings */
+        /* Section Headings */
         h3 {
             color: #0056b3;
             text-transform: uppercase;
-            margin-top: 0;
+            margin-top: 0; /* Handled by section or first-child logic if needed */
             margin-bottom: 8pt;
             font-size: 11pt;
             border-bottom: 1px solid #0056b3;
@@ -113,9 +115,15 @@ function get_resume_html($resumeData) {
             border-bottom-width: 1.5px;
             padding-bottom: 3pt;
          }
+         /* Remove top margin for first h3 in a cell if it's the first child of its parent section */
+         .resume-sidebar-cell section:first-child > h3:first-child,
+         .resume-main-cell section:first-child > h3:first-child {
+            margin-top: 0;
+         }
+
 
         .resume-sidebar-cell ul { list-style: none; padding: 0; margin: 0 0 8pt 0; }
-        .resume-sidebar-cell li { margin-bottom: 5pt; font-size: 9pt; }
+        .resume-sidebar-cell li { margin-bottom: 5pt; font-size: 9pt; word-wrap: break-word; }
         .resume-sidebar-cell li .icon-text { font-weight: bold; margin-right: 0.5em; }
         .resume-sidebar-cell a { color: #0056b3; text-decoration: none; }
 
@@ -124,37 +132,21 @@ function get_resume_html($resumeData) {
         .job .job-location, .school .degree-info { font-style: italic; color: #495057; margin-bottom: 1pt; font-size: 9pt; }
         .job time, .school time { display: block; font-size: 8pt; color: #6c757d; margin-bottom: 3pt; }
 
-        /* Default list style for main content (Experience, Projects) */
-        .main-resume-content ul { list-style: none; padding-left: 0; margin-top: 3pt; }
-        .main-resume-content ul li { position: relative; padding-left: 1.2em; margin-bottom: 3pt; font-size: 9pt; line-height: 1.3; }
-        .main-resume-content ul li::before { content: '▹'; position: absolute; left: 0; top: 0.05em; color: #0056b3; font-size: 1em; }
+        .main-resume-content ul, .skills-grid-table ul {
+            list-style: none; padding-left: 0; margin-top: 3pt;
+        }
+        .main-resume-content ul li, .skills-grid-table ul li {
+            position: relative; padding-left: 1.2em; margin-bottom: 3pt; font-size: 9pt; line-height: 1.3;
+        }
+        .main-resume-content ul li::before, .skills-grid-table ul li::before {
+            content: '▹'; position: absolute; left: 0; top: 0.05em; color: #0056b3; font-size: 1em;
+        }
         .main-resume-content a { color: #0056b3; text-decoration: none; }
 
-        /* Skills Grid - uses triangle bullet style */
         .skills-grid-container { margin-bottom: 8pt; }
-        .skills-grid-table { width: 100%; }
         .skills-grid-table td { width: 50%; vertical-align: top; padding-right: 8pt; }
         .skills-grid-table td:last-child { padding-right: 0; }
-        .skills-grid-table ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 0;
-            margin-bottom: 6pt;
-        }
-        .skills-grid-table ul li {
-            position: relative;
-            padding-left: 1.2em;
-            margin-bottom: 2pt;
-            font-size: 9pt;
-        }
-        .skills-grid-table ul li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            top: 0.05em;
-            color: #0056b3;
-            font-size: 1em;
-        }
+        .skills-grid-table ul { margin-bottom: 6pt; } /* Specific margin for skill lists */
     </style>
 </head>
 <body>
@@ -163,48 +155,24 @@ function get_resume_html($resumeData) {
             <h1>Aaron Perkel</h1>
             <div class="contact-line">
                 <?php
-                $contact_items = [];
+                $header_contacts = [];
+                // Simplified extraction for key items
                 foreach ($resumeData['contactInfo'] as $item) {
-                    // Extract text and href for cleaner presentation if they are links
-                    if (preg_match('/<a href="([^"]+)">([^<]+)<\/a>/', $item['text'], $matches)) {
-                        $contact_items[] = '<a href="' . htmlspecialchars($matches[1]) . '">' . htmlspecialchars($matches[2]) . '</a>';
-                    } elseif (preg_match('/<a href="mailto:([^"]+)">([^<]+)<\/a>/', $item['text'], $matches)) {
-                        $contact_items[] = '<a href="mailto:' . htmlspecialchars($matches[1]) . '">' . htmlspecialchars($matches[2]) . '</a>';
-                    }else {
-                         // For items without links, just use the text, but try to find relevant ones for header
-                        if (strpos($item['icon'], 'fa-envelope') !== false) $contact_items[] = strip_tags($item['text']); // Prefer link version if available
-                        else if (strpos($item['icon'], 'fa-phone') !== false) $contact_items[] = strip_tags($item['text']);
-                        else if (strpos($item['icon'], 'fa-globe') !== false) $contact_items[] = strip_tags($item['text']);
-                    }
-                }
-                // Manually order and select specific items for the header line for brevity
-                $header_contact_order = ['email', 'phone', 'website', 'linkedin', 'github'];
-                $final_header_contacts = [];
-
-                // Prioritize extracting from $resumeData based on known keys if possible
-                $email = $resumeData['contactInfo'][0]['text'] ?? null; // Assuming first is email
-                $phone = $resumeData['contactInfo'][1]['text'] ?? null; // Assuming second is phone
-
-                // Find website, linkedin, github by text content if specific keys aren't in $resumeData
-                $website_text = 'aaronperkel.com'; // text to identify website
-                $linkedin_text = '/in/aaronperkel'; // text to identify linkedin
-                $github_text = '/aaronperkel'; // text to identify github
-
-                $website_link = ''; $linkedin_link = ''; $github_link = '';
-
-                foreach($resumeData['contactInfo'] as $c_item) {
-                    if (strpos($c_item['text'], $website_text) !== false) $website_link = $c_item['text'];
-                    if (strpos($c_item['text'], $linkedin_text) !== false) $linkedin_link = $c_item['text'];
-                    if (strpos($c_item['text'], $github_text) !== false && strpos($c_item['icon'], 'fa-github') !== false) $github_link = $c_item['text'];
+                    if (strpos($item['icon'], 'fa-envelope') !== false) $header_contacts['email'] = $item['text'];
+                    else if (strpos($item['icon'], 'fa-phone') !== false) $header_contacts['phone'] = $item['text'];
+                    else if (strpos($item['icon'], 'fa-globe') !== false && strpos($item['text'], 'aaronperkel.com') !== false) $header_contacts['website'] = $item['text'];
+                    else if (strpos($item['icon'], 'fa-linkedin') !== false) $header_contacts['linkedin'] = $item['text'];
+                    else if (strpos($item['icon'], 'fa-github') !== false) $header_contacts['github'] = $item['text'];
                 }
 
-                if ($email) $final_header_contacts[] = $email;
-                if ($phone) $final_header_contacts[] = $phone;
-                if ($website_link) $final_header_contacts[] = $website_link;
-                if ($linkedin_link) $final_header_contacts[] = $linkedin_link;
-                if ($github_link) $final_header_contacts[] = $github_link;
+                $display_contacts = [];
+                if (!empty($header_contacts['email'])) $display_contacts[] = $header_contacts['email'];
+                if (!empty($header_contacts['phone'])) $display_contacts[] = $header_contacts['phone'];
+                if (!empty($header_contacts['website'])) $display_contacts[] = $header_contacts['website'];
+                if (!empty($header_contacts['linkedin'])) $display_contacts[] = $header_contacts['linkedin'];
+                if (!empty($header_contacts['github'])) $display_contacts[] = $header_contacts['github'];
 
-                echo implode('<span class="contact-separator">|</span>', $final_header_contacts);
+                echo implode('<span class="contact-separator">|</span>', $display_contacts);
                 ?>
             </div>
         </div>
@@ -335,7 +303,7 @@ try {
         ob_end_clean();
     }
 
-    $dompdf->stream("resume_with_header.pdf", ["Attachment" => true]);
+    $dompdf->stream("resume_with_padding_fix.pdf", ["Attachment" => true]);
     exit;
 
 } catch (Exception $e) {
