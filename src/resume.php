@@ -108,7 +108,7 @@
     </div>
 
     <p class="download">
-        <a href="public/aaron-perkel-resume.pdf" download>
+        <a href="generate_resume_pdf.php">
             <i class="fas fa-file-pdf"></i> Download PDF
         </a>
     </p>
