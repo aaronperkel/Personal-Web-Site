@@ -16,183 +16,107 @@ function get_resume_html($resumeData) {
     ob_start();
 ?>
 <!DOCTYPE html>
-<html lang="en" style="width: 100%; margin: 0; padding: 0;">
+<html lang="en" style="width: 100%; margin: 0; padding: 0; background-color: #fff;">
 <head>
     <meta charset="utf-8">
     <title>Aaron Perkel - Resume</title>
     <style>
         @page {
-            margin: 0.75in;
+            margin: 0.75in; /* Standard page margins */
         }
         html, body {
+            /* EXTREME SIMPLIFICATION FOR PAGE FLOW TEST */
             width: 100%;
-            margin: 0;
-            padding: 0;
+            margin: 0 !important;
+            padding: 0 !important;
             font-family: 'DejaVu Sans', 'Arial', sans-serif;
-            font-size: 10pt; /* Base font size */
-            background: #ffffff;
-            color: #212529; /* Default dark text for body */
-            line-height: 1.5; /* Adjusted for better readability */
+            font-size: 10pt;
+            background-color: #ffffff !important; /* Ensure white background */
+            color: #000000 !important; /* Ensure black text */
+            line-height: 1.4;
+            display: block !important; /* Try to force block rendering */
         }
         .container {
-            width: 100%; /* Container should fill the page area within margins */
-            margin: 0 auto;
-            padding: 0; /* Padding is handled by @page margins or cell padding */
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important; /* Remove all padding for this test */
+            border: 1px solid #ff0000; /* RED BORDER FOR DEBUGGING CONTAINER */
         }
 
-        /* Main layout table */
+        /* Main layout table - simplified further */
         .resume-grid-table {
-            width: 100%;
-            table-layout: fixed; /* Important for predictable column widths */
-            border-collapse: collapse; /* Remove spacing between cells */
-            border-spacing: 0;
+            width: 100% !important;
+            table-layout: fixed !important;
+            border-collapse: collapse !important;
+            border-spacing: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 1px solid #00ff00; /* GREEN BORDER FOR DEBUGGING TABLE */
         }
         .resume-sidebar-cell {
-            width: 30%;
-            vertical-align: top;
-            background: #f0f0f0; /* Light grey background for sidebar */
-            padding: 12pt; /* Approx 1.5rem, using points for PDF consistency */
-            color: #212529; /* Dark text for sidebar */
-            border-radius: 0; /* Border-radius often not well supported on td */
+            width: 30% !important;
+            vertical-align: top !important;
+            background-color: #f0f0f0 !important; /* Light grey background for sidebar */
+            padding: 5pt !important; /* Minimal padding */
+            color: #212529 !important;
+            border: 1px solid #0000ff; /* BLUE BORDER FOR DEBUGGING SIDEBAR CELL */
         }
         .resume-main-cell {
-            width: 70%;
-            vertical-align: top;
-            padding: 12pt; /* Approx 1.5rem */
-            color: #212529;
+            width: 70% !important;
+            vertical-align: top !important;
+            padding: 5pt !important; /* Minimal padding */
+            color: #212529 !important;
+            border: 1px solid #ffa500; /* ORANGE BORDER FOR DEBUGGING MAIN CELL */
         }
 
-        /* Headings */
-        .resume-sidebar-cell h3 {
-            color: #0056b3; /* Professional blue for sidebar headings */
+        /* Keep other styles for content, but they might be affected by container changes */
+        .resume-sidebar-cell h3, .resume-main-cell h3 {
+            color: #0056b3;
             text-transform: uppercase;
             margin-top: 0;
-            margin-bottom: 10pt;
-            font-size: 11pt; /* Slightly smaller than main content h3 */
+            margin-bottom: 8pt;
+            font-size: 11pt;
             border-bottom: 1px solid #0056b3;
-            padding-bottom: 3pt;
-        }
-        .resume-main-cell h3 {
-            color: #0056b3; /* Professional blue for main headings */
-            text-transform: uppercase;
-            margin-top: 0;
-            margin-bottom: 10pt;
-            font-size: 12pt;
-            border-bottom: 1.5px solid #0056b3;
-            padding-bottom: 4pt;
-            /* display: inline-block; Removed as it can cause issues with table cells */
+            padding-bottom: 2pt;
         }
          .resume-main-cell section > h3:first-child,
          .resume-sidebar-cell section > h3:first-child {
              margin-top: 0;
         }
+        .resume-sidebar-cell ul { list-style: none; padding: 0; margin: 0 0 8pt 0; }
+        .resume-sidebar-cell li { margin-bottom: 5pt; font-size: 9pt; }
+        .resume-sidebar-cell li .icon-text { font-weight: bold; margin-right: 0.5em; }
+        .resume-sidebar-cell a { color: #0056b3; text-decoration: none; }
 
+        .job, .school { margin-bottom: 10pt; }
+        .job h4, .school h4 { margin-top:0; margin-bottom: 1pt; color: #212529; font-size: 10pt; font-weight: bold; }
+        .job .job-location, .school .degree-info { font-style: italic; color: #495057; margin-bottom: 1pt; font-size: 9pt; }
+        .job time, .school time { display: block; font-size: 8pt; color: #6c757d; margin-bottom: 3pt; }
 
-        /* Sidebar specific content */
-        .resume-sidebar-cell ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 10pt 0;
-        }
-        .resume-sidebar-cell li {
-            margin-bottom: 6pt;
-            font-size: 9pt;
-        }
-        .resume-sidebar-cell li .icon-text {
-            font-weight: bold;
-            margin-right: 0.5em;
-        }
-        .resume-sidebar-cell a {
-            color: #0056b3; /* Link color in sidebar */
-            text-decoration: none;
-        }
-        .resume-sidebar-cell a:hover { /* Not applicable in PDF but for consistency */
-            text-decoration: underline;
-        }
+        .main-resume-content ul { list-style: none; padding-left: 0; margin-top: 3pt; }
+        .main-resume-content ul li { position: relative; padding-left: 1.2em; margin-bottom: 3pt; font-size: 9pt; line-height: 1.3; }
+        .main-resume-content ul li::before { content: '▹'; position: absolute; left: 0; top: 0.05em; color: #0056b3; font-size: 1em; }
+        .main-resume-content a { color: #0056b3; text-decoration: none; }
 
-        /* Main content specific */
-        .job, .school { /* Article wrapper for jobs and education */
-            margin-bottom: 12pt;
-        }
-        .job h4, .school h4 { /* Job titles, Institution names */
-            margin-top:0;
-            margin-bottom: 2pt;
-            color: #212529;
-            font-size: 11pt;
-            font-weight: bold;
-        }
-        .job .job-location, .school .degree-info {
-             font-style: italic;
-             color: #495057; /* Slightly lighter muted dark color */
-             margin-bottom: 2pt;
-             font-size: 9.5pt;
-        }
-        .job time, .school time {
-            display: block;
-            font-size: 8.5pt;
-            color: #6c757d;
-            margin-bottom: 4pt;
+        .skills-grid-container { margin-bottom: 8pt; }
+        .skills-grid-table { width: 100%; }
+        .skills-grid-table td { width: 50%; vertical-align: top; padding-right: 8pt; }
+        .skills-grid-table td:last-child { padding-right: 0; }
+        .skills-grid-table ul { list-style: disc; padding-left: 1.2em; margin-top: 0; margin-bottom: 6pt; }
+        .skills-grid-table ul li { padding-left: 0; margin-bottom: 2pt; font-size: 9pt; }
+        .skills-grid-table ul li::before { content: none; }
+
+        /* NO UNNECESSARY PAGE BREAKS */
+        html, body, div, table, tr, td, section, article, h3, h4, p, ul, li {
+            page-break-inside: auto !important;
+            page-break-before: auto !important;
+            page-break-after: auto !important;
         }
 
-        /* Lists in main content (Experience details, Projects) */
-        .main-resume-content ul {
-            list-style: none; /* Will use ::before for custom bullets */
-            padding-left: 0;
-            margin-top: 4pt;
-        }
-        .main-resume-content ul li {
-            position: relative; /* For ::before positioning */
-            padding-left: 1.2em; /* Space for the custom bullet */
-            margin-bottom: 4pt;
-            font-size: 9.5pt;
-            line-height: 1.4; /* Slightly less than body for tighter lists */
-        }
-        .main-resume-content ul li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            top: 0.05em; /* Adjust vertical alignment of bullet */
-            color: #0056b3; /* Accent color for bullets */
-            font-size: 1.1em; /* Make bullet slightly larger */
-        }
-        .main-resume-content a {
-            color: #0056b3;
-            text-decoration: none;
-        }
-
-        /* Skills Grid - using a table for layout */
-        .skills-grid-container {
-            margin-bottom: 10pt;
-        }
-        .skills-grid-table {
-            width: 100%;
-        }
-        .skills-grid-table td {
-            width: 50%;
-            vertical-align: top;
-            padding-right: 10pt; /* Space between skill columns */
-        }
-        .skills-grid-table td:last-child {
-            padding-right: 0;
-        }
-        .skills-grid-table ul {
-            list-style: disc; /* Standard bullets for skills */
-            padding-left: 1.2em; /* Indent disc bullets */
-            margin-top: 0;
-            margin-bottom: 8pt;
-        }
-         .skills-grid-table ul li {
-            padding-left: 0;
-            margin-bottom: 3pt;
-            font-size: 9.5pt;
-        }
-        .skills-grid-table ul li::before {
-            content: none; /* Remove custom arrow bullet */
-        }
     </style>
 </head>
 <body>
-    <main class="container">
+    <main class="container"> <!-- Content starts here -->
         <table class="resume-grid-table">
             <tr>
                 <td class="resume-sidebar-cell">
@@ -261,7 +185,6 @@ function get_resume_html($resumeData) {
                             $category_count = 0;
                             $total_categories = count($resumeData['skillsAndInterests']['categories']);
                             foreach ($resumeData['skillsAndInterests']['categories'] as $category):
-                                // Start a new row every 2 categories for a 2-column layout
                                 if ($category_count % 2 == 0 && $category_count > 0) { echo '</tr><tr>'; }
                             ?>
                                 <td>
@@ -274,7 +197,6 @@ function get_resume_html($resumeData) {
                             <?php
                                 $category_count++;
                             endforeach;
-                            // If there's an odd number of categories, add an empty cell to complete the row
                             if ($total_categories > 0 && $category_count % 2 != 0) { echo '<td></td>'; }
                             ?>
                            </tr></table>
@@ -305,16 +227,15 @@ $html = get_resume_html($resumeData);
 $options = new Options();
 $options->set('isRemoteEnabled', true);
 $options->set('isHtml5ParserEnabled', true);
-// $options->setLogOutputFile(__DIR__ . '/dompdf_log.html');
+// $options->setLogOutputFile(__DIR__ . '/dompdf_log.html'); // For deep debugging
+// $options->set('debugLayout', true); // Visual debugging - careful, can be messy
 
 
 $dompdf = new Dompdf($options);
 $dompdf->loadHtml($html);
 
-// (Optional) Setup the paper size and orientation
 $dompdf->setPaper('A4', 'portrait');
 
-// Render the HTML as PDF
 try {
     $dompdf->render();
 
@@ -322,7 +243,7 @@ try {
         ob_end_clean();
     }
 
-    $dompdf->stream("resume_styled_adjusted.pdf", ["Attachment" => true]);
+    $dompdf->stream("resume_page_flow_test.pdf", ["Attachment" => true]);
     exit;
 
 } catch (Exception $e) {
