@@ -102,52 +102,19 @@ nav a.active {
 
 /* Hero */
 .hero {
-    background: var(--bg-panel); /* Optional: Add a subtle background to the hero */
-    padding: 4rem 2rem; /* Responsive padding */
-    margin-bottom: 3rem; /* Space below hero */
-    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    padding: 4rem 0;
 }
 
-.hero-content {
-    max-width: 700px; /* Limit width for readability */
-    margin: 0 auto; /* Center content */
-}
-
-.hero-title {
-    font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
+.hero h2 {
+    font-size: 2rem;
     margin-bottom: 1rem;
-    color: var(--text-primary);
 }
 
-.hero-subtitle {
-    font-size: clamp(1rem, 3vw, 1.25rem); /* Responsive font size */
+.hero p {
+    font-size: 1.125rem;
     color: var(--text-muted);
-    line-height: 1.7;
 }
-
-
-/* Section Titles */
-.section-title {
-    text-align: center;
-    font-size: clamp(1.75rem, 4vw, 2.5rem); /* Responsive font size */
-    color: var(--text-primary);
-    margin-bottom: 2rem; /* Space below title */
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--accent);
-    display: inline-block; /* To make border only as wide as text */
-}
-
-/* Center section titles if they are direct children of sections */
-section > .section-title {
-    display: block; /* Allow text-align center to work */
-    border-bottom: none; /* Remove border for centered titles or style differently */
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 1rem; /* Adjust spacing */
-}
-
 
 /* Grid helpers */
 .grid {
@@ -156,152 +123,139 @@ section > .section-title {
 }
 
 .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger minmax */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 /* Cards */
 .card {
     background: var(--bg-panel);
-    border-radius: 12px; /* Slightly more rounded */
+    padding: 1rem;
+    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Standard shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* For better internal alignment */
-    flex-direction: column; /* Stack image and text vertically */
-    overflow: hidden; /* Ensures border-radius clips image */
-}
-
-.card-img {
-    width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover;
-    /* border-radius: 8px 8px 0 0; Removed as overflow:hidden on .card handles it */
-}
-
-.card-title {
-    padding: 1rem; /* Padding around the title */
-    font-size: 1.1rem;
-    color: var(--text-primary);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+    transition: transform .2s, box-shadow .2s;
     text-align: center;
-    margin-top: auto; /* Pushes title to bottom if card heights vary due to text */
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin-top: .75rem;
+    font-size: 1rem;
+    color: var(--text-primary);
 }
 
 .card:hover {
-    transform: translateY(-6px) scale(1.02); /* More noticeable hover */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
 }
 
 /* Popup overlay */
 .popup {
-    display: none; /* Initially hidden */
+    display: none;
     position: fixed;
-    inset: 0; /* Replaces top, left, width, height */
-    background: rgba(0, 0, 0, 0.88); /* Slightly darker overlay */
-    /* display: flex; Will be set by JS when opened */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    padding: 1rem; /* Padding for smaller screens */
 }
 
 .popup-content {
     background: var(--bg-panel);
     color: var(--text-primary);
-    padding: 2rem; /* Increased padding */
-    border-radius: 12px; /* Consistent with cards */
-    width: 90vw; /* Relative width */
-    max-width: 700px; /* Max width */
-    max-height: 90vh; /* Relative height */
-    overflow-y: auto; /* Scroll for content overflow */
+    padding: 1rem;
+    border-radius: 8px;
+    width: 80vw;
+    max-width: 750px;
+    max-height: 120vh;
+    overflow: auto;
     position: relative;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
 
 .popup-nav {
-    position: fixed; /* Fixed position relative to viewport */
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(40, 58, 80, 0.7); /* Darker, less transparent */
+    background: rgba(255, 255, 255, 0.1);
     border: none;
     border-radius: 50%;
-    width: 3.5rem; /* Slightly larger */
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem; /* Adjusted icon size */
+    font-size: 2rem;
     color: var(--text-primary);
     cursor: pointer;
-    transition: background 0.25s ease, transform 0.15s ease;
-    z-index: 1001; /* Above popup content if it overflows */
+
+    transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .popup-nav:hover {
-    background: rgba(50, 72, 99, 0.9);
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-50%) scale(1.1);
 }
 
 .popup-nav:active {
-    transform: translateY(-50%) scale(0.95);
+    transform: translateY(-50%) scale(0.9);
 }
 
 #popup-prev {
-    left: 1rem; /* Consistent spacing from edge */
+    left: calc(-1.5rem);
+    /* in case of tiny viewports */
+    left: calc(50% - min(40vw, 375px) - 4rem);
+    /* center (50%) minus half-width minus half-button */
 }
 
 #popup-next {
-    right: 1rem; /* Consistent spacing from edge */
+    right: calc(-1.5rem);
+    right: calc(50% - min(40vw, 375px) - 4rem);
 }
-
-/* Media query for positioning nav buttons outside content on larger screens */
-@media (min-width: 800px) { /* Adjust breakpoint as needed */
-    #popup-prev {
-        left: calc(50% - 350px - 4rem); /* Half of max-width (700px/2) - button_width */
-    }
-    #popup-next {
-        right: calc(50% - 350px - 4rem);
-    }
-}
-
 
 .popup-img {
-    width: 100%; /* Responsive image */
-    max-height: 60vh; /* Limit image height */
-    object-fit: contain; /* Show full image, might leave space */
+    max-width: 90%;
     display: block;
-    margin: 0 auto 1rem auto; /* Center and space below */
+    margin: 0 auto;
     border-radius: 8px;
 }
 
 .popup-text {
     margin-top: 1rem;
-    color: var(--text-muted); /* Softer text color for description */
-    line-height: 1.7;
-}
-
-.popup-text h3 {
-    color: var(--text-primary); /* Ensure heading in description is primary color */
-    margin-bottom: 0.75rem;
+    color: var(--text-primary);
 }
 
 .popup-content .close {
-    width: 2rem; /* Larger clickable area */
-    height: 2rem;
-    line-height: 2rem;
+    /* lock in its size so scaling can’t push anything */
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
     text-align: center;
-    font-size: 1.2rem; /* Larger icon */
+
+    /* ensure rotations happen around the very center */
     transform-origin: center center;
+
+    /* you already have this: */
+    display: inline-block;
     position: absolute;
-    top: 1rem; /* Adjusted position */
-    right: 1rem; /* Adjusted position */
-    color: var(--text-muted); /* Muted color, accent on hover */
+    top: 0.5rem;
+    /* you can tweak this vertical offset */
+    right: 0.5rem;
+    /* and this one too */
     cursor: pointer;
-    transition: transform 0.25s ease, color 0.2s ease;
+    transition: transform 0.25s ease;
 }
 
 .popup-content .close:hover {
     transform: rotate(90deg) scale(1.2);
-    color: var(--accent); /* Accent color on hover */
 }
 
 .popup-content .close:active {
