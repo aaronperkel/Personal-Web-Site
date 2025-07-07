@@ -22,7 +22,7 @@ function get_resume_html($resumeData) {
     <title>Aaron Perkel - Resume</title>
     <style>
         @page {
-            margin: 0.7in; /* Slightly reduced margin */
+            margin: 0.7in;
         }
         html {
             width: 100%;
@@ -32,21 +32,20 @@ function get_resume_html($resumeData) {
             font-size: 10pt;
             background-color: #ffffff;
             color: #212529;
-            line-height: 1.4; /* Reduced from 1.5 for compactness */
+            line-height: 1.4;
         }
         body {
             width: 100%;
             margin: 0;
             padding: 0;
-            border: 2px solid red !important; /* DEBUG BORDER FOR BODY */
-            position: relative; /* Ensure positioning context */
+            /* REMOVED: border: 2px solid red !important; */
+            position: relative;
         }
         .container {
             width: 100%;
             margin: 0 auto;
             padding: 0;
-            /* border: 1px solid green !important; DEBUG BORDER FOR CONTAINER */
-            position: relative; /* Ensure positioning context */
+            position: relative;
         }
 
         .resume-grid-table {
@@ -56,36 +55,36 @@ function get_resume_html($resumeData) {
             border-spacing: 0;
             margin: 0;
             padding: 0;
-            border: 2px solid blue !important; /* DEBUG BORDER FOR MAIN TABLE */
+            /* REMOVED: border: 2px solid blue !important; */
         }
         .resume-sidebar-cell {
             width: 30%;
             vertical-align: top;
             background-color: #f0f0f0;
-            padding: 10pt; /* Reduced padding */
+            padding: 10pt;
             color: #212529;
         }
         .resume-main-cell {
             width: 70%;
             vertical-align: top;
-            padding: 10pt; /* Reduced padding */
+            padding: 10pt;
             color: #212529;
         }
 
         /* Headings */
-        h3 { /* General h3 for less specificity issues initially */
+        h3 {
             color: #0056b3;
             text-transform: uppercase;
-            margin-top: 0; /* Applies to all h3, fine for first elements */
-            margin-bottom: 8pt; /* Reduced */
+            margin-top: 0;
+            margin-bottom: 8pt;
             font-size: 11pt;
             border-bottom: 1px solid #0056b3;
             padding-bottom: 2pt;
         }
-         .resume-main-cell h3 { /* Specific for main content if different */
+         .resume-main-cell h3 {
             font-size: 12pt;
             border-bottom-width: 1.5px;
-            padding-bottom: 3pt; /* Reduced */
+            padding-bottom: 3pt;
          }
 
         .resume-sidebar-cell ul { list-style: none; padding: 0; margin: 0 0 8pt 0; }
@@ -224,13 +223,8 @@ $html = get_resume_html($resumeData);
 $options = new Options();
 $options->set('isRemoteEnabled', true);
 $options->set('isHtml5ParserEnabled', true);
-// Try enabling Dompdf's own layout debugging if problems persist
-// $options->setLogOutputFile(__DIR__ . '/dompdf_render_log.htm'); // Ensure this path is writable
+// $options->setLogOutputFile(__DIR__ . '/dompdf_render_log.htm');
 // $options->set('debugLayout', true);
-// $options->set('debugLayoutLines', true);
-// $options->set('debugLayoutBlocks', true);
-// $options->set('debugLayoutInline', true);
-// $options->set('debugLayoutPaddingBox', true);
 
 
 $dompdf = new Dompdf($options);
@@ -245,7 +239,8 @@ try {
         ob_end_clean();
     }
 
-    $dompdf->stream("resume_page_flow_test_v2.pdf", ["Attachment" => true]);
+    // Changed PDF name for this version
+    $dompdf->stream("resume_final_layout.pdf", ["Attachment" => true]);
     exit;
 
 } catch (Exception $e) {
