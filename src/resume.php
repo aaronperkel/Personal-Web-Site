@@ -7,8 +7,7 @@
             <section>
                 <h3>Contact</h3>
                 <ul>
-                    <li><i class="fas fa-envelope"></i> <a
-                            style="font-size: 92%" 
+                    <li><i class="fas fa-envelope"></i> <a style="font-size: 92%"
                             href="mailto:&#109;&#101;&#64;&#97;&#97;&#114;&#111;&#110;&#112;&#101;&#114;&#107;&#101;&#108;.com">me[at]aaronperkel[dot]com</a>
                     </li>
                     <li><i class="fas fa-phone"></i> <a href="tel:4782628935">(478) 262‑8935</a></li>
@@ -26,9 +25,9 @@
                     <li>Golden Key Honor Society <em>Oct 2023</em></li>
                 </ul>
 
-                <ul>
+                <!-- <ul>
                     <li>Excellence in Technology <em>May 2021</em></li>
-                </ul>
+                </ul> -->
             </section>
         </aside>
 
@@ -49,6 +48,17 @@
             </article>
 
             <article class="job">
+                <h4>ETS Student Technician - Level II</h4>
+                <h5 class="job-location">University of Vermont – Burlington, VT</h5>
+                <time>Nov 2023 – May 2025 • 1 yr 7 mos</time>
+                <ul>
+                    <li>Primary IT support contact for UVM staff & students</li>
+                    <li>Respond to tickets via phone & email; escalated to the appropriate group</li>
+                    <li>Maintained internal documentation and assisted lower level techs</li>
+                </ul>
+            </article>
+
+            <!-- <article class="job">
                 <h4>Computer Science Teaching Assistant</h4>
                 <h5 class="job-location">University of Vermont – Burlington, VT</h5>
                 <time>Jan 2024 – May 2025 • 1 yr 5 mos</time>
@@ -57,27 +67,16 @@
                     <li>Co‑develop lecture materials and lab exercises for CS2100 & CS2300</li>
                     <li>Built a Java‑based autograder leveraging JUnit to streamline grading</li>
                 </ul>
-            </article>
-
-            <article class="job">
-                <h4>ETS Student Technician - Level II</h4>
-                <h5 class="job-location">University of Vermont – Burlington, VT</h5>
-                <time>Nov 2023 – May 2025 • 1 yr 7 mos</time>
-                <ul>
-                    <li>Primary IT support contact for UVM staff & students</li>
-                    <li>Respond to tickets via phone & email, resolving 95% within SLA</li>
-                    <li>Maintained internal documentation and automated onboarding workflows</li>
-                </ul>
-            </article>
+            </article> -->
 
             <h3>Education</h3>
-            <article class="school">
+            <!-- <article class="school">
                 <strong>Middle Georgia State University</strong> — M.S. Management, Aviation Concentration<br>
                 <time>Admitted</time>
-            </article>
+            </article> -->
             <article class="school">
                 <strong>University of Vermont</strong> — B.S. Computer Science, Math Minor<br>
-                <time>Aug 2022 – May 2025</time>
+                <time>Aug 2022 – May 2025</time>
             </article>
 
             <h3>Skills & Interests</h3>
