@@ -22,15 +22,15 @@ function get_resume_html($resumeData) {
     <title>Aaron Perkel - Resume</title>
     <style>
         * {
-            box-sizing: border-box; /* Apply border-box to all elements */
+            box-sizing: border-box;
         }
         @page {
-            margin: 0.7in; /* This is the main "outer" padding from paper edge */
+            margin: 0.7in;
         }
         html {
             width: 100%;
             margin: 0;
-            padding: 0; /* Remove padding from html element */
+            padding: 0;
             font-family: 'DejaVu Sans', 'Arial', sans-serif;
             font-size: 10pt;
             background-color: #ffffff;
@@ -40,14 +40,14 @@ function get_resume_html($resumeData) {
         body {
             width: 100%;
             margin: 0;
-            padding: 2%; /* This padding will now be inside the 100% width due to box-sizing */
+            padding: 0; /* Padding moved to .container */
             position: relative;
-            background-color: #ffffff; /* Ensure body background is white if html isn't enough */
+            background-color: #ffffff;
         }
-        .container { /* This class is on <main>, can be used if further nesting is needed */
+        main.container { /* Targeting the <main> element directly */
             width: 100%;
             margin: 0 auto;
-            padding: 0; /* Container itself doesn't need padding if body has it */
+            padding: 15pt; /* This will be the main content inset */
             position: relative;
         }
 
@@ -67,14 +67,14 @@ function get_resume_html($resumeData) {
         .resume-top-header .contact-line {
             font-size: 9pt;
             color: #495057;
-            word-wrap: break-word; /* Allow long lines to wrap */
+            word-wrap: break-word;
         }
         .resume-top-header .contact-line a {
             color: #495057;
             text-decoration: none;
         }
         .resume-top-header .contact-line .contact-separator {
-            margin: 0 0.4em; /* Slightly reduced separator margin */
+            margin: 0 0.4em;
         }
 
         /* Main two-column layout table */
@@ -83,7 +83,7 @@ function get_resume_html($resumeData) {
             table-layout: fixed;
             border-collapse: collapse;
             border-spacing: 0;
-            margin: 0; /* Ensure no default table margins */
+            margin: 0;
             padding: 0;
         }
         .resume-sidebar-cell {
@@ -104,7 +104,7 @@ function get_resume_html($resumeData) {
         h3 {
             color: #0056b3;
             text-transform: uppercase;
-            margin-top: 0; /* Handled by section or first-child logic if needed */
+            margin-top: 0;
             margin-bottom: 8pt;
             font-size: 11pt;
             border-bottom: 1px solid #0056b3;
@@ -115,9 +115,8 @@ function get_resume_html($resumeData) {
             border-bottom-width: 1.5px;
             padding-bottom: 3pt;
          }
-         /* Remove top margin for first h3 in a cell if it's the first child of its parent section */
-         .resume-sidebar-cell section:first-child > h3:first-child,
-         .resume-main-cell section:first-child > h3:first-child {
+         .resume-sidebar-cell section:first-child > h3, /* Simpler selector for first h3 */
+         .resume-main-cell section:first-child > h3 {
             margin-top: 0;
          }
 
@@ -146,7 +145,7 @@ function get_resume_html($resumeData) {
         .skills-grid-container { margin-bottom: 8pt; }
         .skills-grid-table td { width: 50%; vertical-align: top; padding-right: 8pt; }
         .skills-grid-table td:last-child { padding-right: 0; }
-        .skills-grid-table ul { margin-bottom: 6pt; } /* Specific margin for skill lists */
+        .skills-grid-table ul { margin-bottom: 6pt; }
     </style>
 </head>
 <body>
@@ -155,24 +154,24 @@ function get_resume_html($resumeData) {
             <h1>Aaron Perkel</h1>
             <div class="contact-line">
                 <?php
-                $header_contacts = [];
-                // Simplified extraction for key items
+                $header_contacts_map = [];
+                // Standardize keys for easier lookup
                 foreach ($resumeData['contactInfo'] as $item) {
-                    if (strpos($item['icon'], 'fa-envelope') !== false) $header_contacts['email'] = $item['text'];
-                    else if (strpos($item['icon'], 'fa-phone') !== false) $header_contacts['phone'] = $item['text'];
-                    else if (strpos($item['icon'], 'fa-globe') !== false && strpos($item['text'], 'aaronperkel.com') !== false) $header_contacts['website'] = $item['text'];
-                    else if (strpos($item['icon'], 'fa-linkedin') !== false) $header_contacts['linkedin'] = $item['text'];
-                    else if (strpos($item['icon'], 'fa-github') !== false) $header_contacts['github'] = $item['text'];
+                    if (strpos($item['icon'], 'fa-envelope') !== false) $header_contacts_map['email'] = $item['text'];
+                    else if (strpos($item['icon'], 'fa-phone') !== false) $header_contacts_map['phone'] = $item['text'];
+                    else if (strpos($item['icon'], 'fa-globe') !== false && strpos(strtolower($item['text']), 'aaronperkel.com') !== false) $header_contacts_map['website'] = $item['text'];
+                    else if (strpos($item['icon'], 'fa-linkedin') !== false) $header_contacts_map['linkedin'] = $item['text'];
+                    else if (strpos($item['icon'], 'fa-github') !== false) $header_contacts_map['github'] = $item['text'];
                 }
 
-                $display_contacts = [];
-                if (!empty($header_contacts['email'])) $display_contacts[] = $header_contacts['email'];
-                if (!empty($header_contacts['phone'])) $display_contacts[] = $header_contacts['phone'];
-                if (!empty($header_contacts['website'])) $display_contacts[] = $header_contacts['website'];
-                if (!empty($header_contacts['linkedin'])) $display_contacts[] = $header_contacts['linkedin'];
-                if (!empty($header_contacts['github'])) $display_contacts[] = $header_contacts['github'];
+                $display_items_ordered = [];
+                if (!empty($header_contacts_map['email'])) $display_items_ordered[] = $header_contacts_map['email'];
+                if (!empty($header_contacts_map['phone'])) $display_items_ordered[] = $header_contacts_map['phone'];
+                if (!empty($header_contacts_map['website'])) $display_items_ordered[] = $header_contacts_map['website'];
+                if (!empty($header_contacts_map['linkedin'])) $display_items_ordered[] = $header_contacts_map['linkedin'];
+                if (!empty($header_contacts_map['github'])) $display_items_ordered[] = $header_contacts_map['github'];
 
-                echo implode('<span class="contact-separator">|</span>', $display_contacts);
+                echo implode('<span class="contact-separator">|</span>', $display_items_ordered);
                 ?>
             </div>
         </div>
@@ -303,7 +302,7 @@ try {
         ob_end_clean();
     }
 
-    $dompdf->stream("resume_with_padding_fix.pdf", ["Attachment" => true]);
+    $dompdf->stream("resume_padding_corrected.pdf", ["Attachment" => true]);
     exit;
 
 } catch (Exception $e) {
