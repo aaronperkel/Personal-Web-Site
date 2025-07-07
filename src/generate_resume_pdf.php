@@ -47,6 +47,35 @@ function get_resume_html($resumeData) {
             position: relative;
         }
 
+        /* New Resume Header Styles */
+        .resume-top-header {
+            text-align: center;
+            margin-bottom: 15pt;
+            padding-bottom: 10pt;
+            border-bottom: 1.5px solid #0056b3; /* Accent color border */
+        }
+        .resume-top-header h1 {
+            font-size: 22pt;
+            color: #0056b3; /* Accent color */
+            margin: 0 0 4pt 0;
+            font-weight: bold; /* Make name bold */
+        }
+        .resume-top-header .contact-line {
+            font-size: 9pt;
+            color: #495057; /* Muted text color */
+        }
+        .resume-top-header .contact-line a {
+            color: #495057;
+            text-decoration: none;
+        }
+        .resume-top-header .contact-line a:hover {
+            text-decoration: underline;
+        }
+        .resume-top-header .contact-separator {
+            margin: 0 0.5em;
+        }
+
+
         .resume-grid-table {
             width: 100%;
             table-layout: fixed;
@@ -101,35 +130,85 @@ function get_resume_html($resumeData) {
         .main-resume-content ul li::before { content: '▹'; position: absolute; left: 0; top: 0.05em; color: #0056b3; font-size: 1em; }
         .main-resume-content a { color: #0056b3; text-decoration: none; }
 
-        /* Skills Grid - now uses the same triangle bullet style */
+        /* Skills Grid - uses triangle bullet style */
         .skills-grid-container { margin-bottom: 8pt; }
         .skills-grid-table { width: 100%; }
         .skills-grid-table td { width: 50%; vertical-align: top; padding-right: 8pt; }
         .skills-grid-table td:last-child { padding-right: 0; }
         .skills-grid-table ul {
-            list-style: none; /* Changed from disc */
-            padding-left: 0;   /* Changed from 1.2em */
+            list-style: none;
+            padding-left: 0;
             margin-top: 0;
             margin-bottom: 6pt;
         }
         .skills-grid-table ul li {
-            position: relative; /* Added */
-            padding-left: 1.2em;  /* Added, was 0 */
+            position: relative;
+            padding-left: 1.2em;
             margin-bottom: 2pt;
             font-size: 9pt;
         }
         .skills-grid-table ul li::before {
-            content: '▹'; /* Changed from none */
-            position: absolute; /* Added */
-            left: 0;            /* Added */
-            top: 0.05em;        /* Added */
-            color: #0056b3;     /* Added */
-            font-size: 1em;     /* Added */
+            content: '▹';
+            position: absolute;
+            left: 0;
+            top: 0.05em;
+            color: #0056b3;
+            font-size: 1em;
         }
     </style>
 </head>
 <body>
     <main class="container">
+        <div class="resume-top-header">
+            <h1>Aaron Perkel</h1>
+            <div class="contact-line">
+                <?php
+                $contact_items = [];
+                foreach ($resumeData['contactInfo'] as $item) {
+                    // Extract text and href for cleaner presentation if they are links
+                    if (preg_match('/<a href="([^"]+)">([^<]+)<\/a>/', $item['text'], $matches)) {
+                        $contact_items[] = '<a href="' . htmlspecialchars($matches[1]) . '">' . htmlspecialchars($matches[2]) . '</a>';
+                    } elseif (preg_match('/<a href="mailto:([^"]+)">([^<]+)<\/a>/', $item['text'], $matches)) {
+                        $contact_items[] = '<a href="mailto:' . htmlspecialchars($matches[1]) . '">' . htmlspecialchars($matches[2]) . '</a>';
+                    }else {
+                         // For items without links, just use the text, but try to find relevant ones for header
+                        if (strpos($item['icon'], 'fa-envelope') !== false) $contact_items[] = strip_tags($item['text']); // Prefer link version if available
+                        else if (strpos($item['icon'], 'fa-phone') !== false) $contact_items[] = strip_tags($item['text']);
+                        else if (strpos($item['icon'], 'fa-globe') !== false) $contact_items[] = strip_tags($item['text']);
+                    }
+                }
+                // Manually order and select specific items for the header line for brevity
+                $header_contact_order = ['email', 'phone', 'website', 'linkedin', 'github'];
+                $final_header_contacts = [];
+
+                // Prioritize extracting from $resumeData based on known keys if possible
+                $email = $resumeData['contactInfo'][0]['text'] ?? null; // Assuming first is email
+                $phone = $resumeData['contactInfo'][1]['text'] ?? null; // Assuming second is phone
+
+                // Find website, linkedin, github by text content if specific keys aren't in $resumeData
+                $website_text = 'aaronperkel.com'; // text to identify website
+                $linkedin_text = '/in/aaronperkel'; // text to identify linkedin
+                $github_text = '/aaronperkel'; // text to identify github
+
+                $website_link = ''; $linkedin_link = ''; $github_link = '';
+
+                foreach($resumeData['contactInfo'] as $c_item) {
+                    if (strpos($c_item['text'], $website_text) !== false) $website_link = $c_item['text'];
+                    if (strpos($c_item['text'], $linkedin_text) !== false) $linkedin_link = $c_item['text'];
+                    if (strpos($c_item['text'], $github_text) !== false && strpos($c_item['icon'], 'fa-github') !== false) $github_link = $c_item['text'];
+                }
+
+                if ($email) $final_header_contacts[] = $email;
+                if ($phone) $final_header_contacts[] = $phone;
+                if ($website_link) $final_header_contacts[] = $website_link;
+                if ($linkedin_link) $final_header_contacts[] = $linkedin_link;
+                if ($github_link) $final_header_contacts[] = $github_link;
+
+                echo implode('<span class="contact-separator">|</span>', $final_header_contacts);
+                ?>
+            </div>
+        </div>
+
         <table class="resume-grid-table">
             <tr>
                 <td class="resume-sidebar-cell">
@@ -256,7 +335,7 @@ try {
         ob_end_clean();
     }
 
-    $dompdf->stream("resume_final_layout.pdf", ["Attachment" => true]);
+    $dompdf->stream("resume_with_header.pdf", ["Attachment" => true]);
     exit;
 
 } catch (Exception $e) {
