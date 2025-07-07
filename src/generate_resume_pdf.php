@@ -5,7 +5,7 @@ error_reporting(E_ALL & ~E_DEPRECATED);
 
 // Include Composer's autoloader
 require_once __DIR__ . '/../vendor/autoload.php';
-// Include the resume content
+// Include the resume content - $resumeData will be available but not used by get_resume_html in this test
 require_once __DIR__ . '/data/resume_content.php';
 
 use Dompdf\Dompdf;
@@ -13,41 +13,44 @@ use Dompdf\Options;
 
 // Function to generate the HTML for the resume
 function get_resume_html($resumeData) {
-    ob_start();
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Resume - <?php echo htmlspecialchars($resumeData['pageTitle']); ?></title>
-    <style>
-        /* ALL CSS REMOVED FOR THIS TEST */
-    </style>
-</head>
-<body>
-    <div class="resume-container">
-        <table class="resume-grid">
-            <tr>
-                <td class="sidebar-cell">
-                    <section class="contact-info">
-                        <h3>Contact</h3>
-                        <ul>
-                            <?php foreach ($resumeData['contactInfo'] as $item): ?>
-                                <?php
-                                    $label = '';
-                                    if (strpos($item['icon'], 'fa-envelope') !== false) $label = 'E:';
-                                    else if (strpos($item['icon'], 'fa-phone') !== false) $label = 'P:';
-                                    else if (strpos($item['icon'], 'fa-map-marker-alt') !== false) $label = 'A:';
-                                    else if (strpos($item['icon'], 'fa-globe') !== false) $label = 'W:';
-                                    else if (strpos($item['icon'], 'fa-github') !== false) $label = 'GH:';
-                                    else if (strpos($item['icon'], 'fa-linkedin') !== false) $label = 'LI:';
-                                ?>
-                                <li><?php echo htmlspecialchars($label); ?> <?php echo $item['text']; // HTML is allowed in text ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </section>
+    // --- TEMPORARY: Return very simple hardcoded HTML, ignoring $resumeData ---
+    $simple_html = "<!DOCTYPE html><html><head><title>Simple HTML Test</title><style>body{font-family: sans-serif;} h1{color: blue;}</style></head><body><h1>Test from Function</h1><p>This PDF content came from the get_resume_html function.</p></body></html>";
+    return $simple_html;
+    // --- END TEMPORARY ---
 
-                    <section class="honors-awards">
+    /* // Original ob_start() based content generation - temporarily disabled
+    ob_start();
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Resume - <?php echo htmlspecialchars($resumeData['pageTitle']); ?></title>
+        <style>
+            /* CSS would go here if we were using it */
+        </style>
+    </head>
+    <body>
+        <div class="resume-container">
+            <table class="resume-grid">
+                <tr>
+                    <td class="sidebar-cell">
+                        <section class="contact-info">
+                            <h3>Contact</h3>
+                            <ul>
+                                <?php foreach ($resumeData['contactInfo'] as $item): ?>
+                                    <?php
+                                        $label = '';
+                                        if (strpos($item['icon'], 'fa-envelope') !== false) $label = 'E:';
+                                        else if (strpos($item['icon'], 'fa-phone') !== false) $label = 'P:';
+                                        // ... more labels
+                                    ?>
+                                    <li><?php echo htmlspecialchars($label); ?> <?php echo $item['text']; ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </section>
+
+                        <section class="honors-awards">
                         <h3>Honors &amp; Awards</h3>
                         <?php foreach ($resumeData['honorsAndAwards'] as $honor): ?>
                         <ul>
@@ -58,9 +61,9 @@ function get_resume_html($resumeData) {
                         </ul>
                         <?php endforeach; ?>
                     </section>
-                </td>
-                <td class="main-content-cell">
-                    <section class="main-resume">
+                    </td>
+                    <td class="main-content-cell">
+                       <section class="main-resume">
                         <h3>Experience</h3>
                         <?php foreach ($resumeData['experience'] as $job): ?>
                             <article class="job">
@@ -89,7 +92,7 @@ function get_resume_html($resumeData) {
                             <?php foreach ($resumeData['skillsAndInterests']['categories'] as $category): ?>
                                 <ul>
                                     <?php foreach ($category as $skill): ?>
-                                        <li><?php echo $skill; // HTML is allowed in skill items ?></li>
+                                        <li><?php echo $skill; ?></li>
                                     <?php endforeach; ?>
                                 </ul>
                             <?php endforeach; ?>
@@ -102,18 +105,19 @@ function get_resume_html($resumeData) {
                             <?php endforeach; ?>
                         </ul>
                     </section>
-                </td>
-            </tr>
-        </table>
-    </div>
-</body>
-</html>
-<?php
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    </html>
+    <?php
     return ob_get_clean();
+    */
 }
 
 // Get the HTML content
-$html = get_resume_html($resumeData);
+$html = get_resume_html($resumeData); // $resumeData is passed but not used by the simplified function for now
 
 
 // Configure Dompdf
@@ -124,7 +128,7 @@ $options->set('isHtml5ParserEnabled', true);
 
 
 $dompdf = new Dompdf($options);
-$dompdf->loadHtml($html);
+$dompdf->loadHtml($html); // Should load the simple hardcoded HTML string from get_resume_html
 
 // (Optional) Setup the paper size and orientation
 $dompdf->setPaper('A4', 'portrait');
@@ -137,7 +141,7 @@ try {
         ob_end_clean();
     }
 
-    $dompdf->stream("resume_no_styles.pdf", ["Attachment" => true]);
+    $dompdf->stream("resume_simple_function_test.pdf", ["Attachment" => true]);
     exit;
 
 } catch (Exception $e) {
