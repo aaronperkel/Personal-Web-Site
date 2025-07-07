@@ -38,7 +38,6 @@ function get_resume_html($resumeData) {
             width: 100%;
             margin: 0;
             padding: 0;
-            /* REMOVED: border: 2px solid red !important; */
             position: relative;
         }
         .container {
@@ -55,7 +54,6 @@ function get_resume_html($resumeData) {
             border-spacing: 0;
             margin: 0;
             padding: 0;
-            /* REMOVED: border: 2px solid blue !important; */
         }
         .resume-sidebar-cell {
             width: 30%;
@@ -97,18 +95,37 @@ function get_resume_html($resumeData) {
         .job .job-location, .school .degree-info { font-style: italic; color: #495057; margin-bottom: 1pt; font-size: 9pt; }
         .job time, .school time { display: block; font-size: 8pt; color: #6c757d; margin-bottom: 3pt; }
 
+        /* Default list style for main content (Experience, Projects) */
         .main-resume-content ul { list-style: none; padding-left: 0; margin-top: 3pt; }
         .main-resume-content ul li { position: relative; padding-left: 1.2em; margin-bottom: 3pt; font-size: 9pt; line-height: 1.3; }
         .main-resume-content ul li::before { content: '▹'; position: absolute; left: 0; top: 0.05em; color: #0056b3; font-size: 1em; }
         .main-resume-content a { color: #0056b3; text-decoration: none; }
 
+        /* Skills Grid - now uses the same triangle bullet style */
         .skills-grid-container { margin-bottom: 8pt; }
         .skills-grid-table { width: 100%; }
         .skills-grid-table td { width: 50%; vertical-align: top; padding-right: 8pt; }
         .skills-grid-table td:last-child { padding-right: 0; }
-        .skills-grid-table ul { list-style: disc; padding-left: 1.2em; margin-top: 0; margin-bottom: 6pt; }
-        .skills-grid-table ul li { padding-left: 0; margin-bottom: 2pt; font-size: 9pt; }
-        .skills-grid-table ul li::before { content: none; }
+        .skills-grid-table ul {
+            list-style: none; /* Changed from disc */
+            padding-left: 0;   /* Changed from 1.2em */
+            margin-top: 0;
+            margin-bottom: 6pt;
+        }
+        .skills-grid-table ul li {
+            position: relative; /* Added */
+            padding-left: 1.2em;  /* Added, was 0 */
+            margin-bottom: 2pt;
+            font-size: 9pt;
+        }
+        .skills-grid-table ul li::before {
+            content: '▹'; /* Changed from none */
+            position: absolute; /* Added */
+            left: 0;            /* Added */
+            top: 0.05em;        /* Added */
+            color: #0056b3;     /* Added */
+            font-size: 1em;     /* Added */
+        }
     </style>
 </head>
 <body>
@@ -239,7 +256,6 @@ try {
         ob_end_clean();
     }
 
-    // Changed PDF name for this version
     $dompdf->stream("resume_final_layout.pdf", ["Attachment" => true]);
     exit;
 
