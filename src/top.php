@@ -7,11 +7,16 @@ $pathParts = pathinfo($phpSelf);
 
 <head>
     <meta charset="utf-8">
-    <title>Aaron Perkel – Personal Site</title>
+    <title>Aaron Perkel – CS Grad and Network Technician</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="author" content="Aaron Coleman Perkel">
-    <meta name="description" content="Aaron Perkel | CS & Aviation Enthusiast">
+    <meta name="author" content="Aaron Coleman Perkel">
+    <meta name="description" content="
+        Computer science grad, network technician, and 
+        avgeek blending tech and flight. Check 
+        out my projects, resume, & more.
+    ">
     <link rel="icon" href="public/img/favicon.ico">
+    <link rel="canonical" href="https://aaronperkel.com/" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -40,7 +45,7 @@ $pathParts = pathinfo($phpSelf);
             "https://instagram.com/aaronperkel",
             "https://aperkel.w3.uvm.edu"
         ],
-        "jobTitle": "Computer Science Student",
+        "jobTitle": "Network Technician",
         "worksFor": {
             "@type": "Organization",
             "name": "University of Vermont"
@@ -49,11 +54,6 @@ $pathParts = pathinfo($phpSelf);
             {
             "@type": "CollegeOrUniversity",
             "name": "University of Vermont"
-            },
-            {
-            "@type": "CollegeOrUniversity",
-            "name": "Middle Georgia State University",
-            "description": "Admitted to the Master of Management (Aviation Management) program"
             }
         ],
         "address": {
@@ -67,7 +67,7 @@ $pathParts = pathinfo($phpSelf);
         "birthPlace": "Richmond, VA",
         "birthDate": "2003-11-11",
         "gender": "Male",
-        "image": "https://aperkel.w3.uvm.edu/public/img/headshot.jpg"
+        "image": "https://aperkel.w3.uvm.edu/public/img/headshot.webp"
     }
     </script>
 </head>
