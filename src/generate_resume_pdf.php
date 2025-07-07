@@ -16,15 +16,15 @@ function get_resume_html($resumeData) {
     ob_start();
 ?>
 <!DOCTYPE html>
-<html lang="en" style="width: 100%; margin: 0; padding: 0;">
+<html lang="en" style="width: 100%; margin: 0; padding: 0; background-color: #fff;">
 <head>
     <meta charset="utf-8">
     <title>Aaron Perkel - Resume</title>
     <style>
         @page {
-            margin: 0.75in;
+            margin: 0.7in; /* Slightly reduced margin */
         }
-        html, body {
+        html {
             width: 100%;
             margin: 0;
             padding: 0;
@@ -32,14 +32,21 @@ function get_resume_html($resumeData) {
             font-size: 10pt;
             background-color: #ffffff;
             color: #212529;
-            line-height: 1.5;
-            /* REMOVED: display: block !important; */
+            line-height: 1.4; /* Reduced from 1.5 for compactness */
+        }
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 2px solid red !important; /* DEBUG BORDER FOR BODY */
+            position: relative; /* Ensure positioning context */
         }
         .container {
             width: 100%;
             margin: 0 auto;
             padding: 0;
-            /* REMOVED: border: 1px solid #ff0000; */
+            /* border: 1px solid green !important; DEBUG BORDER FOR CONTAINER */
+            position: relative; /* Ensure positioning context */
         }
 
         .resume-grid-table {
@@ -49,75 +56,60 @@ function get_resume_html($resumeData) {
             border-spacing: 0;
             margin: 0;
             padding: 0;
-            /* REMOVED: border: 1px solid #00ff00; */
+            border: 2px solid blue !important; /* DEBUG BORDER FOR MAIN TABLE */
         }
         .resume-sidebar-cell {
             width: 30%;
             vertical-align: top;
             background-color: #f0f0f0;
-            padding: 12pt;
+            padding: 10pt; /* Reduced padding */
             color: #212529;
-            /* REMOVED: border: 1px solid #0000ff; */
         }
         .resume-main-cell {
             width: 70%;
             vertical-align: top;
-            padding: 12pt;
+            padding: 10pt; /* Reduced padding */
             color: #212529;
-            /* REMOVED: border: 1px solid #ffa500; */
         }
 
         /* Headings */
-        .resume-sidebar-cell h3, .resume-main-cell h3 {
+        h3 { /* General h3 for less specificity issues initially */
             color: #0056b3;
             text-transform: uppercase;
-            margin-top: 0;
-            margin-bottom: 10pt;
+            margin-top: 0; /* Applies to all h3, fine for first elements */
+            margin-bottom: 8pt; /* Reduced */
             font-size: 11pt;
             border-bottom: 1px solid #0056b3;
-            padding-bottom: 3pt;
+            padding-bottom: 2pt;
         }
-         .resume-main-cell h3 {
+         .resume-main-cell h3 { /* Specific for main content if different */
             font-size: 12pt;
             border-bottom-width: 1.5px;
-            padding-bottom: 4pt;
+            padding-bottom: 3pt; /* Reduced */
          }
-         .resume-main-cell section > h3:first-child,
-         .resume-sidebar-cell section > h3:first-child {
-             margin-top: 0;
-        }
 
-        .resume-sidebar-cell ul { list-style: none; padding: 0; margin: 0 0 10pt 0; }
-        .resume-sidebar-cell li { margin-bottom: 6pt; font-size: 9pt; }
+        .resume-sidebar-cell ul { list-style: none; padding: 0; margin: 0 0 8pt 0; }
+        .resume-sidebar-cell li { margin-bottom: 5pt; font-size: 9pt; }
         .resume-sidebar-cell li .icon-text { font-weight: bold; margin-right: 0.5em; }
         .resume-sidebar-cell a { color: #0056b3; text-decoration: none; }
 
-        .job, .school { margin-bottom: 12pt; }
-        .job h4, .school h4 { margin-top:0; margin-bottom: 2pt; color: #212529; font-size: 11pt; font-weight: bold; }
-        .job .job-location, .school .degree-info { font-style: italic; color: #495057; margin-bottom: 2pt; font-size: 9.5pt; }
-        .job time, .school time { display: block; font-size: 8.5pt; color: #6c757d; margin-bottom: 4pt; }
+        .job, .school { margin-bottom: 10pt; }
+        .job h4, .school h4 { margin-top:0; margin-bottom: 1pt; color: #212529; font-size: 10pt; font-weight: bold; }
+        .job .job-location, .school .degree-info { font-style: italic; color: #495057; margin-bottom: 1pt; font-size: 9pt; }
+        .job time, .school time { display: block; font-size: 8pt; color: #6c757d; margin-bottom: 3pt; }
 
-        .main-resume-content ul { list-style: none; padding-left: 0; margin-top: 4pt; }
-        .main-resume-content ul li { position: relative; padding-left: 1.2em; margin-bottom: 4pt; font-size: 9.5pt; line-height: 1.4; }
-        .main-resume-content ul li::before { content: '▹'; position: absolute; left: 0; top: 0.05em; color: #0056b3; font-size: 1.1em; }
+        .main-resume-content ul { list-style: none; padding-left: 0; margin-top: 3pt; }
+        .main-resume-content ul li { position: relative; padding-left: 1.2em; margin-bottom: 3pt; font-size: 9pt; line-height: 1.3; }
+        .main-resume-content ul li::before { content: '▹'; position: absolute; left: 0; top: 0.05em; color: #0056b3; font-size: 1em; }
         .main-resume-content a { color: #0056b3; text-decoration: none; }
 
-        .skills-grid-container { margin-bottom: 10pt; }
+        .skills-grid-container { margin-bottom: 8pt; }
         .skills-grid-table { width: 100%; }
-        .skills-grid-table td { width: 50%; vertical-align: top; padding-right: 10pt; }
+        .skills-grid-table td { width: 50%; vertical-align: top; padding-right: 8pt; }
         .skills-grid-table td:last-child { padding-right: 0; }
-        .skills-grid-table ul { list-style: disc; padding-left: 1.2em; margin-top: 0; margin-bottom: 8pt; }
-        .skills-grid-table ul li { padding-left: 0; margin-bottom: 3pt; font-size: 9.5pt; }
+        .skills-grid-table ul { list-style: disc; padding-left: 1.2em; margin-top: 0; margin-bottom: 6pt; }
+        .skills-grid-table ul li { padding-left: 0; margin-bottom: 2pt; font-size: 9pt; }
         .skills-grid-table ul li::before { content: none; }
-
-        /* REMOVED universal page-break controls:
-        html, body, div, table, tr, td, section, article, h3, h4, p, ul, li {
-            page-break-inside: auto !important;
-            page-break-before: auto !important;
-            page-break-after: auto !important;
-        }
-        */
-
     </style>
 </head>
 <body>
@@ -232,8 +224,13 @@ $html = get_resume_html($resumeData);
 $options = new Options();
 $options->set('isRemoteEnabled', true);
 $options->set('isHtml5ParserEnabled', true);
-// $options->setLogOutputFile(__DIR__ . '/dompdf_log.html');
+// Try enabling Dompdf's own layout debugging if problems persist
+// $options->setLogOutputFile(__DIR__ . '/dompdf_render_log.htm'); // Ensure this path is writable
 // $options->set('debugLayout', true);
+// $options->set('debugLayoutLines', true);
+// $options->set('debugLayoutBlocks', true);
+// $options->set('debugLayoutInline', true);
+// $options->set('debugLayoutPaddingBox', true);
 
 
 $dompdf = new Dompdf($options);
@@ -248,7 +245,7 @@ try {
         ob_end_clean();
     }
 
-    $dompdf->stream("resume_fatal_error_fix_attempt_2.pdf", ["Attachment" => true]);
+    $dompdf->stream("resume_page_flow_test_v2.pdf", ["Attachment" => true]);
     exit;
 
 } catch (Exception $e) {
