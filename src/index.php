@@ -3,7 +3,8 @@
     <!-- move these two buttons out here, not inside .popup-content -->
     <button id="popup-prev" class="popup-nav"><i class="fa-solid fa-caret-left"></i></button>
     <div class="popup-content" onclick="event.stopPropagation()">
-        <span class="close" onclick="closePopup(event)"><i class="fa-solid fa-xmark fa-xl" style="color: rbga(255, 255, 255, 0.1)"></i></span>
+        <span class="close" onclick="closePopup(event)"><i class="fa-solid fa-xmark fa-xl"
+                style="color: rbga(255, 255, 255, 0.1)"></i></span>
         <img id="popup-img" class="popup-img">
         <div id="popup-text" class="popup-text"></div>
     </div>

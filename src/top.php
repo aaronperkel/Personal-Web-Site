@@ -30,7 +30,7 @@ $pathParts = pathinfo($phpSelf);
     <!-- Project Card JS -->
     <?php if ($pathParts['filename'] === 'index') {
         print '<script defer src="js/main.js?<?php echo time(); ?>"></script>';
-    }?>
+    } ?>
 
     <script type="application/ld+json">
     {
