@@ -53,25 +53,23 @@ function get_resume_html($resumeData) {
 
         /* Resume Header Styles */
         .resume-top-header {
-            /* text-align: center; /* Removed: Will center h1 and contact-line individually */
-            margin-bottom: 15pt;
-            padding-bottom: 10pt; /* Space above the border */
-            border-bottom: 1.5px solid #0056b3;
-            width: 100%; /* Explicitly set width */
+            margin-bottom: 15pt; /* Space after the entire header block (including the new line) */
+            /* REMOVED: border-bottom: 1.5px solid #0056b3; */
+            width: 100%;
         }
         .resume-top-header h1 {
             font-size: 22pt;
             color: #0056b3;
             margin: 0 0 4pt 0;
             font-weight: bold;
-            text-align: center; /* Center the h1 text */
-            /* display: inline-block; /* Reverted: h1 should be block to allow text-align:center to work as expected */
+            text-align: center;
         }
         .resume-top-header .contact-line {
             font-size: 9pt;
             color: #495057;
             word-wrap: break-word;
-            text-align: center; /* Center the contact line text */
+            text-align: center;
+            margin-bottom: 10pt; /* Space between contact line and the new hr line */
         }
         .resume-top-header .contact-line a {
             color: #495057;
@@ -80,6 +78,13 @@ function get_resume_html($resumeData) {
         .resume-top-header .contact-line .contact-separator {
             margin: 0 0.4em;
         }
+        .header-line { /* New style for the explicit line */
+            width: 100%;
+            height: 1.5px;
+            background-color: #0056b3;
+            margin-top: 5pt; /* Adjust if needed, after contact line's margin-bottom */
+        }
+
 
         /* Main two-column layout table */
         .resume-grid-table {
@@ -87,7 +92,7 @@ function get_resume_html($resumeData) {
             table-layout: fixed;
             border-collapse: collapse;
             border-spacing: 0;
-            margin: 15pt 0 0 0; /* Add some margin above the table, below the header */
+            /* margin: 15pt 0 0 0; /* Removed, header margin-bottom will handle space */
             padding: 0;
         }
         .resume-sidebar-cell {
@@ -113,9 +118,9 @@ function get_resume_html($resumeData) {
             font-size: 11pt;
             border-bottom: 1px solid #0056b3;
             padding-bottom: 2pt;
-            display: inline-block; /* Key change for border width - for section titles */
+            display: inline-block;
         }
-         .resume-main-cell h3 { /* Specific for main content if different styling needed later */
+         .resume-main-cell h3 {
             font-size: 12pt;
             border-bottom-width: 1.5px;
             padding-bottom: 3pt;
@@ -177,6 +182,7 @@ function get_resume_html($resumeData) {
                 echo implode('<span class="contact-separator">|</span>', $display_items_ordered);
                 ?>
             </div>
+            <div class="header-line"></div> <!-- New explicit div for the line -->
         </div>
 
         <table class="resume-grid-table">
@@ -305,7 +311,7 @@ try {
         ob_end_clean();
     }
 
-    $dompdf->stream("resume_border_and_header_fix.pdf", ["Attachment" => true]);
+    $dompdf->stream("resume_header_line_fix.pdf", ["Attachment" => true]);
     exit;
 
 } catch (Exception $e) {
