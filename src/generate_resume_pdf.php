@@ -53,8 +53,9 @@ function get_resume_html($resumeData) {
 
         /* Resume Header Styles */
         .resume-top-header {
-            margin-bottom: 15pt; /* Space after the entire header block (including the new line) */
             /* REMOVED: border-bottom: 1.5px solid #0056b3; */
+            /* text-align: center; /* Centering will be on children if needed */
+            margin-bottom: 15pt; /* Space after the entire header block (including the new line div) */
             width: 100%;
         }
         .resume-top-header h1 {
@@ -82,7 +83,8 @@ function get_resume_html($resumeData) {
             width: 100%;
             height: 1.5px;
             background-color: #0056b3;
-            margin-top: 5pt; /* Adjust if needed, after contact line's margin-bottom */
+            margin-top: 5pt; /* Space after contact text, before this line */
+             /* margin-bottom is handled by .resume-top-header's margin-bottom */
         }
 
 
@@ -92,7 +94,7 @@ function get_resume_html($resumeData) {
             table-layout: fixed;
             border-collapse: collapse;
             border-spacing: 0;
-            /* margin: 15pt 0 0 0; /* Removed, header margin-bottom will handle space */
+            /* margin: 15pt 0 0 0; /* No longer needed, .resume-top-header provides bottom margin */
             padding: 0;
         }
         .resume-sidebar-cell {
@@ -182,7 +184,7 @@ function get_resume_html($resumeData) {
                 echo implode('<span class="contact-separator">|</span>', $display_items_ordered);
                 ?>
             </div>
-            <div class="header-line"></div> <!-- New explicit div for the line -->
+            <div class="header-line"></div> <!-- The new explicit div for the line -->
         </div>
 
         <table class="resume-grid-table">
@@ -311,7 +313,7 @@ try {
         ob_end_clean();
     }
 
-    $dompdf->stream("resume_header_line_fix.pdf", ["Attachment" => true]);
+    $dompdf->stream("resume_final_header_line.pdf", ["Attachment" => true]);
     exit;
 
 } catch (Exception $e) {
