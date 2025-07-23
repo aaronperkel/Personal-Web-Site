@@ -629,6 +629,28 @@ body.no-scroll {
 
 /* Mobile‑friendly resume layout */
 @media (max-width: 768px) {
+    body {
+        max-width: 100%;
+        margin: 1em;
+        padding: 0;
+    }
+
+    .popup-nav {
+        top: auto;
+        bottom: 1rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
+    }
+
+    #popup-prev {
+        left: 1rem;
+    }
+
+    #popup-next {
+        right: 1rem;
+    }
+
     .resume-grid {
         /* switch to a single column */
         grid-template-columns: 1fr !important;
