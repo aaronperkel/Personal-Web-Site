@@ -655,10 +655,6 @@ body.no-scroll {
         /* switch to a single column */
         grid-template-columns: 1fr !important;
         gap: 1rem;
-    }
-
-    .resume .sidebar {
-        /* give a little breathing room */
-        margin-bottom: 1.5rem;
+        border: none;
     }
 }
