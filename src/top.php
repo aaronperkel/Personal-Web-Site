@@ -8,14 +8,13 @@ $pathParts = pathinfo($phpSelf);
 <head>
     <meta charset="utf-8">
     <title>Aaron Perkel – CS Grad and Network Technician</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="author" content="Aaron Coleman Perkel">
     <meta name="description" content="
         Computer science grad, network technician, and 
         avgeek blending tech and flight. Check 
         out my projects, resume, & more.
     ">
-    <link rel="icon" href="public/img/favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <link rel="canonical" href="https://aaronperkel.com/" />
 
     <!-- Google Fonts -->
@@ -70,6 +69,18 @@ $pathParts = pathinfo($phpSelf);
         "image": "https://aperkel.w3.uvm.edu/public/img/headshot.webp"
     }
     </script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/public/img/favicon.svg" />
+    <link rel="icon" type="image/png" href="/public/img/favicon-96x96.png" sizes="96x96" />
+    <link rel="mask-icon" href="/public/favicon.svg" color="#000000" />
+    <link rel="manifest" href="/public/img/site.webmanifest" />
+    <link rel="shortcut icon" href="/public/img/favicon.ico" />
+    
+    <meta name="theme-color" content="#0F1A29" />
+    <meta name="apple-mobile-web-app-title" content="AP" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 </head>
 
 <body class="<?= $pathParts['filename'] ?>">
