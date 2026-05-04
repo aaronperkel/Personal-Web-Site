@@ -20,9 +20,9 @@ $resumeData = [
             "location" => "University of Vermont – Burlington, VT",
             "time" => "May 2025 – Present",
             "details" => [
-                "Support campus-wide networking infrastructure",
-                "Assist with switch and access point deployments",
-                "Collaborate with other ETS staff on summer infrastructure upgrades."
+                "Support campus-wide networking and telecommunications infrastructure within an enterprise environment",
+                "Execute department-level phone system migrations from Nortel to Cisco",
+                "Install, mount, and patch wireless access points across campus buildings"
             ]
         ],
         [
