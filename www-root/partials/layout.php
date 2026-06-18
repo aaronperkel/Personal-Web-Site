@@ -21,14 +21,14 @@ $pathParts = pathinfo($phpSelf);
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/c428e5511d.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/c428e5511d.js" crossorigin="anonymous"></script>
 
     <!-- Main stylesheet -->
-    <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="public/css/style.css?<?php echo time(); ?>">
 
     <!-- Project Card JS -->
     <?php if ($pathParts['filename'] === 'index') {
-        print '<script defer src="js/main.js?<?php echo time(); ?>"></script>';
+        print '<script defer src="public/js/main.js?<?php echo time(); ?>"></script>';
     } ?>
 
     <script type="application/ld+json">
@@ -85,4 +85,4 @@ $pathParts = pathinfo($phpSelf);
 
 <body class="<?= $pathParts['filename'] ?>">
     <?php include __DIR__ . '/header.php'; ?>
-    <?php include __DIR__ . '/nav.php'; ?>
+	<?php include __DIR__ . '/nav.php'; ?>

@@ -1,6 +1,6 @@
 <?php
-include 'top.php';
-include 'data/about_content.php';
+include 'partials/layout.php';
+include 'data/about.php';
 ?>
 
 <main class="about container">
@@ -25,4 +25,4 @@ include 'data/about_content.php';
     </div>
 </main>
 
-<?php include 'footer.php'; ?>
+<?php include 'partials/footer.php'; ?>

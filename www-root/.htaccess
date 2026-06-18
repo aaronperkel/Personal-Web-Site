@@ -1,4 +1,26 @@
+RewriteEngine On
+
+# Force HTTPS for direct hits (e.g., aperkel.w3.uvm.edu)
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Clean URLs just for these two pages:
+# /about  -> /about.php
+# /resume -> /resume.php
+RewriteRule ^(about|resume)/?$ $1.php [L]
+
+# Don't touch the riley21 subsite
+RewriteRule ^riley21/ - [L]
+
+# If it's an actual file/dir, serve it
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule . - [L]
+
+# Custom 404
 ErrorDocument 404 /notfound.html
+
+# Compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/rss+xml

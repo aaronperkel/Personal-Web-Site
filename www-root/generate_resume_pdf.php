@@ -4,9 +4,9 @@
 error_reporting(E_ALL & ~E_DEPRECATED);
 
 // Include Composer's autoloader
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/./vendor/autoload.php';
 // Include the resume content
-require_once __DIR__ . '/data/resume_content.php';
+require_once __DIR__ . '/data/resume.php';
 
 use Dompdf\Dompdf;
 use Dompdf\Options;

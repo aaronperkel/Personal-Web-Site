@@ -1,6 +1,6 @@
 <?php
-include 'top.php';
-include 'data/resume_content.php'; // Ensures $resumeData is available
+include 'partials/layout.php';
+include 'data/resume.php'; // Ensures $resumeData is available
 ?>
 <main class="resume container">
     <div class="grid resume-grid">
@@ -102,4 +102,4 @@ include 'data/resume_content.php'; // Ensures $resumeData is available
         </a>
     </p>
 </main>
-<?php include 'footer.php'; ?>
+<?php include 'partials/footer.php'; ?>

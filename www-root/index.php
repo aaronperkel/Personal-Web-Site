@@ -1,4 +1,4 @@
-<?php include 'top.php'; ?>
+<?php include 'partials/layout.php'; ?>
 <div id="popup" class="popup" onclick="closePopup(event)">
     <!-- move these two buttons out here, not inside .popup-content -->
     <button id="popup-prev" class="popup-nav"><i class="fa-solid fa-caret-left"></i></button>
@@ -14,7 +14,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Hello! I’m Aaron.</h1>
-            <p>Network Technician @ UVM, B.S. in Computer Science, & Aviation Enthusiast.</p>
+            <p>Network Technician @ UVM; B.S. in Computer Science.</p>
         </div>
     </section>
 
@@ -34,6 +34,13 @@
                 <img src="public/img/utility.webp" alt="Utility Manager" class="card-img">
                 <h3 class="card-title">Utility Manager</h3>
             </article>
+
+			<!-- Message/Doodle Board -->
+			<article class="card"
+				data-desc='I built a lightweight birthday guestbook that lets visitors write notes or draw on a canvas; entries are saved to MySQL and rendered in a masonry gallery with live refresh. Stack: PHP (PDO), vanilla JS/Canvas, and a simple email notify flow with CSRF + honeypot spam protection. <a href="https://github.com/aaronperkel/message-doodle-board.git" target="_blank">GitHub Repo</a>'>
+				<img src="public/img/board.webp" alt="Message/Doodle Board" class="card-img">
+				<h3 class="card-title">Message/Doodle Board</h3>
+			</article>
 
             <!-- Finance Tracker -->
             <article class="card"
@@ -85,12 +92,12 @@
             </article>
 
             <!-- Room Status Sign -->
-            <article class="card"
+            <!-- <article class="card"
                 data-desc='An E‑Ink door display showing my current status (e.g. "Do Not Disturb") with timeframe, powered by Flask on Raspberry Pi. <a href="https://github.com/aaronperkel/Room-Display-Sign" target="_blank">GitHub Repo</a>'>
                 <img src="public/img/sign.webp" alt="Room Status Sign" class="card-img">
                 <h3 class="card-title">Room Status Sign</h3>
-            </article>
+            </article> -->
         </div>
     </section>
 </main>
-<?php include 'footer.php'; ?>
+<?php include 'partials/footer.php'; ?>
