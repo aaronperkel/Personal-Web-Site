@@ -386,8 +386,9 @@ function get_resume_html($resumeData)
                             <h3>Projects</h3>
                             <ul>
                                 <?php foreach ($resumeData['projects'] as $project): ?>
+                                    <?php $absoluteLink = 'https://aaronperkel.com/' . str_replace(' ', '%20', $project['link']); ?>
                                     <li><a
-                                            href="<?php echo htmlspecialchars($project['link']); ?>"><?php echo htmlspecialchars($project['name']); ?></a>
+                                            href="<?php echo htmlspecialchars($absoluteLink); ?>"><?php echo htmlspecialchars($project['name']); ?></a>
                                         — <?php echo htmlspecialchars($project['description']); ?></li>
                                 <?php endforeach; ?>
                             </ul>

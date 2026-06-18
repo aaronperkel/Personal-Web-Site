@@ -2,20 +2,30 @@
 ob_start();
 $phpSelf = htmlspecialchars($_SERVER['PHP_SELF']);
 $pathParts = pathinfo($phpSelf);
+
+$pageMeta = [
+    'about' => [
+        'title' => 'Aaron Perkel – About',
+        'description' => 'About Aaron Perkel: a computer science grad and network technician based in Burlington, VT, working at the intersection of networking, software, and automation.',
+    ],
+    'resume' => [
+        'title' => 'Aaron Perkel – Resume',
+        'description' => "Aaron Perkel's resume: experience as a network technician, education, skills, and side projects.",
+    ],
+];
+$currentPage = $pathParts['filename'];
+$pageTitle = $pageMeta[$currentPage]['title'] ?? 'Aaron Perkel – CS Grad and Network Technician';
+$pageDescription = $pageMeta[$currentPage]['description'] ?? 'Computer science grad, network technician, and avgeek blending tech and flight. Check out my projects, resume, & more.';
 ?><!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Aaron Perkel – CS Grad and Network Technician</title>
-    <meta name="description" content="
-        Computer science grad, network technician, and 
-        avgeek blending tech and flight. Check 
-        out my projects, resume, & more.
-    ">
+    <title><?= htmlspecialchars($pageTitle) ?></title>
+    <meta name="description" content="<?= htmlspecialchars($pageDescription) ?>">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <link rel="canonical" href="https://aaronperkel.com/" />
+    <link rel="canonical" href="https://aaronperkel.com/<?= $pathParts['filename'] === 'index' ? '' : $pathParts['filename'] ?>" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -66,14 +76,14 @@ $pathParts = pathinfo($phpSelf);
         "birthPlace": "Richmond, VA",
         "birthDate": "2003-11-11",
         "gender": "Male",
-        "image": "https://aperkel.w3.uvm.edu/public/img/headshot.webp"
+        "image": "https://aaronperkel.com/public/img/headshot.webp"
     }
     </script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/public/img/apple-touch-icon.png" />
     <link rel="icon" type="image/svg+xml" href="/public/img/favicon.svg" />
     <link rel="icon" type="image/png" href="/public/img/favicon-96x96.png" sizes="96x96" />
-    <link rel="mask-icon" href="/public/favicon.svg" color="#000000" />
+    <link rel="mask-icon" href="/public/img/favicon.svg" color="#000000" />
     <link rel="manifest" href="/public/img/site.webmanifest" />
     <link rel="shortcut icon" href="/public/img/favicon.ico" />
     

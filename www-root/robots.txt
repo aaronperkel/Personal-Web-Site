@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /cal.ics
 
-Sitemap: https://aperkel.w3.uvm.edu/sitemap.xml
+Sitemap: https://aaronperkel.com/sitemap.xml

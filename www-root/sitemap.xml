@@ -13,27 +13,22 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://aaronperkel.com/index.php</loc>
+  <loc>https://aaronperkel.com/about</loc>
   <lastmod>2025-06-07T03:54:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://aaronperkel.com/about.php</loc>
+  <loc>https://aaronperkel.com/resume</loc>
   <lastmod>2025-06-07T03:54:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://aaronperkel.com/resume.php</loc>
-  <lastmod>2025-06-07T03:54:32+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://aaronperkel.com/index.php?project=UVM%C2%A0Sublets</loc>
+  <loc>https://aaronperkel.com/index.php?project=UVM%20Sublets</loc>
   <lastmod>2025-06-07T03:54:32+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://aaronperkel.com/index.php?project=Utility%C2%A0Manager</loc>
+  <loc>https://aaronperkel.com/index.php?project=Utility%20Manager</loc>
   <lastmod>2025-06-07T03:54:32+00:00</lastmod>
   <priority>0.64</priority>
 </url>
@@ -43,13 +38,8 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://aaronperkel.com/index.php?project=Blob%C2%A0Kart</loc>
+  <loc>https://aaronperkel.com/index.php?project=Blob%20Kart</loc>
   <lastmod>2025-06-07T03:54:32+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://aaronperkel.com/public/aaron-perkel-resume.pdf</loc>
-  <lastmod>2025-05-14T01:04:35+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
